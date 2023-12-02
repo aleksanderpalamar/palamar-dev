@@ -1,6 +1,5 @@
 import "./globals.css";
 
-import { ClerkProvider } from "@clerk/nextjs";
 import { ErrorBoundary } from "react-error-boundary";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";

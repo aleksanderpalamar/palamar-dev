@@ -7,6 +7,18 @@ body,
 :root {
   height: 100%;
 }
+
+.cl-formButtonPrimary {
+  font-size: 14px;
+  text-transform: none;
+  background-color: #8b5cf6;
+}
+ 
+.cl-formButtonPrimary:hover,
+.cl-formButtonPrimary:focus,
+.cl-formButtonPrimary:active {
+  background-color: #7c3aed;
+}
  
 @layer base {
   :root {

@@ -32,6 +32,7 @@ export const GitHubContribution = ({ username }: GitHubContributionProps) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    "server client";
     const fetchData = async () => {
       try {
         const res = await axios.get(
@@ -76,13 +77,13 @@ export const GitHubContribution = ({ username }: GitHubContributionProps) => {
                         key={index}
                         className="truncate break-words text-xs"
                       >
-                        {formatText(commit.message, 5)}
+                        {formatText(commit.message, 4)}
                       </span>
                     ))}
                   </>
                 ) : (
                   <>
-                    <span className="truncate break-words text-xs">No commits.</span>
+                    <span className="truncate break-words text-xs">No commits</span>
                   </>
                 )}
               </span>

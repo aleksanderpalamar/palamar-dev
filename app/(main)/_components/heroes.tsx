@@ -38,7 +38,7 @@ export const Heroes = () => {
                 <LastPosted
                   title="Initialize a new project with Next.js 14 and Shadcn-UI"
                   href="https://appnotes.vercel.app/preview/3nwqs55rvd3gwhe0gssabwhq9ker5v0"
-                />
+                />                
               </ScrollArea>
             </Card>
             <Card

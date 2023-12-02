@@ -2,7 +2,7 @@
 
 import { ArrowRight,  } from "lucide-react";
 
-interface LastPostedProps {
+interface LastPostedProps {  
   title?: string;
   href: string;
 }

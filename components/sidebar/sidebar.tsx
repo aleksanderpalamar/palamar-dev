@@ -24,14 +24,13 @@ export const Sidebar = ({
   href,
   onClick,
   ...props
-}: ItemNavigationProps) => {  
-
+}: ItemNavigationProps) => {
   const Items = [
     {
       id: "home",
       label: "Home",
       href: "/",
-    },       
+    },    
   ] as ItemNavigationProps[];
 
   return (
@@ -42,7 +41,7 @@ export const Sidebar = ({
           <AccordionItem value="text">
             <AccordionTrigger className="flex justify-between items-center">
               <span className="flex items-center">
-                <Newspaper className="w-6 h-6 mr-2 text-violet-500 dark:text-violet-50"/>
+                <Newspaper className="w-6 h-6 mr-2 text-violet-500 dark:text-violet-50" />
                 <p>General</p>
               </span>
             </AccordionTrigger>

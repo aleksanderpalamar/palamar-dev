@@ -1,7 +1,7 @@
 "use client";
 
 import { Logo } from "@/components/logo";
-import { MobileToggle } from "@/components/mobile-toggle"
+import { UserButton } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
 
 export const Navbar = () => {
@@ -22,8 +22,8 @@ export const Navbar = () => {
       <div className="flex items-center gap-x-4">
        <Logo />         
       </div>
-      <div className="ml-auto flex items-center gap-x-2 mr-14">
-        <MobileToggle />
+      <div className="ml-auto flex items-center gap-x-2 mr-14">        
+        <UserButton afterSignOutUrl="/" />
       </div>
     </nav>
   )
