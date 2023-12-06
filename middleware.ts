@@ -8,7 +8,7 @@ export default authMiddleware({
   publicRoutes: ["/"],
   afterAuth: (auth, req) => {
     if (auth.userId && auth.isPublicRoute) {
-      return NextResponse.redirect(new URL("/dashboard", req.url));
+      return NextResponse.redirect(new URL("/posts", req.url));
     }
 
     if (!auth.userId && !auth.isPublicRoute) {
