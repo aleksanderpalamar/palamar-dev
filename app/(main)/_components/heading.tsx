@@ -37,15 +37,21 @@ export const Heading = () => {
         Aleksander Palamar
       </h1>
       <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2">
-        Web Developer |
+        Software Engineer |
         <Badge className="text-violet-500 text-xs" variant="secondary">
           Fullstack
         </Badge>
       </p>
-      <p className="text-gray-500 dark:text-gray-50 word-spacing-2 break-words p-2 text-start">
-        As a skilled fullstack developer, I am dedicated to turning ideas into
-        innovative web applications. Explore my latest projects and articles,
-        showcasing my expertise in React and web development.
+      <p className="text-gray-500 dark:text-gray-50 word-spacing-2 break-words p-2 text-justify">
+        I am passionate about coding, and as a software engineer, I specialize
+        in incredible technologies such as JavaScript, React, TypeScript, and
+        Next.js. My professional journey is centered around crafting UI in
+        accordance with UX, ensuring that each web experience not only functions
+        seamlessly but also captivates users. While exploring these tools, I
+        discover new ways to turn ideas into reality, all while sharing my
+        enthusiasm through innovative projects and inspiring articles. I am here
+        not just to write code but to create engaging and impactful digital
+        narratives.
       </p>
       <div className="mt-4 flex items-center self-end space-x-2">
         <Button
@@ -72,7 +78,7 @@ export const Heading = () => {
           size="sm"
         >
           More Projects
-        </Button>        
+        </Button>
       </div>
       <Separator className="my-4 w-full bg-muted-foreground/25 dark:bg-zinc-700" />
     </div>

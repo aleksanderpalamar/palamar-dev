@@ -6,6 +6,9 @@ import { ChevronsLeft, MenuIcon } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
+import { Navbar } from "./navbar";
+import { UserButton } from "@clerk/nextjs";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export const Navigation = () => {
   const router = useRouter();
@@ -151,10 +154,10 @@ export const Navigation = () => {
       >
         <nav className="bg-transparent px-3 py-2 w-full">
           {isCollapsed && (
-            <MenuIcon 
+            <MenuIcon
               onClick={resetWidth}
-              role="button" 
-              className="h-6 w-6 text-muted-foreground" 
+              role="button"
+              className="w-6 h-6 text-muted-foreground"
             />
           )}
         </nav>
