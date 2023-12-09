@@ -1,30 +1,19 @@
-"use client";
+import { useQuery } from "convex/react";
+import { useParams } from "next/navigation";
 
-import { Logo } from "@/components/logo";
-import { MobileToggle } from "@/components/mobile-toggle"
-import { useEffect, useState } from "react";
+interface NavbarProps {
+  isCollapsed: boolean
+  onResetWidth: () => void
+}
 
-export const Navbar = () => {
-  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, [])
-
-  switch (isMounted) {
-    case false:
-      return null
-  }
+export const Navbar = ({ isCollapsed, onResetWidth }: NavbarProps) => {
+  const params = useParams();
+  
 
   return (
-    <nav className="fixed z-50 top-0 w-full h-14 px-4 border-b
-    shadow-sm bg-violet-100 dark:bg-[#313338] flex items-center">
-      <div className="flex items-center gap-x-4">
-       <Logo />         
-      </div>
-      <div className="ml-auto flex items-center gap-x-2 mr-14">
-        <MobileToggle />
-      </div>
-    </nav>
+    <div>
+      Navbar!
+    </div>
   )
 }

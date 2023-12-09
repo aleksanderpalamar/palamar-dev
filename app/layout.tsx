@@ -9,6 +9,8 @@ import { ModalProvider } from "@/components/providers/modal-provider";
 import ErrorFallback from "./error";
 import { siteConfig } from "@/config/site";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
+import { EdgeStoreProvider } from "@/lib/edgestore";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -54,15 +56,18 @@ export default function RootLayout({
       >
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <ConvexClientProvider>
+            <EdgeStoreProvider>
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
               enableSystem
               storageKey="PalamarDevTheme"
             >
+              <Toaster position="bottom-right" />
               <ModalProvider />
               {children}
             </ThemeProvider>
+            </EdgeStoreProvider>            
           </ConvexClientProvider>
         </ErrorBoundary>
       </body>

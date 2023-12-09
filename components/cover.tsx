@@ -1,0 +1,75 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { useEdgeStore } from "@/lib/edgestore"
+import { useParams } from "next/navigation";
+import { useCoverImage } from "@/hooks/use-cover-image";
+import { useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { Id } from "@/convex/_generated/dataModel";
+import Image from "next/image";
+import { Button } from "./ui/button";
+import { ImageIcon, Trash } from "lucide-react";
+
+interface CoverImageProps {
+  url?: string;
+  preview?: string;
+}
+
+export const Cover = ({ url, preview }: CoverImageProps) => {
+  const { edgestore } = useEdgeStore();
+  const params = useParams();
+  const coverImage = useCoverImage();
+  const removeCoverImage = useMutation(api.documents.removeCoverImage);
+
+  const handleOnRemove = async () => {
+    if (url) {
+      await edgestore.publicFiles.delete({
+        url: url
+      })
+    }
+    removeCoverImage({
+      id: params.documentId as Id<"documents">
+    })
+  }
+  
+
+  return (
+    <div className={cn(
+      "relative w-full h-[35vh] group",
+      !url && "h-[72vh]",
+      url && "bg-muted"
+    )}>
+      {!!url && (
+        <Image 
+          src={url}
+          fill
+          alt="Cover image"
+          className="object-cover"
+        />
+      )}
+      {url && !preview && (
+        <div className="opacity-0 group-hover:opacity-100 absolute bottom-5 right-5 flex items-center gap-x-2">
+          <Button 
+            onClick={() => coverImage.onReplace(url)}
+            className="text-muted-foreground text-xs text-violet-500 border-violet-500 border hover:bg-violet-100 hover:text-violet-500"
+            variant="outline"
+            size="sm"
+          >
+            <ImageIcon className="h-5 w-5 mr-2"/>
+            Change cover image            
+          </Button>
+          <Button 
+            onClick={handleOnRemove}
+            variant="outline" 
+            className="text-muted-foreground text-xs text-rose-500 border-rose-500 border hover:bg-rose-100 hover:text-rose-500"
+            size="sm"
+          >
+            <Trash className="h-5 w-5 mr-2"/>
+            Remove            
+          </Button>
+        </div>
+      )}
+    </div>
+  )
+}

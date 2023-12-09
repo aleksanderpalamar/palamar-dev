@@ -7,7 +7,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useContact } from "@/hooks/use-contact";
 import { useDownload } from "@/hooks/use-download";
 import { useProject } from "@/hooks/use-projects";
-import { LoaderIcon } from "lucide-react";
+import { SignInButton } from "@clerk/clerk-react";
+import { useConvexAuth } from "convex/react";
+import { Loader, LoaderIcon } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export const Heading = () => {
@@ -15,6 +18,7 @@ export const Heading = () => {
   const download = useDownload();
   const project = useProject();
   const [isMounted, setIsMounted] = useState(false);
+  
 
   useEffect(() => {
     setIsMounted(true);
@@ -53,7 +57,7 @@ export const Heading = () => {
         not just to write code but to create engaging and impactful digital
         narratives.
       </p>
-      <div className="mt-4 flex items-center self-end space-x-2">
+      <div className="mt-4 flex items-center justify-center self-end space-x-2">        
         <Button
           className="hover:bg-emerald-100 dark:hover:bg-zinc-700/75"
           variant="ghost"
@@ -78,7 +82,7 @@ export const Heading = () => {
           size="sm"
         >
           More Projects
-        </Button>
+        </Button>        
       </div>
       <Separator className="my-4 w-full bg-muted-foreground/25 dark:bg-zinc-700" />
     </div>

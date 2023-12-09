@@ -6,9 +6,6 @@ import { ChevronsLeft, MenuIcon } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { Navbar } from "./navbar";
-import { UserButton } from "@clerk/nextjs";
-import { ModeToggle } from "@/components/mode-toggle";
 
 export const Navigation = () => {
   const router = useRouter();
