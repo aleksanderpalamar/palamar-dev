@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ContactModal } from "@/components/modals/contact-modal"
 import { DownloadModal } from "@/components/modals/download-modal"
 import { ProjectModal } from "../modals/project-modal"
+import { CoverImageModal } from "../modals/cover-image-modal"
 
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false)
@@ -20,7 +21,8 @@ export const ModalProvider = () => {
     <>
       <ContactModal />
       <DownloadModal />
-      <ProjectModal />      
+      <ProjectModal />
+      <CoverImageModal />      
     </>
   )
 }

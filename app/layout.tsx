@@ -8,9 +8,10 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import ErrorFallback from "./error";
 import { siteConfig } from "@/config/site";
-import { ConvexClientProvider } from "@/components/providers/convex-provider";
+
 import { EdgeStoreProvider } from "@/lib/edgestore";
 import { Toaster } from "sonner";
+import { ConvexClientProvider } from "@/components/providers/convex-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
