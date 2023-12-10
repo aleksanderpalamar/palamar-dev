@@ -83,7 +83,7 @@ export const Sidebar = ({
               )}
               {!isAuthenticated && !isLoading && (
                 <SignInButton mode="modal">
-                  <Button className="bg-violet-500/10 hover:bg-violet-500/10 text-violet-500 border border-violet-500 gap-x-2 flex items-center w-full">
+                  <Button className="bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 border border-violet-500 gap-x-2 flex items-center w-full">
                     <User className="w-4 h-4" />
                     Login
                   </Button>

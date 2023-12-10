@@ -29,14 +29,14 @@ const DocumentsPage = () => {
       <div className="flex flex-col items-center">
         <FileWarning size={96} className="text-zinc-500 dark:text-zinc-400" />
         <h1 className="text-2xl font-bold text-zinc-500 dark:text-zinc-400">
-          Empty documents
+          Empty Posts.
         </h1>
         <p className="text-zinc-500 dark:text-zinc-400">
-          Welcome to {user?.firstName}&apos;s Notes
+          Welcome my dashboard.
         </p>
         <Button onClick={handleOnCreate} className="mt-4 bg-violet-500 hover:bg-violet-600">
           <PlusCircle className="mr-2 h-5 w-5" />
-          Create a note
+          Create a new post
         </Button>
       </div>     
     </div>
