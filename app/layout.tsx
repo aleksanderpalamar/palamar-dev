@@ -62,9 +62,10 @@ export default function RootLayout({
               attribute="class"
               defaultTheme="system"
               enableSystem
+              disableTransitionOnChange
               storageKey="PalamarDevTheme"
             >
-              <Toaster position="bottom-right" />
+              <Toaster position="bottom-center" />
               <ModalProvider />
               {children}
             </ThemeProvider>
