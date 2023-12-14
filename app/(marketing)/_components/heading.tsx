@@ -36,7 +36,7 @@ export const Heading = () => {
   }
 
   return (
-    <div className="w-full space-y-4 flex flex-col px-3 py-4">
+    <div className="max-w-[1280px] space-y-4 flex flex-col px-3 py-4">
       <h1 className="text-4xl self-start font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500">
         Aleksander Palamar
       </h1>
@@ -73,17 +73,9 @@ export const Heading = () => {
           size="sm"
         >
           Resume
-        </Button>
-        <Button
-          className="ml-4 bg-violet-500 hover:bg-violet-400 "
-          onClick={project.onOpen}
-          aria-label="Projects"
-          size="sm"
-        >
-          More Projects
-        </Button>
+        </Button>        
       </div>
-      <Separator className="my-4 w-full bg-muted-foreground/25 dark:bg-zinc-700" />
+      <Separator className="my-4 w-full bg-muted-foreground/25 dark:bg-zinc-700" />      
     </div>
   );
 };

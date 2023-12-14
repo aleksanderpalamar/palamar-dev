@@ -1,26 +1,10 @@
-type Props = {
-  status?: string;  
-  id: string;
-  title: string;
-  description: string;
-  href: string;
-  githubUrl: string;
-  badge?: [
-    {
-      id: string;
-      label: string;
-    }
-  ];
-  image?: string;
-};
-
 export const projects = [
   {
     id: "TaskFlow",
     status: "In Progress",
     title: "TaskFlow",
     description: "Collaborate, manage project, and reach new productivity levels. From highly, regarded projects to mind-blowing initiatives, we accomplish it all with TaskFlow.",
-    href: "https://github.com/aleksanderpalamar/taskflow",
+    href: "https://taskflow-alpha.vercel.app/",
     githubUrl: "https://github.com/aleksanderpalamar/taskflow",
     badge: [
       {
@@ -43,11 +27,12 @@ export const projects = [
         id: "stripe",
         label: "Stripe",
       }
-    ]
+    ],
+    image: "https://cdn.discordapp.com/attachments/811800332006457356/1184985905350582383/image.png?ex=658df71f&is=657b821f&hm=6ea7f18657a84c267f6e88271c944ffee9a9bc51113d7c652d5448bffdefaaea&",
   },
   {
     id: "xteam",
-    status: "In Production",
+    status: "Live",
     title: "XTeam Chat Application",
     description:
       "xTeam Chat is an exciting Fullstack application built with Next.js 13, Socket.io, Prisma, Tailwind, and MySQL. This application enables teams to collaborate efficiently, providing a real-time chat experience. Harness the power of modern technology to enhance your team's communication",
@@ -79,7 +64,7 @@ export const projects = [
   },
   {
     id: "Notes",
-    status: "In Production",
+    status: "Live",
     title: "Notes",
     description:
       "Notes is the connected workspace fou your ideas, documents, and plans, faster work and better collaboration.",
@@ -110,37 +95,28 @@ export const projects = [
     image: "https://cdn.discordapp.com/attachments/811800332006457356/1170063799542370446/image.png?ex=6557add4&is=654538d4&hm=3af6d8953c934d78cb921f7c9e781879273cd43cf68b0e48d388b35f0164e1ef&",
   },
   {
-    id: "palamar ui",
-    status: "In Production",
-    title: "Palamar UI Library",
-    description:
-      "" +
-      "Palamar UI Library is a collection of React components that can be used in any React application. It includes a variety of components such as buttons, inputs, and more. ",
-    githubUrl: "https://github.com/aleksanderpalamar/palamar-ui",
-    href: "https://github.com/aleksanderpalamar/palamar-ui",
-  },
-  {
-    id: "api-contact",
-    status: "In Production",
-    title: "API Contact",
-    description:
-      "API Contact is a simple contact management application that allows users to create, read, update, and delete contacts.",
-    githubUrl: "https://github.com/aleksanderpalamar/api-contact",
-    href: "https://github.com/aleksanderpalamar/api-contact",
+    id: "CoffeeDelivery",
+    status: "Live",
+    title: "Coffee Delivery",
+    image: "https://raw.githubusercontent.com/aleksanderpalamar/CoffeeDelivery/main/.github/CoffeeDelivery.png",
+    description: "Coffee Delivery is a web application that allows users to order coffee drinks.",
+    href: "https://github.com/aleksanderpalamar/CoffeeDelivery",
+    githubUrl: "https://github.com/aleksanderpalamar/CoffeeDelivery",
     badge: [
       {
-        id: "node",
-        label: "Node.js",
+        id: "React",
+        label: "React",
       },
       {
         id: "typescript",
         label: "TypeScript",
       },
       {
-        id: "nodemailer",
-        label: "Nodemailer",
+        id: "styled-components",
+        label: "Styled Components",
       }
-    ],
-  },  
-] as Props[];
+    ]
+  } 
+   
+];
 

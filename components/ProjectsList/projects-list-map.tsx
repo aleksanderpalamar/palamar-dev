@@ -1,18 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Loader2 } from "lucide-react";
-import { projects } from "./projects";
-import { Badge } from "../ui/badge";
-import { ScrollArea } from "../ui/scroll-area";
 import { useEffect, useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { projects } from "./projects";
+import Link from "next/link";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 
 const BadgeConfirm = [
   {
     id: 1,
-    name: "In Production",
+    name: "Live",
     color: "text-emerald-500 text-xs",
     bgColor: "bg-emerald-500/10 rounded-full hover:bg-emerald-500/20 h-4",
   },
@@ -37,23 +35,22 @@ export const ProjectsListMap = () => {
   }
 
   return (
-    <ScrollArea className="w-full h-[80vh] flex-1 flex-col">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {projects.map((project) => (
-        <Card
+        <div
           key={project.id}
-          className="flex flex-col dark:bg-transparent hover:bg-violet-100/25 dark:hover:bg-zinc-700/75 overflow-hidden mt-2 w-full"
-        >
-          <CardHeader className="flex items-start justify-center">
-            <div
-              onClick={() => window.open(project.href, "_blank")}
-              className="w-full h-full flex items-center 
-            overflow-hidden rounded-lg cursor-pointer"
-              title={`App: ${project.title}`}
-              aria-label={`App: ${project.title}`}
-            >
-              <h2 className="text-lg font-semibold hover:underline ml-2">
-                {project.title}
-                {BadgeConfirm.map((item) => (
+          className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all rounded overflow-hidden">
+            <div className="flex flex-col">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="flex flex-col p-4 space-y-4">
+                <h2 className="flex items-center justify-between">
+                  {project.title}
+                  <span className="badge badge-secondary">
+                  {BadgeConfirm.map((item) => (
                   <>
                     {item.name === project?.status && (
                       <Badge
@@ -65,26 +62,21 @@ export const ProjectsListMap = () => {
                     )}
                   </>
                 ))}
-              </h2>
+                  </span>
+                </h2>
+                <p className="text-gray-500 dark:text-gray-50 text-xs truncate">{project.description}</p>
+                <div className="flex justify-between gap-x-2 items-end mt-4">
+                  <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Button variant="primary" size="sm">Visit Repo</Button>
+                  </Link>
+                  <Link href={project.href} target="_blank" rel="noopener noreferrer">
+                    <Button variant="secondary" size="sm">Visit Site</Button>
+                  </Link>
+                </div>
+              </div>
             </div>
-          </CardHeader>
-          <CardContent className="w-full h-full flex flex-col items-center justify-center overflow-hidden gap-y-2">
-            <div className="flex flex-col text-justify text-xs">
-              {project.description}
-            </div>
-            <div className="md:flex items-center self-start">
-              {project.badge?.map((item) => (
-                <Badge
-                  key={item.id}
-                  className="bg-violet-500 hover:bg-violet-400 transition-all text-xs ml-2 mb-1"
-                >
-                  {item.label}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </ScrollArea>
+          </div>
+      ))}         
+    </div>
   );
 };

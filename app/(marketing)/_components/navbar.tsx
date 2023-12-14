@@ -2,6 +2,7 @@
 
 import { Logo } from "@/components/logo";
 import { MobileToggle } from "@/components/mobile-toggle"
+import { ModeToggle } from "@/components/mode-toggle";
 import { useEffect, useState } from "react";
 
 export const Navbar = () => {
@@ -23,7 +24,7 @@ export const Navbar = () => {
        <Logo />         
       </div>
       <div className="ml-auto flex items-center gap-8 pr-14">
-        <MobileToggle />        
+        <ModeToggle />        
       </div>
     </nav>
   )

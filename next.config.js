@@ -25,6 +25,36 @@ const nextConfig = {
         hostname: 'files.edgestore.dev', 
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'reactjs.org', 
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'nextjs.org', 
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.iconscout.com', 
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'tailwindcss.com', 
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com', 
+        port: '',
+        pathname: '/**'
       }
     ]
   }
