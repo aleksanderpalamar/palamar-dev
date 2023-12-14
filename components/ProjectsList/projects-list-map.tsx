@@ -70,6 +70,8 @@ export const ProjectsListMap = () => {
                 <Badge
                   key={item.id}
                   className="bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 transition-all text-xs ml-2 mb-1"
+                  variant="default"
+                  size="sm"                  
                 >
                   {item.label}
                 </Badge>
