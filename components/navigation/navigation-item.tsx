@@ -9,7 +9,7 @@ import Link from "next/link";
 type ItemNavigationProps = {
   id: string;
   label: string;
-  imageUrl: string;
+  imageUrl: string
   link?: string
   target?: string;
 };

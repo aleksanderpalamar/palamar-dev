@@ -24,6 +24,12 @@ export const NavigationSidebar = () => {
       link: "https://palamardev.vercel.app/",
     },
     {
+      id: "Notes App",
+      label: "Notes App",
+      imageUrl: "https://cdn.discordapp.com/attachments/811800332006457356/1184856807164870736/palamar-logo_5.png?ex=658d7ee4&is=657b09e4&hm=f32eb7a5395d0ecf6035f30d87073efa66a340e2da24d2ea816fd1fb241fa949&",
+      link: "https://appnotes.vercel.app/",
+    },
+    {
       id: "xteam",
       label: "xTeam Chat Application development project by Aleksander Palamar",
       imageUrl:
