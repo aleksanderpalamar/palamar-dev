@@ -72,7 +72,7 @@ export const Heading = () => {
           aria-label="Download CV"
           size="sm"
         >
-          Download CV
+          Resume
         </Button>
         <Button
           className="ml-4 bg-violet-500 hover:bg-violet-400 "
