@@ -6,7 +6,7 @@ export const projects = [
     description: "Collaborate, manage project, and reach new productivity levels. From highly, regarded projects to mind-blowing initiatives, we accomplish it all with TaskFlow.",
     href: "https://taskflow-alpha.vercel.app/",
     githubUrl: "https://github.com/aleksanderpalamar/taskflow",
-    badge: [
+    technologies: [
       {
         id: "next",
         label: "Next.js",
@@ -38,7 +38,7 @@ export const projects = [
       "xTeam Chat is an exciting Fullstack application built with Next.js 13, Socket.io, Prisma, Tailwind, and MySQL. This application enables teams to collaborate efficiently, providing a real-time chat experience. Harness the power of modern technology to enhance your team's communication",
     href: "https://github.com/aleksanderpalamar/team-chat-application",
     githubUrl: "https://github.com/aleksanderpalamar/team-chat-application",
-    badge: [
+    technologies: [
       {
         id: "next",
         label: "Next.js",
@@ -70,7 +70,7 @@ export const projects = [
       "Notes is the connected workspace fou your ideas, documents, and plans, faster work and better collaboration.",
     githubUrl: "https://github.com/aleksanderpalamar/notes",
     href: "https://appnotes.vercel.app/",
-    badge: [
+    technologies: [
       {
         id: "next",
         label: "Next.js",        
@@ -102,7 +102,7 @@ export const projects = [
     description: "Coffee Delivery is a web application that allows users to order coffee drinks.",
     href: "https://github.com/aleksanderpalamar/CoffeeDelivery",
     githubUrl: "https://github.com/aleksanderpalamar/CoffeeDelivery",
-    badge: [
+    technologies: [
       {
         id: "React",
         label: "React",

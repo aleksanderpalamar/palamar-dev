@@ -65,6 +65,16 @@ export const ProjectsListMap = () => {
                   </span>
                 </h2>
                 <p className="text-gray-500 dark:text-gray-50 text-xs truncate">{project.description}</p>
+                <div className="text-gray-500 dark:text-gray-50 text-xs">                
+                {project.technologies?.map((item) => (
+                <Badge
+                  key={item.id}
+                  className="bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 transition-all text-xs ml-2 mb-1"
+                >
+                  {item.label}
+                </Badge>
+              ))} 
+                </div>
                 <div className="flex justify-between gap-x-2 items-end mt-4">
                   <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Button variant="primary" size="sm">Visit Repo</Button>
