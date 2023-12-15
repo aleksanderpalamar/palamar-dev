@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
 const BadgeConfirm = [
   {
     id: 1,
@@ -35,60 +37,98 @@ export const ProjectsListMap = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {projects.map((project) => (
-        <div
-          key={project.id}
-          className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all rounded overflow-hidden">
+    <div className="flex flex-col space-y-4 items-center justify-center">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
+        Projects
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {projects.length === 0 && (
+          <div className="w-full h-full flex items-center justify-center">
+            <p className="text-gray-500 dark:text-gray-50 text-center font-bold">
+              Empty Projects
+            </p>
+          </div>
+        )}
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all rounded overflow-hidden"
+          >
             <div className="flex flex-col">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+              <Dialog>
+                <DialogTrigger>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                </DialogTrigger>
+                <DialogContent className="bg-white text-zinc-950 p-0 overflow-hidden max-w-6xl">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </DialogContent>
+              </Dialog>
               <div className="flex flex-col p-4 space-y-4">
                 <h2 className="flex items-center justify-between">
                   {project.title}
                   <span className="badge badge-secondary">
-                  {BadgeConfirm.map((item) => (
-                  <>
-                    {item.name === project?.status && (
-                      <Badge
-                        key={item.name}
-                        className={`${item.bgColor} ${item.color} ml-2`}
-                      >
-                        {item.name}
-                      </Badge>
-                    )}
-                  </>
-                ))}
+                    {BadgeConfirm.map((item) => (
+                      <>
+                        {item.name === project?.status && (
+                          <Badge
+                            key={item.name}
+                            className={`${item.bgColor} ${item.color} ml-2`}
+                          >
+                            {item.name}
+                          </Badge>
+                        )}
+                      </>
+                    ))}
                   </span>
                 </h2>
-                <p className="text-gray-500 dark:text-gray-50 text-xs truncate">{project.description}</p>
-                <div className="text-gray-500 dark:text-gray-50 text-xs">                
-                {project.technologies?.map((item) => (
-                <Badge
-                  key={item.id}
-                  className="bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 transition-all text-xs ml-2 mb-1"
-                  variant="default"
-                  size="sm"                  
-                >
-                  {item.label}
-                </Badge>
-              ))} 
+                <p className="text-gray-500 dark:text-gray-50 text-xs truncate">
+                  {project.description}
+                </p>
+                <div className="text-gray-500 dark:text-gray-50 text-xs">
+                  {project.technologies?.map((item) => (
+                    <Badge
+                      key={item.id}
+                      className="bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 transition-all text-xs ml-2 mb-1"
+                      variant="default"
+                      size="sm"
+                    >
+                      {item.label}
+                    </Badge>
+                  ))}
                 </div>
                 <div className="flex justify-between gap-x-2 items-end mt-4">
-                  <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Button variant="primary" size="sm">Visit Repo</Button>
+                  <Link
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="primary" size="sm">
+                      Visit Repo
+                    </Button>
                   </Link>
-                  <Link href={project.href} target="_blank" rel="noopener noreferrer">
-                    <Button variant="secondary" size="sm">Visit Site</Button>
+                  <Link
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="secondary" size="sm">
+                      Visit Site
+                    </Button>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-      ))}         
+        ))}
+      </div>
     </div>
   );
 };

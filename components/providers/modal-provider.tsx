@@ -6,6 +6,7 @@ import { DownloadModal } from "@/components/modals/download-modal"
 import { ProjectModal } from "../modals/project-modal"
 import { CoverImageModal } from "../modals/cover-image-modal"
 import { SettingsModal } from "../modals/modal-settings"
+import { ModalImage } from "../modals/modal-image"
 
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false)
@@ -24,7 +25,8 @@ export const ModalProvider = () => {
       <DownloadModal />
       <ProjectModal />
       <CoverImageModal />
-      <SettingsModal />      
+      <SettingsModal />
+      <ModalImage />      
     </>
   )
 }
