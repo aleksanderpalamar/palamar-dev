@@ -1,9 +1,13 @@
 import { cn } from "@/lib/utils"
-import { Poppins } from "next/font/google"
+import { Poppins, VT323 } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
 
 const poppins = Poppins({ subsets: ["latin"], weight: "600" })
+const bits = VT323({
+  subsets: ["latin"],
+  weight: ["400"],
+})
 
 export const Logo = () => {
   return (
@@ -17,8 +21,8 @@ export const Logo = () => {
             alt="logo"
           />
           <h1 className={cn(
-            "font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500  to-orange-500",
-            poppins.className
+            "font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500  to-orange-500",
+            bits.className
           )}>
             Palamar.Dev
           </h1>

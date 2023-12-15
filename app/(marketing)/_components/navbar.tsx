@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed z-50 top-0 w-full h-14 px-4 border-b
-    shadow-sm bg-violet-100 dark:bg-[#313338] flex items-center">
+    shadow-sm bg-violet-100 dark:bg-zinc-900 flex items-center">
       <div className="flex items-center gap-x-4">
        <Logo />         
       </div>

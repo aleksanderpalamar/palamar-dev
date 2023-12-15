@@ -58,7 +58,7 @@ export default function RootLayout({
       <body
         className={cn(
           poppins.className,
-          "bg-white text-zinc-950 dark:bg-dark:bg-[#313338] dark:text-white"
+          "bg-white text-zinc-950 dark:bg-dark:bg-gray-950 dark:text-white"
         )}
       >
         <ErrorBoundary FallbackComponent={ErrorFallback}>

@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -65,14 +65,33 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "blink-cursor": {
+          from: { borderColor: "#fff" },
+          to: { borderColor: "transparent" },
+        },
+        "typing": {
+          from: { width: 0 },
+          to: { width: "10.7em" },
+        },
+        wave: {
+          "0%": { transform: "rotate(0.0deg)" },
+          "10%": { transform: "rotate(14deg)" },
+          "20%": { transform: "rotate(-8deg)" },
+          "30%": { transform: "rotate(14deg)" },
+          "40%": { transform: "rotate(-4deg)" },
+          "50%": { transform: "rotate(10.0deg)" },
+          "60%": { transform: "rotate(0.0deg)" },
+          "100%": { transform: "rotate(0.0deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",        
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "waving-hand": "wave 2s linear infinite",
+        "blink-cursor": "blink-cursor 500ms step(40) infinite both",
+        "typing": "typing 6s steps(40) infinite both",
       },
     },
   },
-  plugins: [
-    require('tailwindcss-animated')
-  ],
-}
+  plugins: [require("tailwindcss-animated")],
+};
