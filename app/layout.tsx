@@ -24,6 +24,10 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  robots: {
+    index: true,
+    follow: true,
+  },  
   icons: [
     {
       url: "/favicon.ico",
@@ -40,6 +44,8 @@ export const metadata: Metadata = {
     "Next.js",
     "React",
   ],
+  authors: [{ name: "Palamar.Dev", url: "https://palamar.dev" }],
+  creator: "Palamar.Dev",
 };
 
 export default function RootLayout({

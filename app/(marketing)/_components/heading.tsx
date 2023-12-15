@@ -37,16 +37,19 @@ export const Heading = () => {
 
   return (
     <div className="max-w-[1280px] space-y-4 flex flex-col px-3 py-4">
-      <h1 className="text-4xl self-start font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500">
+      <h1 className="text-4xl self-start font-bold text-transparent 
+      bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500
+      animate-fade-left">
         Aleksander Palamar
       </h1>
-      <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2">
+      <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right">
         Web Developer |
         <Badge className="bg-violet-500/10 text-violet-500 hover:bg-violet-500/20 transition-all">
           FullStack
         </Badge>
       </p>
-      <p className="text-gray-500 dark:text-gray-50 word-spacing-2 break-words p-2 text-justify">
+      <p className="text-gray-500 dark:text-gray-50 
+      word-spacing-2 break-words p-2 text-justify animate-fade-up">
         I m passionate about coding and my favorite technologies are JavaScript,
         React, TypeScript and Next.js. My professional journey is centered on
         crafting UI according to UX, ensuring that each web experience not only
