@@ -21,8 +21,8 @@ export const Logo = () => {
             alt="logo"
           />
           <h1 className={cn(
-            "font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500  to-orange-500",
-            bits.className
+            "font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-500  to-orange-500",
+            poppins.className
           )}>
             Palamar.Dev
           </h1>

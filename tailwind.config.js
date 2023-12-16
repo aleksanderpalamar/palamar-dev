@@ -71,7 +71,7 @@ module.exports = {
         },
         "typing": {
           from: { width: 0 },
-          to: { width: "10.7em" },
+          to: { width: "16.4em" },
         },
         wave: {
           "0%": { transform: "rotate(0.0deg)" },

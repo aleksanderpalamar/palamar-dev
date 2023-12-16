@@ -66,7 +66,7 @@ export default function RootLayout({
             <EdgeStoreProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
+              defaultTheme="light"
               enableSystem
               disableTransitionOnChange
               storageKey="PalamarDevTheme"

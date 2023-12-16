@@ -6,8 +6,21 @@ import { projects } from "./projects";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
+import { VT323, Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const bits = VT323({
+  subsets: ["latin"],
+  weight: ["400"],
+})
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600"],
+})
 
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { GithubIcon, Globe } from "lucide-react";
 
 const BadgeConfirm = [
   {
@@ -38,8 +51,11 @@ export const ProjectsListMap = () => {
 
   return (
     <div className="flex flex-col space-y-4 items-center justify-center">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
-        Projects
+      <h1 className={cn(
+        "text-4xl font-bold text-gray-900 dark:text-gray-50",
+        poppins.className
+      )}>
+        Projetos
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.length === 0 && (
@@ -110,8 +126,9 @@ export const ProjectsListMap = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button variant="primary" size="sm">
-                      Visit Repo
+                    <Button variant="primary" size="sm" className="flex items-center gap-x-2">
+                      <GithubIcon className="h-5 w-5" />
+                      Github
                     </Button>
                   </Link>
                   <Link
@@ -119,8 +136,9 @@ export const ProjectsListMap = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button variant="secondary" size="sm">
-                      Visit Site
+                    <Button variant="secondary" size="sm" className="flex items-center gap-x-2">
+                      <Globe className="h-5 w-5" />
+                      Live
                     </Button>
                   </Link>
                 </div>
