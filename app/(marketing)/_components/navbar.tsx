@@ -3,6 +3,7 @@
 import { Logo } from "@/components/logo";
 import { MobileToggle } from "@/components/mobile-toggle";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SignInButton } from "@clerk/clerk-react";
 import { useConvexAuth } from "convex/react";
@@ -56,11 +57,11 @@ export const Navbar = () => {
         )}
         {!isAuthenticated && !isLoading && (
           <SignInButton
-            mode="modal"
-            aria-label="Sign in"
-            className="p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+            mode="modal"           
           >
-            Área restrita
+            <Button className="bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 border border-violet-500 gap-x-2 flex items-center w-full">
+              Área restrita
+            </Button>
           </SignInButton>
         )}
         <ModeToggle />
