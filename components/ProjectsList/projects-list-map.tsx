@@ -68,7 +68,8 @@ export const ProjectsListMap = () => {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="card bg-base-100 shadow-xl hover:shadow-2xl dark:shadow-2xl hover:scale-105 transition-all rounded overflow-hidden"
+            className="card bg-base-100 shadow-xl hover:shadow-2xl 
+            dark:shadow-2xl hover:scale-105 transition-all rounded overflow-hidden"
           >
             <div className="flex flex-col">
               <Dialog>
@@ -112,7 +113,7 @@ export const ProjectsListMap = () => {
                   {project.technologies?.map((item) => (
                     <Badge
                       key={item.id}
-                      className="bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 transition-all text-xs ml-2 mb-1"
+                      className="bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 transition-all text-xs ml-1 mb-1"
                       variant="default"
                       size="sm"
                     >
