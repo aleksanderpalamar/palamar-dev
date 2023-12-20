@@ -23,7 +23,7 @@
 
 ## Contributing
 
-You can contribute to this project by creating a PR on the [GitHub repository](https://github.com/aleksanderpalamar/palamar-dev).
+You can contribute to this project by creating a PR on the [GitHub repository](https://github.com/aleksanderpalamar/palamar-dev/pulls).
 
 ## Cloning the repository
 
