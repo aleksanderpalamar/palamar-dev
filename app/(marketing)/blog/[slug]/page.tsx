@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { getPost } from "@/app/_service/blog";
-import { CodeBlock } from "@/components/code-block";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -21,19 +21,20 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
                 {...props}
               />
             ),
-            code: ({ node, inline, className, children, ...props }: any) => {
-              const match = /language-(\w+)/.exec(className || "");
-              return !inline && match ? (
-                <CodeBlock
-                  className="text-sm"
-                  language={match[1]}
-                  value={String(children).replace(/\n$/, "")}
-                  {...props}
-                />
-              ) : (
-                <code className="text-sm bg-[#8257e6]/10 text-[#8257e6]" {...props} />
-              );
-            },
+            img: ({ node, ...props }: any) => (
+              <img
+                className="w-full"
+                src={props.src}
+                alt={props.alt}
+                {...props}
+              />
+            ),
+            code: ({ node, ...props }) => (
+              <code
+                className="text-[#8257e6] bg-[#8257e6]/10 dark:bg-[#8257e6]/20 px-1 py-0.5 rounded"
+                {...props}
+              />              
+            ),
             strong: ({ node, ...props }) => (
               <strong className="text-[#8257e6]" {...props} />
             ),
