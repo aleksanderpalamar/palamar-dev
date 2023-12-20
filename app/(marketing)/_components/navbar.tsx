@@ -40,30 +40,7 @@ export const Navbar = () => {
             href="/blog"
           >
             Blog
-          </Link>
-          {isLoading && (
-            <Loader className="w-4 h-4 animate-spin text-gray-500 dark:text-gray-50" />
-          )}
-          {isAuthenticated && !isLoading && (
-            <div
-              className="p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
-              role="link"
-            >
-              <Link href="/documents" className="flex items-center gap-x-2">
-                Dashboard
-              </Link>
-            </div>
-          )}
-          {!isAuthenticated && !isLoading && (
-            <SignInButton mode="modal">
-              <div
-                role="button"
-                className="p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
-              >
-                Área restrita
-              </div>
-            </SignInButton>
-          )}
+          </Link>          
           <ModeToggle />
         </div>
       </nav>
