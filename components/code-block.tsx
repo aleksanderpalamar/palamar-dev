@@ -55,34 +55,7 @@ export const generateRandomString = (length: number, lowercase = false) => {
 };
 
 const CodeBlock: FC<Props> = memo(({ language, value }) => {
-  const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 2000 });
-
-  const downloadAsFile = () => {
-    if (typeof window === "undefined") {
-      return;
-    }
-    const fileExtension = programmingLanguages[language] || ".file";
-    const suggestedFileName = `file-${generateRandomString(
-      3,
-      true
-    )}${fileExtension}`;
-    const fileName = window.prompt("Enter file name" || "", suggestedFileName);
-
-    if (!fileName) {
-      return;
-    }
-
-    const blob = new Blob([value], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.download = fileName;
-    link.href = url;
-    link.style.display = "none";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
+  const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 2000 });  
 
   return (
     <div className="codeblock w-full bg-zinc-950 font-sans">

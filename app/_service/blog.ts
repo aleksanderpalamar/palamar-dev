@@ -22,7 +22,7 @@ export async function getPosts() {
       tags: post.properties.tags.multi_select.map((tag) => tag.name),
       createdAt: post.created_time,
     };
-  });
+  });  
 }
 
 export async function getPost(slug: string) {
