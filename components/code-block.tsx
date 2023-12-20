@@ -6,7 +6,7 @@ import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { FC, memo } from "react";
 import { Button } from "./ui/button";
-import { Check, Copy, Download } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 import { ActionTooltip } from "./action-tooltip";
 
 interface Props {
@@ -58,7 +58,7 @@ const CodeBlock: FC<Props> = memo(({ language, value }) => {
   const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 2000 });  
 
   return (
-    <div className="codeblock w-full bg-zinc-950 font-sans">
+    <div className="w-full bg-zinc-950">
       <div className="flex w-full items-center justify-between bg-zinc-800 px-6 py-2 pr-4 text-zinc-100">
         <span className="text-xs lowercase">{language}</span>
         <div className="flex items-center space-x-1">
