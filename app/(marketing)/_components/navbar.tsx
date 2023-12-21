@@ -3,6 +3,7 @@
 import { Logo } from "@/components/logo";
 import { MobileToggle } from "@/components/mobile-toggle";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useContact } from "@/hooks/use-contact";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,6 +11,7 @@ import { useEffect, useState } from "react";
 export const Navbar = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const contact = useContact();
 
   useEffect(() => {
     setIsMounted(true);
@@ -45,15 +47,35 @@ export const Navbar = () => {
           {isMobile ? (
             <MobileToggle />
           ) : (
-            <Link
-              className={cn(
-                "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
-              )}
-              role="link"
-              href="/blog"
-            >
-              Blog
-            </Link>
+            <>
+              <Link
+                className={cn(
+                  "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+                )}
+                role="link"
+                href="/"
+              >
+                Home
+              </Link>
+              <Link
+                className={cn(
+                  "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+                )}
+                role="link"
+                href="/blog"
+              >
+                Blog
+              </Link>
+              <div
+                className={cn(
+                  "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base cursor-pointer"
+                )}
+                role="link"
+                onClick={contact.onOpen}
+              >
+                Contato
+              </div>
+            </>
           )}
           <ModeToggle />
         </div>
