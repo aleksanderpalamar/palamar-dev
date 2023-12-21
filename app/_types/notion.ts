@@ -39,12 +39,38 @@ export interface Parent {
 }
 
 export interface Properties {
+  coverImage: CoverImage;
   tags: Tags;
   slug: Slug;
+  status: Status;
   title: Title;
+  description: Description;
+  technologies: Technologies;
+  githubUrl: Url;
+  href: Url;
+}
+
+export interface CoverImage {
+  id: string;
+  type: string;
+  files: any[];
+  name: string;
+  url: string;  
+}
+
+export interface Url {
+  id: string;
+  type: string;
+  rich_text: RichText[];
 }
 
 export interface Tags {
+  id: string;
+  type: string;
+  multi_select: MultiSelect[];
+}
+
+export interface Technologies {
   id: string;
   type: string;
   multi_select: MultiSelect[];
@@ -60,6 +86,12 @@ export interface Slug {
   id: string;
   type: string;
   rich_text: RichText[];
+}
+
+export interface Status {
+  id: string;
+  type: string;
+  multi_select: MultiSelect[];
 }
 
 export interface RichText {
@@ -90,7 +122,21 @@ export interface Title {
   title: Title2[];
 }
 
+export interface Description {
+  id: string;
+  type: string;
+  rich_text: RichText[];
+}
+
 export interface Title2 {
+  type: string;
+  text: Text2;
+  annotations: Annotations2;
+  plain_text: string;
+  href: any;
+}
+
+export interface Title3 {
   type: string;
   text: Text2;
   annotations: Annotations2;
