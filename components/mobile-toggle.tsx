@@ -1,8 +1,8 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Grip, Menu } from "lucide-react";
-import { Sidebar } from "./sidebar/sidebar";
-import { NavigationSidebar } from "./navigation/navigation-sidebar";
+import { MenuIcon } from "lucide-react";
+import { Sidebar } from "./sidebar";
+
 
 export const MobileToggle = () => {
   return (
@@ -15,16 +15,14 @@ export const MobileToggle = () => {
         >
           <Button size="sm" variant="ghost" className="flex items-center gap-x-2 
           hover:bg-violet-500/10 rounded hover:text-violet-500 dark:hover:bg-zinc-500/10 hover:dark:text-zinc-50">
-            <Grip className="h-6 w-6" />
-            Menu
+            <MenuIcon className="w-5 h-5" />
           </Button>
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="p-0 flex gap-0">
-        <div className="w-[72px]">
-          <NavigationSidebar />
-        </div>
-        <Sidebar href="" />
+        <div className="w-full">
+          <Sidebar href="" />          
+        </div>        
       </SheetContent>
     </Sheet>
   );

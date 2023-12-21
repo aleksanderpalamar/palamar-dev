@@ -9,9 +9,7 @@ import { ModalProvider } from "@/components/providers/modal-provider";
 import ErrorFallback from "./error";
 import { siteConfig } from "@/config/site";
 
-import { EdgeStoreProvider } from "@/lib/edgestore";
 import { Toaster } from "sonner";
-import { ConvexClientProvider } from "@/components/providers/convex-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },  
+  },
   icons: [
     {
       url: "/favicon.ico",
@@ -62,21 +60,17 @@ export default function RootLayout({
         )}
       >
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <ConvexClientProvider>
-            <EdgeStoreProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="light"
-              enableSystem
-              disableTransitionOnChange
-              storageKey="PalamarDevTheme"
-            >
-              <Toaster position="bottom-center" />
-              <ModalProvider />
-              {children}
-            </ThemeProvider>
-            </EdgeStoreProvider>            
-          </ConvexClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+            storageKey="PalamarDevTheme"
+          >
+            <Toaster position="bottom-center" />
+            <ModalProvider />
+            {children}
+          </ThemeProvider>
         </ErrorBoundary>
       </body>
     </html>

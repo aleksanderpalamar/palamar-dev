@@ -114,6 +114,10 @@ export const projects = [
       {
         id: "styled-components",
         label: "Styled Components",
+      },
+      {
+        id: "vite",
+        label: "Vite",
       }
     ]
   } 

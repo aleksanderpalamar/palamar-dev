@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ContactModal } from "@/components/modals/contact-modal"
 import { DownloadModal } from "@/components/modals/download-modal"
 import { ProjectModal } from "../modals/project-modal"
-import { CoverImageModal } from "../modals/cover-image-modal"
+
 import { SettingsModal } from "../modals/modal-settings"
 import { ModalImage } from "../modals/modal-image"
 
@@ -24,7 +24,6 @@ export const ModalProvider = () => {
       <ContactModal />
       <DownloadModal />
       <ProjectModal />
-      <CoverImageModal />
       <SettingsModal />
       <ModalImage />      
     </>

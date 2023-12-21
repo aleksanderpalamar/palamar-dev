@@ -16,6 +16,7 @@ export async function loginAction(formData: FormData) {
 
   if (response.status === 200) {
     const data = await response.json();
+    localStorage.setItem("token", data.token);
     redirect("/dashboard")   
   } else {
     const data = await response.json();
