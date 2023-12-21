@@ -21,7 +21,7 @@ export const Logo = () => {
             alt="logo"
           />
           <h1 className={cn(
-            "font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-500  to-orange-500",
+            "font-bold text-lg text-[#8257e6] whitespace-nowrap overflow-hidden",
             poppins.className
           )}>
             Palamar.Dev

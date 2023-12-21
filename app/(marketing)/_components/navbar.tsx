@@ -1,20 +1,30 @@
 "use client";
 
 import { Logo } from "@/components/logo";
+import { MobileToggle } from "@/components/mobile-toggle";
 import { ModeToggle } from "@/components/mode-toggle";
 import { cn } from "@/lib/utils";
-import { SignInButton } from "@clerk/clerk-react";
-import { useConvexAuth } from "convex/react";
-import { Loader } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const { isAuthenticated, isLoading } = useConvexAuth();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+
+    const checkWindowSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkWindowSize();
+
+    window.addEventListener("resize", checkWindowSize);
+
+    return () => {
+      window.removeEventListener("resize", checkWindowSize);
+    };
   }, []);
 
   switch (isMounted) {
@@ -32,15 +42,19 @@ export const Navbar = () => {
           <Logo />
         </div>
         <div className="ml-auto flex items-center gap-2 pr-4 animate-fade-left">
-          <Link
-            className={cn(
-              "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
-            )}
-            role="link"
-            href="/blog"
-          >
-            Blog
-          </Link>          
+          {isMobile ? (
+            <MobileToggle />
+          ) : (
+            <Link
+              className={cn(
+                "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+              )}
+              role="link"
+              href="/blog"
+            >
+              Blog
+            </Link>
+          )}
           <ModeToggle />
         </div>
       </nav>

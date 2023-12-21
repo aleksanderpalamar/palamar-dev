@@ -1,6 +1,5 @@
 "use client";
 
-import { useContact } from "@/hooks/use-contact";
 import { useModal } from "@/hooks/use-modal";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";

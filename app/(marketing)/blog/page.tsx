@@ -8,8 +8,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Blog",
 };
+
 const BlogPage = async () => {
-  const posts = await getPosts();
+  const posts = await getPosts(); 
 
   return (
     <div className="m-auto bg-white dark:bg-zinc-900 w-full h-full flex items-start justify-center">
@@ -45,7 +46,7 @@ const BlogPage = async () => {
                 ))}
               </div>
               <p className="text-xs text-zinc-500">
-                <span>{formatDate(post.createdAt)}</span>
+                <span>{formatDate(post.createdAt)}</span>                                                
               </p>
             </div>
           ))}
