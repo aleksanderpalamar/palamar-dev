@@ -1,5 +1,6 @@
 "use client"
 
+import { useContact } from "@/hooks/use-contact"
 import { cn } from "@/lib/utils"
 import { Code } from "lucide-react"
 import Link, { LinkProps } from "next/link"
@@ -16,7 +17,7 @@ export const Sidebar = ({
   href,
   onClick,
   ...props
- }: itemNavigationProps) => {  
+ }: itemNavigationProps) => {
 
   const Item = [
     {
@@ -28,7 +29,7 @@ export const Sidebar = ({
       id: "blog",
       label: "Blog",
       href: "/blog",
-    }
+    },
   ] as itemNavigationProps[]
 
   return (
