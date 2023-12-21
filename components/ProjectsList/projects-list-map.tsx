@@ -127,20 +127,20 @@ export const ProjectsListMap = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button variant="primary" size="sm" className="flex items-center gap-x-2">
+                    <div role="button" className="flex items-center gap-x-2 p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base">
                       <GithubIcon className="h-5 w-5" />
-                      Github
-                    </Button>
+                      <span>Github</span>
+                    </div>
                   </Link>
                   <Link
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button variant="secondary" size="sm" className="flex items-center gap-x-2">
+                    <div role="button" className="flex items-center gap-x-2 p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base">
                       <Globe className="h-5 w-5" />
-                      Live
-                    </Button>
+                      <span>Live</span>
+                    </div>
                   </Link>
                 </div>
               </div>
