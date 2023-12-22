@@ -30,6 +30,11 @@ export const Sidebar = ({
       label: "Blog",
       href: "/blog",
     },
+    {
+      id: "projects",
+      label: "Projetos",
+      href: "/projects",
+    },
   ] as itemNavigationProps[]
 
   return (

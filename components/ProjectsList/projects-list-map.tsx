@@ -4,15 +4,9 @@
 import { useEffect, useState } from "react";
 import { projects } from "./projects";
 import Link from "next/link";
-import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
-import { VT323, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
-
-const bits = VT323({
-  subsets: ["latin"],
-  weight: ["400"],
-})
 
 const poppins = Poppins({
   subsets: ["latin"],
