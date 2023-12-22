@@ -1,4 +1,3 @@
-import { Separator } from "@/components/ui/separator"
 import { Heading } from "./_components/heading"
 import { Heroes } from "./_components/heroes"
 

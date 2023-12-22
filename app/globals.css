@@ -12,6 +12,7 @@ body,
   font-size: 14px;
   text-transform: none;
   background-color: #8b5cf6;
+  background: linear-gradient(45deg, #8b5cf6, #7c3aed);
 }
  
 .cl-formButtonPrimary:hover,

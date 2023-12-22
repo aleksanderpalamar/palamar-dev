@@ -47,16 +47,7 @@ export const Navbar = () => {
           {isMobile ? (
             <MobileToggle />
           ) : (
-            <>
-              <Link
-                className={cn(
-                  "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
-                )}
-                role="link"
-                href="/"
-              >
-                Home
-              </Link>
+            <>              
               <Link
                 className={cn(
                   "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
@@ -65,6 +56,15 @@ export const Navbar = () => {
                 href="/blog"
               >
                 Blog
+              </Link>
+              <Link
+                className={cn(
+                  "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+                )}
+                role="link"
+                href="/projects"
+              >
+                Projetos
               </Link>
               <div
                 className={cn(

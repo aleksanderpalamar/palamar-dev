@@ -13,12 +13,12 @@ const BlogPage = async () => {
   const posts = await getPosts(); 
 
   return (
-    <div className="m-auto bg-white dark:bg-zinc-900 w-full h-full flex items-start justify-center">
-      <div className="max-w-3xl py-14 md:py-20">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
+      <div className="max-w-[1280px] py-14 md:py-20">
+        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
           Blog
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 animate-fade-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
           {posts.map((post) => (
             <div
               key={post.id}
