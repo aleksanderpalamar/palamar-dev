@@ -125,7 +125,7 @@ export interface Title {
 export interface Description {
   id: string;
   type: string;
-  rich_text: RichText[];
+  title: Title2[];
 }
 
 export interface Title2 {
