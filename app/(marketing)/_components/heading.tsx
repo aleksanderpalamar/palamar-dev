@@ -44,33 +44,12 @@ export const Heading = () => {
   }
 
   return (
-    <div className="max-w-[1280px] space-y-4 flex flex-col px-3 py-4">
+    <div className="max-w-6xl space-y-4 flex flex-col px-3 py-4">
       <div className="flex flex-col space-y-2">
         <Title />
       </div>
       <Description />
       <div className="mt-4 flex items-center justify-center self-end space-x-2">
-        {isMobile ? (
-          <ActionTooltip
-            label="Form de contato"
-            align="end"
-            aria-label="Form de contato"
-          >
-            <div
-              className={cn(
-                "p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base",
-                poppins.className
-              )}
-              role="button"
-              onClick={contact.onOpen}
-              aria-label="Get in touch"
-            >
-              <MailIcon className="w-6 h-6" />
-            </div>
-          </ActionTooltip>
-        ) : (
-          <></>
-        )}
         <ActionTooltip
           label="Download CV"
           align="end"
