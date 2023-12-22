@@ -17,6 +17,7 @@ export async function getPosts() {
   return typedResponse.results.map((post) => {
     return {
       id: post.id,
+      coverImage: post.properties.coverImage.url,
       title: post.properties.title.title[0].plain_text,
       slug: post.properties.slug.rich_text[0].plain_text,
       tags: post.properties.tags.multi_select.map((tag) => tag.name),
