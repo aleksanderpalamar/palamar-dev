@@ -1,7 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { getProjects } from "@/app/_service/projects";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { GithubIcon, Globe } from "lucide-react";
 import Image from "next/image";
@@ -10,9 +8,9 @@ const Projects = async () => {
   const projects = await getProjects();
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900 p-4">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
       <div className="max-w-[1280px] py-14 md:py-20">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
+        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14 p-4">
           Projetos
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
@@ -23,22 +21,13 @@ const Projects = async () => {
               dark:shadow-2xl hover:scale-105 transition-all rounded overflow-hidden
               flex flex-col space-y-4"
             >
-              <Dialog>
-                <DialogTrigger>
-                  <img
-                    src={project.coverImage}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                </DialogTrigger>
-                <DialogContent className="bg-white text-zinc-950 p-0 overflow-hidden max-w-6xl">
-                  <img
-                    src={project.coverImage}
-                    alt={project.title}
-                    className="w-full h-full object-cover animate-fade"
-                  />
-                </DialogContent>
-              </Dialog>
+              <Image
+                src={project.coverImage}
+                alt={project.title}
+                width={500}
+                height={500}
+                className="w-full h-48 object-cover"
+              />
               <div className="flex items-center justify-between w-full p-2">
                 <h1>{project.title}</h1>
                 {project.status.map((status) => (
