@@ -18,15 +18,10 @@ export async function getProjects() {
       id: project.id,
       coverImage: project.properties.coverImage.url,
       title: project.properties.title.title[0].plain_text,
-      status: project.properties.status.multi_select.map(
-        (status) => status.name
-      ),
-      description: project.properties.description,
-      tchenologies: project.properties.technologies.multi_select.map(
-        (tchenology) => tchenology.name
-      ),
-      githubUrl: project.properties.githubUrl.rich_text[0].href,
-      href: project.properties.href.rich_text[0].href,
-    };
+      description: project.properties.description.rich_text[0].plain_text,
+      technologies: project.properties.technologies.multi_select.map((technologies) => technologies.name),
+      githubUrl: project.properties.githubUrl.url,
+      href: project.properties.href.url,  
+    }
   });
 }
