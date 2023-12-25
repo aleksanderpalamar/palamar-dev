@@ -13,7 +13,7 @@ export const Heroes = () => {
           Últimos commits
         </h3>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="flex flex-col md:flex-row items-center gap-4">
         <Link href="/projects">
           <div
             className="w-[258px] h-[160px] bg-base-100 dark:bg-zinc-800 shadow-xl hover:shadow-2xl 
@@ -26,7 +26,9 @@ export const Heroes = () => {
               className="w-full h-full object-cover opacity-30"
             />
             <div className="absolute top-0 w-full h-full flex items-start justify-between p-2">
-              <FaCode className="w-6 h-6" />
+              <div className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300">
+                <FaCode className="w-6 h-6" />
+              </div>
               <p>4 Projetos</p>
             </div>
           </div>
@@ -43,7 +45,9 @@ export const Heroes = () => {
               className="w-full h-full object-cover opacity-30"
             />
             <div className="absolute top-0 w-full h-full flex items-start justify-between p-2">
-              <FaReadme className="w-6 h-6" />
+              <div className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300">
+                <FaReadme className="w-6 h-6" />
+              </div>
               <p>2 Posts</p>
             </div>
           </div>
