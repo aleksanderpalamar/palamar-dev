@@ -6,10 +6,13 @@ import { formatDate } from "@/utils/formatDate";
 import { Metadata } from "next";
 import Link from "next/link";
 import { formatText } from "@/utils/formatText";
+import { NotionDatabaseResponse } from "@/app/_types/notion";
 
 export const metadata: Metadata = {
   title: "Blog",
 };
+
+const DATABASE_ID = process.env.DATABASE_ID as string;
 
 const BlogPage = async () => {
   const posts = await getPosts();
@@ -23,13 +26,20 @@ const BlogPage = async () => {
         </h1>
         {data && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
+            {posts.length === 0 && (
+              <div className="flex flex-col items-center justify-center">
+                <p className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
+                  Nenhum post encontrado
+                </p>              
+              </div>              
+            )}
             {posts.map((post) => (
               <div
                 key={post.id}
                 className="card bg-base-100 dark:bg-zinc-800 shadow-xl hover:shadow-2xl 
               dark:shadow-2xl hover:scale-105 transition-all rounded overflow-hidden
               flex flex-col space-y-4"
-              >
+              >                
                 {post.coverImage ? (
                   <div className="w-full h-48">
                     <img
@@ -85,10 +95,10 @@ const BlogPage = async () => {
 export default BlogPage;
 
 async function getData() {
-  const res = await fetch("https://api.notion.com/v1/databases", {
+  const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}`, {
     next: { revalidate: 60 },
   });
-  const data = await res.json();
+  const data = await res.json() as NotionDatabaseResponse;
 
   return {
     props: { data },
