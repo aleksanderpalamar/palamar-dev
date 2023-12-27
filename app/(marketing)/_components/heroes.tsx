@@ -1,10 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
+"use server";
 
+import { getPosts } from "@/app/_service/blog";
+import { getProjects } from "@/app/_service/projects";
 import Link from "next/link";
 import { FaCode, FaCodeBranch, FaReadme } from "react-icons/fa6";
 
-export const Heroes = () => {
+export const Heroes = async () => {
+  const post = await getPosts();
+  const project = await getProjects();
+  const ProjectCounter = project.length
+  const PostCounter = post.length
+
   return (
     <div className="w-full flex flex-col md:justify-start mb-14 space-y-4">
       <div className="flex items-start justify-start">
@@ -29,7 +36,7 @@ export const Heroes = () => {
               <div className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300">
                 <FaCode className="w-6 h-6" />
               </div>
-              <p>4 Projetos</p>
+              <p>{ProjectCounter} Projetos</p>
             </div>
           </div>
         </Link>
@@ -48,7 +55,7 @@ export const Heroes = () => {
               <div className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300">
                 <FaReadme className="w-6 h-6" />
               </div>
-              <p>2 Posts</p>
+              <p>{PostCounter} Posts</p>
             </div>
           </div>
         </Link>
