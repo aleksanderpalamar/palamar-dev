@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { formatDate } from "@/utils/formatDate";
 import { Metadata } from "next";
 import Link from "next/link";
-import { formatText } from "@/utils/formatText"
+import { formatText } from "@/utils/formatText";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 const BlogPage = async () => {
   const posts = await getPosts();
+  const data = await getData();
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900 p-2">
@@ -20,59 +21,77 @@ const BlogPage = async () => {
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
           Blog
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
-          {posts.map((post) => (
-            <div
-              key={post.id}
-              className="card bg-base-100 dark:bg-zinc-800 shadow-xl hover:shadow-2xl 
-          dark:shadow-2xl hover:scale-105 transition-all rounded overflow-hidden
-          flex flex-col space-y-4"
-            >
-              {post.coverImage ? (
-                <img
-                src={post.coverImage}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              ) : (
-                <div className="w-full h-48 bg-[#8257e6]">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-base font-bold text-zinc-50">No Cover Image</p>
+        {data && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
+            {posts.map((post) => (
+              <div
+                key={post.id}
+                className="card bg-base-100 dark:bg-zinc-800 shadow-xl hover:shadow-2xl 
+              dark:shadow-2xl hover:scale-105 transition-all rounded overflow-hidden
+              flex flex-col space-y-4"
+              >
+                {post.coverImage ? (
+                  <div className="w-full h-48">
+                    <img
+                      src={post.coverImage}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                ) : (
+                  <div className="w-full h-48 bg-[#8257e6]">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <p className="text-base font-bold text-zinc-50">
+                        No Cover Image
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <div className="p-4 space-y-4">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="hover:underline underline-offset-4"
+                  >
+                    <h1 className="text-2xl font-bold">
+                      {formatText(post.title, 10)}
+                    </h1>
+                  </Link>
+                  <div className="flex flex-wrap gap-2 items-center">
+                    Tags:
+                    {post.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        className={cn(
+                          "bg-[#8257e6]/10 text-[#8257e6] hover:bg-[#8257e6]/20 transition-all w-[max-content]"
+                        )}
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <p className="text-xs text-zinc-500">
+                    <span>{formatDate(post.createdAt)}</span>
+                  </p>
                 </div>
-              )}
-              <div className="p-4 space-y-4">
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="hover:underline underline-offset-4"
-                >
-                  <h1 className="text-2xl font-bold">
-                    {formatText(post.title, 10)}
-                  </h1>
-                </Link>                
-                <div className="flex flex-wrap gap-2 items-center">
-                  Tags:
-                  {post.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      className={cn(
-                        "bg-[#8257e6]/10 text-[#8257e6] hover:bg-[#8257e6]/20 transition-all w-[max-content]"
-                      )}
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <p className="text-xs text-zinc-500">
-                  <span>{formatDate(post.createdAt)}</span>
-                </p>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
 export default BlogPage;
+
+async function getData() {
+  const res = await fetch("https://api.notion.com/v1/databases", {
+    next: { revalidate: 60 },
+  });
+  const data = await res.json();
+
+  return {
+    props: { data },
+    revalidate: 60, // Revalida a cada 60 segundos
+  };
+}
