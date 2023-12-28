@@ -2,6 +2,7 @@
 
 import { useContact } from "@/hooks/use-contact";
 import { Mail } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { WhatsappLogo } from "phosphor-react";
 import { FaThreads, FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa6";
@@ -52,7 +53,7 @@ export const CTA = () => {
               role="button"
               aria-label="Github"
             >
-              <FaGithub className="w-6 h-6" />
+              <FaGithub className="w-7 h-7" />
             </div>
           </Link>
           <Link href="https://www.linkedin.com/in/aleksanderpalamar/">
@@ -61,7 +62,7 @@ export const CTA = () => {
               role="button"
               aria-label="Linkedin"
             >
-              <FaLinkedin className="w-6 h-6" />
+              <FaLinkedin className="w-7 h-7" />
             </div>
           </Link>
           <Link href="https://www.threads.net/@palamar.dev">
@@ -70,7 +71,16 @@ export const CTA = () => {
               role="button"
               aria-label="Threads"
             >
-              <FaThreads className="w-6 h-6" />
+              <FaThreads className="w-7 h-7" />
+            </div>
+          </Link>
+          <Link href="https://x.com/Palamar_Dev_">
+            <div 
+              className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base text-zinc-700 dark:text-white"
+              role="button"
+              aria-label="X"
+            >
+              <Image src="/assets/X.svg" width={20} height={20} alt="" className="w-7 h-7 dark:invert"/>
             </div>
           </Link>
           <Link href="https://discord.com/users/273228029843734528">
@@ -79,7 +89,7 @@ export const CTA = () => {
               role="button"
               aria-label="Discord"
             >
-              <FaDiscord className="w-6 h-6" />
+              <FaDiscord className="w-7 h-7" />
             </div>
           </Link>
         </div>
