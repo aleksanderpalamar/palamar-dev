@@ -6,87 +6,83 @@ import { formatDate } from "@/utils/formatDate";
 import { Metadata } from "next";
 import Link from "next/link";
 import { formatText } from "@/utils/formatText";
-import { NotionDatabaseResponse } from "@/app/_types/notion";
+import { revalidatePath } from "next/cache";
 
 export const metadata: Metadata = {
   title: "Blog",
 };
 
-const DATABASE_ID = process.env.DATABASE_ID as string;
-
 const BlogPage = async () => {
   const posts = await getPosts();
-  const data = await getData();
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900 p-2">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
       <div className="max-w-6xl p-2 mt-20">
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
           Blog
         </h1>
-        {data && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
-            {posts.length === 0 && (
-              <div className="flex flex-col items-center justify-center">
-                <p className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
-                  Nenhum post encontrado
-                </p>              
-              </div>              
-            )}
-            {posts.map((post) => (
-              <div
-                key={post.id}
-                className="card bg-base-100 dark:bg-zinc-800 shadow-xl hover:shadow-2xl 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
+          {posts.length === 0 && (
+            <div className="flex flex-col items-center justify-center">
+              <p className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
+                Nenhum post encontrado
+              </p>
+            </div>
+          )}
+          {posts.map((post) => (
+            <div
+              key={post.id}
+              className="card bg-base-100 dark:bg-zinc-800 shadow-xl hover:shadow-2xl 
               dark:shadow-2xl hover:scale-105 transition-all rounded overflow-hidden
               flex flex-col space-y-4"
-              >                
-                {post.coverImage ? (
-                  <div className="w-full h-48">
-                    <img
-                      src={post.coverImage}
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
+            >
+              {post.coverImage ? (
+                <div className="w-full h-48">
+                  <img
+                    src={post.coverImage}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-full h-48 bg-[#8257e6]">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <p className="text-base font-bold text-zinc-50">
+                      No Cover Image
+                    </p>
                   </div>
-                ) : (
-                  <div className="w-full h-48 bg-[#8257e6]">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <p className="text-base font-bold text-zinc-50">
-                        No Cover Image
-                      </p>
-                    </div>
-                  </div>
-                )}
-                <div className="p-4 space-y-4">
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="hover:underline underline-offset-4"
-                  >
-                    <h1 className="text-2xl font-bold">
-                      {formatText(post.title, 10)}
-                    </h1>
-                  </Link>
-                  <div className="flex flex-wrap gap-2 items-center">
-                    Tags:
-                    {post.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        className={cn(
-                          "bg-[#8257e6]/10 text-[#8257e6] hover:bg-[#8257e6]/20 transition-all w-[max-content]"
-                        )}
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <p className="text-xs text-zinc-500">
+                </div>
+              )}
+              <div className="p-4 space-y-4">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="hover:underline underline-offset-4"
+                >
+                  <h1 className="text-base font-bold">
+                    {formatText(post.title, 10)}
+                  </h1>
+                </Link>
+                <div className="flex flex-wrap gap-2 items-center">
+                  {post.tags.map((tag) => (
+                    <Badge
+                      key={tag}
+                      className={cn(
+                        "bg-[#8257e6]/10 text-[#8257e6] hover:bg-[#8257e6]/20 transition-all w-[max-content]"
+                      )}
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="flex items-end mx-auto ">
+                  <p className="text-xs text-zinc-500 flex items-center">
                     <span>{formatDate(post.createdAt)}</span>
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -94,14 +90,11 @@ const BlogPage = async () => {
 
 export default BlogPage;
 
-async function getData() {
-  const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}`, {
-    next: { revalidate: 60 },
-  });
-  const data = await res.json() as NotionDatabaseResponse;
-
-  return {
-    props: { data },
-    revalidate: 60, // Revalida a cada 60 segundos
-  };
+export async function updateBlog() {
+  const posts = await getPosts();
+  
+  // Update cache
+  revalidatePath('/blog');
+  
+  return posts  
 }
