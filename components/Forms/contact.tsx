@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import axios from "axios";
 
 import {
   Form,
@@ -48,23 +49,24 @@ export const ContactForm = () => {
   });
 
   const handleOnSubmit = async (values: z.infer<typeof formSchema>) => {
-    try {
-      const response = await fetch(
-        "https://palamardev-api.onrender.com/Contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(values),
-        }
-      );
-      const responseData = await response.json();
-      form.reset();
-      router.refresh();
-      onClose();
-    } catch (error) {}
+    const apiEndPoint = "/api/email";
+
+    fetch(apiEndPoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 200) {
+          alert("Email sent");
+        }        
+      })
+      .catch((err) => {
+        alert(err);
+      })
   };
 
   const isLoading = form.formState.isSubmitting;
@@ -73,7 +75,7 @@ export const ContactForm = () => {
     form.reset();
     form.setValue("name", "");
     onClose();
-    window.history.back();
+    router.push("/");
   };
 
   return (
