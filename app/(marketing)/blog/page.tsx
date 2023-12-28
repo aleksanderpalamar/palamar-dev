@@ -6,7 +6,6 @@ import { formatDate } from "@/utils/formatDate";
 import { Metadata } from "next";
 import Link from "next/link";
 import { formatText } from "@/utils/formatText";
-import { revalidatePath } from "next/cache";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -89,12 +88,3 @@ const BlogPage = async () => {
 };
 
 export default BlogPage;
-
-export async function updateBlog() {
-  const posts = await getPosts();
-  
-  // Update cache
-  revalidatePath('/blog');
-  
-  return posts  
-}
