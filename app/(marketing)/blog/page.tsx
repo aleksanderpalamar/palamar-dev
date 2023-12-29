@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   title: "Blog",
 };
 
+export const revalidate = 60; // 60 seconds
+export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 const BlogPage = async () => {
   const posts = await getPosts();
 

@@ -1,7 +1,5 @@
-import { ProjectsListMap } from "@/components/ProjectsList/projects-list-map";
 import { CTA } from "../_components/cta";
 import { ProjectsComponentServer } from "../_components/projects-component-server";
-
 
 
 const Projects = () => {

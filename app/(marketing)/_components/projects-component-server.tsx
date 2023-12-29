@@ -1,12 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-"use server";
-
 import { getProjects } from "@/app/_service/projects";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { formatText } from "@/utils/formatText";
 import Link from "next/link";
+
+export const revalidate = 60; // 60 seconds
+export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
+  const projects = await getProjects();
+  return projects.map((project) => ({
+    slug: project.id,
+  }));
+}
+
 
 export const ProjectsComponentServer = async () => {
   const projects = await getProjects();
