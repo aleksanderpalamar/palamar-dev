@@ -1,10 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
-"use server";
+
 
 import { getPosts } from "@/app/_service/blog";
 import { getProjects } from "@/app/_service/projects";
 import Link from "next/link";
 import { FaCode, FaCodeBranch, FaReadme } from "react-icons/fa6";
+
+export const revalidate = 60; // 60 seconds
+export const dynamic = "force-dynamic";
+
+export const generateStaticParams = async () => {
+  const posts = await getPosts();
+  const projects = await getProjects();
+  return [
+    ...posts.map((post) => ({
+      slug: post.slug,
+    })),
+    ...projects.map((project) => ({
+      slug: project.id,
+    })),
+  ];
+}
 
 export const Heroes = async () => {
   const post = await getPosts();
