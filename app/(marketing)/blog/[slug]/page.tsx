@@ -11,13 +11,25 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
       <div className="max-w-4xl py-14 md:py-20 px-4 text-justify animate-fade space-y-4">
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-8">
           {post.title}
-        </h1>        
+        </h1>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
             h2: ({ node, ...props }) => (
               <h2
                 className="text-2xl text-[#8257e6] font-semibold"
+                {...props}
+              />
+            ),
+            ol: ({ node, ...props }) => (
+              <ol className="list-decimal list-inside text-sm text-justify" {...props}>
+                {props.children}
+              </ol>             
+            ),           
+            blockquote: ({ node, ...props }) => (
+              <blockquote
+                className="border-l-4 border-[#8257e6] pl-4 pr-2 
+                my-4 font-light bg-[#8257e6]/10 dark:bg-[#8257e6]/20 text-sm text-ellipsis"
                 {...props}
               />
             ),
@@ -33,7 +45,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
               <code
                 className="text-[#8257e6] bg-[#8257e6]/10 dark:bg-[#8257e6]/20 px-1 py-0.5 rounded"
                 {...props}
-              />              
+              />
             ),
             strong: ({ node, ...props }) => (
               <strong className="text-[#8257e6]" {...props} />
@@ -42,9 +54,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
             ul: ({ node, ...props }) => (
               <ul className="list-disc list-inside" {...props} />
             ),
-            li: ({ node, ...props }) => (
-              <li className="my-2" {...props} />
-            ),
+            li: ({ node, ...props }) => <li className="my-2" {...props} />,
             a: ({ node, ...props }) => (
               <a
                 className="text-[#8257e6] hover:underline underline-offset-4"
