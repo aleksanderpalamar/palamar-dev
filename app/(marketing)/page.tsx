@@ -7,7 +7,7 @@ const Home = () => {
     <div className="min-h-screen min-w-screen flex flex-col items-center justify-center dark:bg-zinc-900">
       <div
         className="flex flex-col items-center justify-center
-      md:justify-between text-center flex-1 p-4 mt-20"
+      md:justify-between text-center flex-1 p-4"
       >
         <Heading />
         <Heroes />
