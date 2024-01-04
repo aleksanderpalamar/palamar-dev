@@ -26,9 +26,13 @@ const BlogPage = async () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
-      <div className="max-w-6xl p-2 mt-20">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
+      <div className="max-w-6xl p-2 mt-20 space-y-4">
+        <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
           Blog
+          <span className="text-sm text-center font-medium text-zinc-500">
+            Esses são os meus artigos falando sobre tecnologia e programação,
+            pois é uma forma que eu encontrei de compartilhar meus conhecimentos.
+          </span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
           {posts.length === 0 && (

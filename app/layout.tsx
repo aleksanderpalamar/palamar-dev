@@ -62,7 +62,7 @@ export default function RootLayout({
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
             storageKey="PalamarDevTheme"

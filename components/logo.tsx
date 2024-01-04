@@ -16,8 +16,8 @@ export const Logo = () => {
         <div className="items-center hover:opacity-75 transition gap-x-2 flex p-2">
           <Image 
             src="/images/favicon.png"
-            width={30}
-            height={30}
+            width={40}
+            height={40}
             alt="logo"
           />
           <h1 className={cn(

@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      rotate: {
+        "30": "30deg",
+        "60": "60deg",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -93,5 +97,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animated")],
+  plugins: [require("tailwindcss-animated", "tailwindcss-3d")],
 };
