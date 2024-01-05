@@ -19,7 +19,7 @@ export const Title = () => {
     <>
       <h1
         className={cn(
-          "md:text-4xl text-xl self-start font-bold animate-typing transform-gpu whitespace-nowrap overflow-hidden text-center border-r-4 border-violet-500 border:animate-blink-cursor",
+          "md:text-4xl text-xl self-start font-bold transform-gpu whitespace-nowrap overflow-hidden",
           poppins.className
         )}
       >

@@ -2,6 +2,15 @@
 
 import { Logo } from "@/components/logo";
 import { MobileToggle } from "@/components/mobile-toggle";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 //import { ModeToggle } from "@/components/mode-toggle";
 import { useContact } from "@/hooks/use-contact";
 import { cn } from "@/lib/utils";
@@ -36,10 +45,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav
-        className="px-3 py-4 bg-white border-b border-gray-700  
-        backdrop-blur-lg dark:bg-zinc-800 dark:backdrop-blur-lg"
-      >
+      <nav className="px-3 py-4 bg-white border-b border-zinc-800 dark:bg-zinc-900">
         <div className="flex items-center justify-between max-w-6xl mx-auto w-full">
           <Logo />
           <div className="flex items-center gap-2 pr-4 animate-fade-left">
@@ -48,34 +54,32 @@ export const Navbar = () => {
             ) : (
               <>
                 <Link
-                  className={cn(
-                    "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
-                  )}
+                  className={cn("p-2 hover:bg-zinc-500/10 rounded-md")}
                   role="link"
                   href="/blog"
                 >
-                  Blog
+                  <p className="text-base font-semibold flex flex-col">Blog</p>
                 </Link>
                 <Link
-                  className={cn(
-                    "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
-                  )}
+                  className={cn("p-2 hover:bg-zinc-500/10 rounded-md")}
                   role="link"
                   href="/projects"
                 >
-                  Projetos
+                  <p className="text-base font-semibold flex flex-col">
+                    Projetos
+                  </p>
                 </Link>
-                <div
+                <Button
                   className={cn(
-                    "p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base cursor-pointer"
+                    "p-2 hover:bg-zinc-500/10 rounded-md cursor-pointer"
                   )}
-                  role="link"
+                  variant="ghost"
                   onClick={contact.onOpen}
                 >
-                  Contato
-                </div>
+                  <p className="text-base font-semibold flex flex-col">Contato</p>
+                </Button>
               </>
-            )}            
+            )}
           </div>
         </div>
       </nav>
