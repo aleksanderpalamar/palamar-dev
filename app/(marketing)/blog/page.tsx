@@ -28,7 +28,7 @@ const BlogPage = async () => {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
       <div className="max-w-6xl p-2 space-y-4">
-        <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mb-14">
+        <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mt-40">
           Blog
           <span className="text-sm text-center font-medium text-zinc-500">
             Esses são os meus artigos falando sobre tecnologia e programação,
