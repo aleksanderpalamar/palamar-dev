@@ -63,7 +63,6 @@ export const Navbar = ({ className }: NavbarProps) => {
             />
             <p className="text-[#8257e6]">Palamar.Dev</p>
           </Link>
-
           <MenuItem setActive={setActive} active={active} item="Sobre">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/about">
