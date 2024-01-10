@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { Separator } from "@/components/ui/separator";
 import { CTA } from "../_components/cta";
 import Link from "next/link";
 

@@ -45,7 +45,7 @@ export const Heading = () => {
 
   return (
     <div className="max-w-6xl space-y-4 flex flex-col px-3 py-4">
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2 mt-14">
         <Title />
       </div>      
       <div className="mt-4 flex items-center justify-center self-end space-x-2">
