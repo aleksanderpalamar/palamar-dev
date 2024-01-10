@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 import { getPosts } from "@/app/_service/blog";
 import { getProjects } from "@/app/_service/projects";
 import Link from "next/link";
@@ -8,11 +7,11 @@ import { FaCode, FaCodeBranch, FaReadme } from "react-icons/fa6";
 export const revalidate = 60; // 60 seconds
 export const dynamic = "force-dynamic";
 
-export const Heroes = async () => {
+export const Heroes = async () => {  
   const project = await getProjects();
   const post = await getPosts();
   const ProjectCounter = project.length;
-  const PostCounter = post.length;
+  const PostCounter = post.length;  
 
   return (
     <div className="w-full flex flex-col md:justify-start mb-14 space-y-4">
@@ -22,7 +21,7 @@ export const Heroes = async () => {
           Últimos commits
         </h3>
       </div>
-      <div className="flex flex-col md:flex-row items-center gap-4">
+      <div className="flex flex-col md:flex-row items-center gap-4">        
         <Link href="/projects">
           <div
             className="w-[258px] h-[160px] bg-base-100 dark:bg-zinc-800 shadow-xl hover:shadow-2xl 

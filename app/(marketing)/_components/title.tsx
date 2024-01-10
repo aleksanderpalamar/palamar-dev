@@ -3,7 +3,8 @@
 import { VT323, Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect"
+import { Description } from "./description";
 const bits = VT323({
   subsets: ["latin"],
   weight: ["400"],
@@ -14,17 +15,22 @@ const poppins = Poppins({
   weight: ["400"],
 })
 
-export const Title = () => {
+export function Title() {
+  const words = [
+    {
+      text: "Olá,",
+    },
+    {
+      text: "eu sou",
+    },    
+    {
+      text: "Aleksander Palamar",
+      className: "text-violet-500 dark:text-violet-500",
+    },
+  ];
   return (
-    <>
-      <h1
-        className={cn(
-          "md:text-4xl text-xl self-start font-bold transform-gpu whitespace-nowrap overflow-hidden",
-          poppins.className
-        )}
-      >
-        Olá, eu sou <span className="text-[#8257e6]">Aleksander Palamar</span>
-      </h1>
+    <div className="flex flex-col items-center justify-center h-[25rem]">      
+      <TypewriterEffectSmooth words={words} />
       <p className={cn(
         "text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-base",
         poppins.className
@@ -37,6 +43,7 @@ export const Title = () => {
           FullStack
         </Badge>
       </p>
-    </>
+      <Description />      
+    </div>
   );
-};
+}

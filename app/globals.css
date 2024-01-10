@@ -8,6 +8,17 @@ body,
   height: 100%;
 }
 
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
 .cl-formButtonPrimary {
   font-size: 14px;
   text-transform: none;
