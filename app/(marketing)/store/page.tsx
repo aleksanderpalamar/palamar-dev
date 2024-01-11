@@ -72,6 +72,46 @@ const StorePage = () => {
       tag: "Periféricos",
       price: "72,90",
     },
+    {
+      id: 7,
+      name: "Suporte para Monitor",
+      image: "https://cdn.discordapp.com/attachments/1194975393971699732/1195021627906338876/image.png?ex=65b2799e&is=65a0049e&hm=00396f5ec434fcbf3489f6aab9f72533bac16040b375ea5bf6bd02f82249799f&",
+      href: "https://www.amazon.com.br/gp/product/B0BTZRQSXK/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1&_encoding=UTF8&tag=palamardev-20&linkCode=ur2&linkId=3b9bbafeb0da8c54fdccfb7a98ca13de&camp=1789&creative=9325",
+      tag: "Periféricos",
+      price: "204,69",
+    },
+    {
+      id: 8,
+      name: "Teclado Mecânico 60% Redragon",
+      image: "https://cdn.discordapp.com/attachments/1194975393971699732/1195022327944060928/image.png?ex=65b27a45&is=65a00545&hm=6f4769a1ef637a0b0ce05e1805684a397826f2718ed623126d802dc2ed65a613&",
+      href: "https://www.amazon.com.br/gp/product/B0BN4MMSKF/ref=ppx_yo_dt_b_asin_title_o01_s01?ie=UTF8&psc=1&_encoding=UTF8&tag=palamardev-20&linkCode=ur2&linkId=4ae6ea4817607a32059a65e78fd0e853&camp=1789&creative=9325",
+      tag: "Periféricos",
+      price: "155,99",
+    },
+    {
+      id: 9,
+      name: "Processador Ryzen 5 5600G",
+      image: "https://cdn.discordapp.com/attachments/1194975393971699732/1195023589422936225/image.png?ex=65b27b72&is=65a00672&hm=78c0fb5c7b0447fe3acf37407348a3bf1c17c8645d8a8f8ab95795786cd07bef&",
+      href: "https://www.amazon.com.br/Processador-AMD-Ryzen-5600G-Stealth/dp/B092L9GF5N/?_encoding=UTF8&tag=palamardev-20&linkCode=ur2&linkId=526192cb7202fc55487610a84c09ec4d&camp=1789&creative=9325&th=1",
+      tag: "Hardware",
+      price: "950,00",
+    },
+    {
+      id: 10,
+      name: "Placa Mãe Asus TUF Gaming B550M-Plus",
+      image: "https://cdn.discordapp.com/attachments/1194975393971699732/1195027322928107591/image.png?ex=65b27eec&is=65a009ec&hm=a46f51d524f8d7168013d676b3de7b65a72a15488bda6dd244727511f0bbb3e5&",
+      href: "https://www.amazon.com.br/Placa-Asus-TUF-GAMING-B550M-PLUS/dp/B089HDJS79/?&_encoding=UTF8&tag=palamardev-20&linkCode=ur2&linkId=1b6d915bd6a24eb066df8c079be7f186&camp=1789&creative=9325",
+      tag: "Hardware",
+      price: "1.068,99",
+    },
+    {
+      id: 11,
+      name: "Placa de Vídeo RTX 3060",
+      image: "https://cdn.discordapp.com/attachments/1194975393971699732/1195028751508066406/image.png?ex=65b28040&is=65a00b40&hm=136c4ecb631b71acb317f29a5532ec080eacbb4e3f9f31f3e400730a3a0833b7&",
+      href: "https://www.amazon.com.br/RTX3060-1-CLICK-192BITS-Galax-36NOL7MD1VOC/dp/B092CNSSV5/?&_encoding=UTF8&tag=palamardev-20&linkCode=ur2&linkId=efe5b15f9256503aa779fba319ee4803&camp=1789&creative=9325",
+      tag: "Hardware",
+      price: "2.089,00",
+    }
   ] as ProductProps[];
 
   return (
