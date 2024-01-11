@@ -1,33 +1,78 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
-/* eslint-disable @next/next/no-img-element */
+type ProductProps = {
+  id: number;
+  name?: string;
+  image: string;
+  href: string;
+  tag: string;
+  price: string;}
+
 const StorePage = () => {
   const listProducts = [
     {
       id: 1,
-      name: "Product 1",
-      image: "https://cdn.discordapp.com/attachments/811800332006457356/1188820804520132638/e9a8244b217a8cb45e0425252c6d4606.jpg?ex=659beaa7&is=658975a7&hm=57970c20a79e1bd5358ee984c1e3534aadd5a7a46f9fc863e320ded944259022&",
-      href: ""
+      name: "Código Limpo",
+      image:
+        "https://cdn.discordapp.com/attachments/1194975393971699732/1194975415001948160/image.png?ex=65b24e94&is=659fd994&hm=9d01f3e7be115e799afff4d6c19e6a2a563aea261c760dee8c94d5c6d5785bd3&",
+      href: "https://www.amazon.com.br/dp/8576082675/?coliid=I43U30GCKOBFL&colid=3DVRN6V5D0QCE&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it",
+      tag: "Book",
+      price: "102,61",
     },
     {
       id: 2,
-      name: "Product 2",
-      image: "https://cdn.discordapp.com/attachments/811800332006457356/1188820804520132638/e9a8244b217a8cb45e0425252c6d4606.jpg?ex=659beaa7&is=658975a7&hm=57970c20a79e1bd5358ee984c1e3534aadd5a7a46f9fc863e320ded944259022&",
-      href: ""
+      name: "Arquitetura Limpa",
+      image:
+        "https://cdn.discordapp.com/attachments/1194975393971699732/1194975895744696330/image.png?ex=65b24f07&is=659fda07&hm=4ae4aabfaf61200b3ab7700200cde2557d14391a5df52b086d84e1779d70c604&",
+      href: "https://www.amazon.com.br/Arquitetura-Limpa-Artes%C3%A3o-Estrutura-Software/dp/8550804606/ref=tmm_pap_swatch_0?_encoding=UTF8&coliid=I1VPIE731IWQ8W&colid=3DVRN6V5D0QCE&qid=&sr=",
+      tag: "Book",
+      price: "53,09",
     },
     {
       id: 3,
-      name: "Product 3",
-      image: "https://cdn.discordapp.com/attachments/811800332006457356/1188820804520132638/e9a8244b217a8cb45e0425252c6d4606.jpg?ex=659beaa7&is=658975a7&hm=57970c20a79e1bd5358ee984c1e3534aadd5a7a46f9fc863e320ded944259022&",
-      href: ""
+      name: "Desenvolvimento Agil",
+      image:
+        "https://cdn.discordapp.com/attachments/1194975393971699732/1194976240059301908/image.png?ex=65b24f59&is=659fda59&hm=c24aa7f05823e50c2b39087b3a826c7018dfb9e63e1acfcf4138e07a89e923f2&",
+      href: "https://www.amazon.com.br/Desenvolvimento-%C3%A1gil-limpo-volta-origens/dp/8550815004/ref=tmm_pap_swatch_0?_encoding=UTF8&coliid=I3MGELBDRRJ49F&colid=3DVRN6V5D0QCE&qid=&sr=",
+      tag: "Book",
+      price: "37,71",
     },
     {
       id: 4,
-      name: "Product 4",
-      image: "https://cdn.discordapp.com/attachments/811800332006457356/1188820804520132638/e9a8244b217a8cb45e0425252c6d4606.jpg?ex=659beaa7&is=658975a7&hm=57970c20a79e1bd5358ee984c1e3534aadd5a7a46f9fc863e320ded944259022&",
-      href: ""
+      name: "Refatoração",
+      image:
+        "https://cdn.discordapp.com/attachments/1194975393971699732/1194980684662579320/image.png?ex=65b2537c&is=659fde7c&hm=08b53a23d935d4f1173405d7ec7727d14276f93cbf8d69956250d59492ba78a3&",
+      href: "https://www.amazon.com.br/Refatora%C3%A7%C3%A3o-Aperfei%C3%A7oando-Design-C%C3%B3digos-Existentes/dp/8575227246/ref=tmm_pap_swatch_0?_encoding=UTF8&coliid=IMQVXA6S530SD&colid=3DVRN6V5D0QCE&qid=&sr=",
+      tag: "Book",
+      price: "105,96",
     },
-  ];
+    {
+      id: 4,
+      name: "Mouse Logitech Lift",
+      image:
+        "https://cdn.discordapp.com/attachments/1194975393971699732/1194978396254523402/image.png?ex=65b2515b&is=659fdc5b&hm=5af2d06ced5ee6989e9beb3ec12857edffd6625c9331ffac6351ae0e95b9c883&https://cdn.discordapp.com/attachments/1194975393971699732/1194978396254523402/image.png?ex=65b2515b&is=659fdc5b&hm=5af2d06ced5ee6989e9beb3ec12857edffd6625c9331ffac6351ae0e95b9c883&",
+      href: "https://www.amazon.com.br/dp/B09J1TB35S/?coliid=IMEZB8SOPH4VX&colid=3DVRN6V5D0QCE&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it",
+      tag: "Periféricos",
+      price: "360,91",
+    },
+    {
+      id: 5,
+      name: "Mouse Pad Logitech",
+      image: "https://cdn.discordapp.com/attachments/1194975393971699732/1194986053401055342/image.png?ex=65b2587c&is=659fe37c&hm=206d0df45f6a741ae0e1f46fb1a67cdc0053177478e6dafd37b3b2be98dd38cb&",
+      href: "https://www.amazon.com.br/dp/B09DV8WKK8/?coliid=I2Q23EZULIVY0P&colid=3DVRN6V5D0QCE&ref_=list_c_wl_lv_ov_lig_dp_it&th=1",
+      tag: "Periféricos",
+      price: "124,39",
+    },
+    {
+      id: 6,
+      name: "Mouse Pad Gamer",
+      image: "https://cdn.discordapp.com/attachments/1194975393971699732/1194986830660108381/image.png?ex=65b25936&is=659fe436&hm=5e41a0af7e1cfc55a7d62fb236d2af7cc46e49e8f3e47d033f833b4c8af0b139&",
+      href: "https://www.amazon.com.br/dp/B0CLPDRL7D/?coliid=I19IAOQWKFF9K8&colid=3DVRN6V5D0QCE&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it",
+      tag: "Periféricos",
+      price: "72,90",
+    },
+  ] as ProductProps[];
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
@@ -48,13 +93,25 @@ const StorePage = () => {
                 alt=""
                 className="w-full h-full object-cover opacity-30"
               />
-              <div className="absolute top-0 w-full h-full flex items-start justify-between p-2">
-                <Link href={product.href}
-                  target="_blank"                  
-                  className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300"
-                >
-                  Comprar
-                </Link>
+              <div className="absolute top-0 w-full h-full flex flex-col justify-around p-2">
+                <div className="flex items-start justify-between w-full gap-x-2">
+                  <Link
+                    href={product.href}
+                    target="_blank"
+                    className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300"
+                  >
+                    Buy
+                  </Link>
+                  <div className="text-lg font-bold text-white">
+                    {product.name}
+                  </div>
+                  <div className="bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20 transition-all text-xs rounded-xl p-1">
+                    {product.tag}
+                  </div>
+                </div>
+                <div className="p-2 flex text-zinc-950 w-1/2 gap-x-2">
+                  <span className="text-white text-sm">R$:</span><p className="text-2xl font-bold text-white">{product.price}</p>
+                </div>
               </div>
             </div>
           ))}
