@@ -39,15 +39,31 @@ export interface Parent {
 }
 
 export interface Properties {
+  id: Id;
   tags: Tags;
   slug: Slug;
   title: Title;
+  name: Title;
+  image: CoverImage;
+  price: Price;
   coverImage: CoverImage;
   description: Description;
   technologies: Tags;
   status: Tags;
   githubUrl: Url;
   href: Url;
+}
+
+export interface Price {
+  id: string;
+  type: string;
+  number: number;
+}
+
+export interface Id {
+  id: string;
+  type: string;
+  number: number;
 }
 
 export interface Url {
