@@ -81,13 +81,20 @@ export const Navbar = ({ className }: NavbarProps) => {
               <HoveredLink href="/blog">
                 <p>Blog</p>
                 <span className="text-zinc-500 text-sm truncate">
-                Esses são os meus artigos falando sobre tecnologia e programação.
+                  Esses são os meus artigos falando sobre tecnologia e
+                  programação.
                 </span>
               </HoveredLink>
             </div>
           </MenuItem>
         </div>
-
+        <MenuItem setActive={setActive} active={active} item="Loja">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/store">
+              <p>Loja</p>              
+            </HoveredLink>
+          </div>
+        </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Contato">
           <div className="flex flex-col space-y-4 text-sm">
             <Button
