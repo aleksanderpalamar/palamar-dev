@@ -94,7 +94,7 @@ const StorePage = () => {
       image: "https://cdn.discordapp.com/attachments/1194975393971699732/1195023589422936225/image.png?ex=65b27b72&is=65a00672&hm=78c0fb5c7b0447fe3acf37407348a3bf1c17c8645d8a8f8ab95795786cd07bef&",
       href: "https://www.amazon.com.br/Processador-AMD-Ryzen-5600G-Stealth/dp/B092L9GF5N/?_encoding=UTF8&tag=palamardev-20&linkCode=ur2&linkId=526192cb7202fc55487610a84c09ec4d&camp=1789&creative=9325&th=1",
       tag: "Hardware",
-      price: "950,00",
+      price: "815,20",
     },
     {
       id: 10,
