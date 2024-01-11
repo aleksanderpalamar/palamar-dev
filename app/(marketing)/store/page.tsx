@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
 type ProductProps = {
@@ -120,6 +121,11 @@ const StorePage = () => {
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
           Loja
         </h1>
+        <Badge className="text-[#8257e6] bg-[#8257e6]/10 hover:bg-[#8257e6]/20">
+          <p>
+            Os produtos listados aqui são afiliados da Amazon.
+          </p>
+        </Badge>        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left mt-40">
           {listProducts.map((product) => (
             <div
