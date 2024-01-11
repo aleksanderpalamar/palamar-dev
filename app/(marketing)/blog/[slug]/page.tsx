@@ -8,8 +8,8 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div className="m-auto bg-white dark:bg-zinc-900 min-h-screen flex items-start justify-center">
-      <div className="max-w-4xl py-14 md:py-20 px-4 text-justify animate-fade space-y-4">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-8">
+      <div className="max-w-6xl py-14 md:py-20 px-4 text-justify animate-fade space-y-4">
+        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-14">
           {post.title}
         </h1>
         <ReactMarkdown
