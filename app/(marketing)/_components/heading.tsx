@@ -47,25 +47,6 @@ export const Heading = () => {
     <div className="max-w-6xl space-y-4 flex flex-col px-3 py-4">
       <div className="flex flex-col space-y-2 mt-14">
         <Title />
-      </div>      
-      <div className="mt-4 flex items-center justify-center self-end space-x-2">
-        <ActionTooltip
-          label="Download CV"
-          align="end"
-          aria-label="Download Curriculo"
-        >
-          <div
-            className={cn(
-              "ml-4 p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base",
-              poppins.className
-            )}
-            onClick={download.onOpen}
-            aria-label="Download CV"
-            role="button"
-          >
-            CV
-          </div>
-        </ActionTooltip>
       </div>
       <Separator className="my-4 w-full bg-muted-foreground/25 dark:bg-zinc-700" />
     </div>
