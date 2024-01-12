@@ -66,24 +66,30 @@ export const Navbar = ({ className }: NavbarProps) => {
           <MenuItem setActive={setActive} active={active} item="Sobre">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/about">
-                <p>Sobre mim</p>
-                <span className="text-zinc-500 text-sm truncate">
+                <p className="flex flex-col hover:bg-zinc-500/10 p-2 rounded">
+                  Sobre mim
+                  <span className="text-zinc-500 text-sm">
                   Descubra mais sobre mim e o que eu faço
                 </span>
+                </p>                
               </HoveredLink>
               <HoveredLink href="/projects">
-                <p>Projetos</p>
-                <span className="text-zinc-500 text-sm truncate">
-                  Conheça os projetos que desenvolvi e os que estou
-                  desenvolvendo
-                </span>
+                <p className="flex flex-col hover:bg-zinc-500/10 p-2 rounded">
+                  Projetos
+                  <span className="text-zinc-500 text-sm">
+                    Conheça os projetos que desenvolvi e os que estou
+                    desenvolvendo
+                  </span>
+                </p>
               </HoveredLink>
               <HoveredLink href="/blog">
-                <p>Blog</p>
-                <span className="text-zinc-500 text-sm truncate">
-                  Esses são os meus artigos falando sobre tecnologia e
-                  programação.
-                </span>
+                <p className="flex flex-col hover:bg-zinc-500/10 p-2 rounded">
+                  Blog
+                  <span className="text-zinc-500 text-sm">
+                    Esses são os meus artigos falando sobre tecnologia e
+                    programação.
+                  </span>
+                </p>
               </HoveredLink>
             </div>
           </MenuItem>
@@ -91,7 +97,12 @@ export const Navbar = ({ className }: NavbarProps) => {
         <MenuItem setActive={setActive} active={active} item="Loja">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/store">
-              <p>Loja</p>              
+              <p className="flex flex-col hover:bg-zinc-500/10 p-2 rounded">
+                Loja
+                <span className="text-zinc-500 text-sm">
+                  Os produtos listados aqui são afiliados da Amazon.
+                </span>
+              </p>
             </HoveredLink>
           </div>
         </MenuItem>
