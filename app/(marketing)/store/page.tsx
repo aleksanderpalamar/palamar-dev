@@ -1,20 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
+import Link from "next/link";
 import { getStore } from "@/app/_service/store";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 
 export const revalidate = 60; // 60 seconds
 export const dynamic = "force-dynamic";
 
-export async function generateStaticParams() {
-  const products = await getStore();
-  return products.map((product) => ({
-    slug: product.id,
-  }));
-}
-
 const StorePage = async () => {
-  const products = await getStore();  
+  const products = await getStore();
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
@@ -22,11 +15,10 @@ const StorePage = async () => {
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
           Loja
         </h1>
+        
         <Badge className="text-[#8257e6] bg-[#8257e6]/10 hover:bg-[#8257e6]/20">
-          <p>
-            Os produtos listados aqui são afiliados da Amazon.
-          </p>
-        </Badge>        
+          <p>Os produtos listados aqui são afiliados da Amazon.</p>
+        </Badge>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left mt-40">
           {products.map((product) => (
             <div
@@ -35,8 +27,10 @@ const StorePage = async () => {
               dark:shadow-2xl hover:scale-105 transition duration-500 rounded-xl overflow-hidden
               flex flex-col relative"
             >
-              <img
+              <Image
                 src={product.image}
+                width={1000}
+                height={1000}
                 alt=""
                 className="w-full h-full object-cover opacity-30"
               />
@@ -57,7 +51,10 @@ const StorePage = async () => {
                   </div>
                 </div>
                 <div className="p-2 flex text-zinc-950 w-1/2 gap-x-2">
-                  <span className="text-white text-sm">R$:</span><p className="text-2xl font-bold text-white"><span>{product.price}</span></p>
+                  <span className="text-white text-sm">R$:</span>
+                  <p className="text-2xl font-bold text-white">
+                    <span>{product.price}</span>
+                  </p>
                 </div>
               </div>
             </div>
