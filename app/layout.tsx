@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "Next.js",
     "React",
   ],
-  authors: [{ name: "Palamar.Dev", url: "https://palamar.dev" }],
+  authors: [{ name: "Palamar.Dev", url: "https://aleksanderpalamar.dev" }],
   creator: "Palamar.Dev",
 };
 
