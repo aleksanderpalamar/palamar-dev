@@ -66,15 +66,15 @@ export const Navbar = ({ className }: NavbarProps) => {
           <MenuItem setActive={setActive} active={active} item="Sobre">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/about">
-                <p className="flex flex-col hover:bg-zinc-500/10 p-2 rounded">
+                <p className="flex flex-col">
                   Sobre mim
                   <span className="text-zinc-500 text-sm">
                   Descubra mais sobre mim e o que eu faço
                 </span>
                 </p>                
               </HoveredLink>
-              <HoveredLink href="/projects">
-                <p className="flex flex-col hover:bg-zinc-500/10 p-2 rounded">
+              <HoveredLink href="/projects" >
+                <p className="flex flex-col">
                   Projetos
                   <span className="text-zinc-500 text-sm">
                     Conheça os projetos que desenvolvi e os que estou
@@ -83,7 +83,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                 </p>
               </HoveredLink>
               <HoveredLink href="/blog">
-                <p className="flex flex-col hover:bg-zinc-500/10 p-2 rounded">
+                <p className="flex flex-col">
                   Blog
                   <span className="text-zinc-500 text-sm">
                     Esses são os meus artigos falando sobre tecnologia e
@@ -97,7 +97,7 @@ export const Navbar = ({ className }: NavbarProps) => {
         <MenuItem setActive={setActive} active={active} item="Loja">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/store">
-              <p className="flex flex-col hover:bg-zinc-500/10 p-2 rounded">
+              <p className="flex flex-col">
                 Loja
                 <span className="text-zinc-500 text-sm">
                   Os produtos listados aqui são afiliados da Amazon.
