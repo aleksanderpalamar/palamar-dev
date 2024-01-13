@@ -69,11 +69,11 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <p className="flex flex-col">
                   Sobre mim
                   <span className="text-zinc-500 text-sm">
-                  Descubra mais sobre mim e o que eu faço
-                </span>
-                </p>                
+                    Descubra mais sobre mim e o que eu faço
+                  </span>
+                </p>
               </HoveredLink>
-              <HoveredLink href="/projects" >
+              <HoveredLink href="/projects">
                 <p className="flex flex-col">
                   Projetos
                   <span className="text-zinc-500 text-sm">
@@ -94,7 +94,7 @@ export const Navbar = ({ className }: NavbarProps) => {
             </div>
           </MenuItem>
         </div>
-        <MenuItem setActive={setActive} active={active} item="Loja">
+        <MenuItem setActive={setActive} active={active} item="Serviços">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/store">
               <p className="flex flex-col">
@@ -103,7 +103,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                   Os produtos listados aqui são afiliados da Amazon.
                 </span>
               </p>
-            </HoveredLink>
+            </HoveredLink>            
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Contato">
