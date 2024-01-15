@@ -19,12 +19,7 @@ export const Description = () => {
         poppins.className
       )}
     >
-      {"/*"}Eu sou desenvolvedor web fullstack, sou apaixonado por tecnologia.
-      Possuo solido conhecimento em HTML, CSS, Javascript, React, Typescript,
-      Tailwind, Next.js e Node.js. Sou uma pessoa dedicada e comprometida com
-      minha carreira, estou disposto a ajudar com novos projetos, estou sempre
-      aberto a novas contribuições e estou sempre buscando aprender e evoluir.
-      {"*/"}
+      Unindo design e código para criar experiências digitais incríveis.
     </p>
   );
 };
