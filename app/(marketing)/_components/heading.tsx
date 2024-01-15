@@ -44,8 +44,8 @@ export const Heading = () => {
   }
 
   return (
-    <div className="max-w-6xl space-y-4 flex flex-col px-3 py-4">
-      <div className="flex flex-col space-y-2 mt-14">
+    <div className="w-full flex flex-col items-center justify-center dark:bg-zinc-900">
+      <div className="max-w-6xl p-2 space-y-4 mt-14">
         <Title />
       </div>
       <Separator className="my-4 w-full bg-muted-foreground/25 dark:bg-zinc-700" />
