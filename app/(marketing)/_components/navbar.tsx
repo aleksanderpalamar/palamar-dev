@@ -23,7 +23,7 @@ type NavbarProps = {
 export const Navbar = ({ className }: NavbarProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const [active, setActive] = useState<string | null>(null);
-  const contact = useContact();  
+  const contact = useContact();
 
   useEffect(() => {
     let element = document.getElementById("logo");
@@ -63,13 +63,13 @@ export const Navbar = ({ className }: NavbarProps) => {
             />
             <p className="text-[#8257e6]">Palamar.Dev</p>
           </Link>
-          <MenuItem setActive={setActive} active={active} item="Sobre">
+          <MenuItem setActive={setActive} active={active} item="About">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/about">
-              <p className="flex flex-col">
-                  Sobre mim
+                <p className="flex flex-col">
+                  About me
                   <span className="text-zinc-500 text-sm hidden md:flex">
-                    Descubra mais sobre mim e o que eu faço
+                    Find out more about me and what I do
                   </span>
                 </p>
               </HoveredLink>
@@ -77,8 +77,8 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <p className="flex flex-col">
                   Projetos
                   <span className="text-zinc-500 text-sm hidden md:flex">
-                    Conheça os projetos que desenvolvi e os que estou
-                    desenvolvendo
+                    Get to know the projects I&apos;ve developed and the ones
+                    I&apos;m developing
                   </span>
                 </p>
               </HoveredLink>
@@ -86,27 +86,26 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <p className="flex flex-col">
                   Blog
                   <span className="text-zinc-500 text-sm hidden md:flex">
-                    Esses são os meus artigos falando sobre tecnologia e
-                    programação.
+                    These my articles talking about technology and programming.
                   </span>
                 </p>
               </HoveredLink>
             </div>
           </MenuItem>
         </div>
-        <MenuItem setActive={setActive} active={active} item="Serviços">
+        <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/store">
               <p className="flex flex-col">
-                Loja
+                Store
                 <span className="text-zinc-500 text-sm hidden md:flex">
-                  Os produtos listados aqui são afiliados da Amazon.
+                  The products listed here are Amazon affiliates.
                 </span>
               </p>
             </HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Contato">
+        <MenuItem setActive={setActive} active={active} item="Contact">
           <div className="flex flex-col space-y-4 text-sm">
             <Button
               className={cn(
