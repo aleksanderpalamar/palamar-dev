@@ -75,7 +75,7 @@ export const Navbar = ({ className }: NavbarProps) => {
               </HoveredLink>
               <HoveredLink href="/projects">
                 <p className="flex flex-col">
-                  Projetos
+                  Projects
                   <span className="text-zinc-500 text-sm hidden md:flex">
                     Get to know the projects I&apos;ve developed and the ones
                     I&apos;m developing
