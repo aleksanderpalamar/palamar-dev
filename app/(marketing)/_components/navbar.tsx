@@ -23,7 +23,7 @@ type NavbarProps = {
 export const Navbar = ({ className }: NavbarProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const [active, setActive] = useState<string | null>(null);
-  const contact = useContact();
+  const contact = useContact();  
 
   useEffect(() => {
     let element = document.getElementById("logo");
@@ -66,9 +66,9 @@ export const Navbar = ({ className }: NavbarProps) => {
           <MenuItem setActive={setActive} active={active} item="Sobre">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/about">
-                <p className="flex flex-col">
+              <p className="flex flex-col">
                   Sobre mim
-                  <span className="text-zinc-500 text-sm">
+                  <span className="text-zinc-500 text-sm hidden md:flex">
                     Descubra mais sobre mim e o que eu faço
                   </span>
                 </p>
@@ -76,7 +76,7 @@ export const Navbar = ({ className }: NavbarProps) => {
               <HoveredLink href="/projects">
                 <p className="flex flex-col">
                   Projetos
-                  <span className="text-zinc-500 text-sm">
+                  <span className="text-zinc-500 text-sm hidden md:flex">
                     Conheça os projetos que desenvolvi e os que estou
                     desenvolvendo
                   </span>
@@ -85,7 +85,7 @@ export const Navbar = ({ className }: NavbarProps) => {
               <HoveredLink href="/blog">
                 <p className="flex flex-col">
                   Blog
-                  <span className="text-zinc-500 text-sm">
+                  <span className="text-zinc-500 text-sm hidden md:flex">
                     Esses são os meus artigos falando sobre tecnologia e
                     programação.
                   </span>
@@ -99,11 +99,11 @@ export const Navbar = ({ className }: NavbarProps) => {
             <HoveredLink href="/store">
               <p className="flex flex-col">
                 Loja
-                <span className="text-zinc-500 text-sm">
+                <span className="text-zinc-500 text-sm hidden md:flex">
                   Os produtos listados aqui são afiliados da Amazon.
                 </span>
               </p>
-            </HoveredLink>            
+            </HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Contato">
