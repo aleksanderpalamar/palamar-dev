@@ -18,52 +18,48 @@ const imageAvatar = "/images/Palamar.png";
 
 export const getAbout = async (): Promise<AboutProps> => {
   return {
-    title: "Sobre mim",
+    title: "About me",
     description: [
-      "Meu nome é Aleksander Palamar, mais conhecido como Palamar tenho 41 anos.",
-      "\n",
-      "Sou programador full-stack com 6 anos de experiência com essas tecnologias: HTML, CSS, JavaScript, Typescript, TailwindCss, React, NextJS, NodeJS, MongoDB, MySQL, PostgreSQL, Docker, Git, Linux, AWS, Azure, GCP, Vercel, Netlify",
-      "Ao longo da minha carreira, trabalhei como freelancer, em agências de marketing e em empresas de tecnologia, adquirindo experiência em metodologias ágeis, como Scrum e Kanban. estou disponivel para contribuir com minhas expertise em JavaScript, TypeScript, NextJs, e NodeJs.",
-      "Sou apaixonado por tecnologia, e adoro aprender coisas novas, e compartilhar o que aprendi com outras pessoas, através de artigos, no meu blog.",
+      "My name is Aleksander Palamar, better known as Palamar I am 41 years old. I'm a full-stack programmer with 6 years of experience with these technologies: HTML, CSS, JavaScript, Typescript, TailwindCss, React, NextJS, NodeJS, MongoDB, MySQL, PostgreSQL, Docker, Git, Linux, AWS, Azure, GCP, Vercel, NetlifyThroughout my career, I've worked as a freelancer, in marketing agencies and in technology companies, gaining experience in agile methodologies such as Scrum and Kanban. I'm available to contribute my expertise in JavaScript, TypeScript, NextJs, and NodeJs.I'm passionate about technology, and I love learning new things, and sharing what I've learned with others, through articles, on my blog.",
     ],
     image: imageAvatar,
     jobs: [
       {
         title: "Desenvolvedor FullStack",
         company: "healthtechportugal.com • Portugal • Remoto",
-        date: "jul 2022 - atualmente",
+        date: "jul 2022 - Present",
       },
       {
         title: "Desenvolvedor Freelancer • FullStack",
         company: "nerdweb • Curitiba/PR",
-        date: "set 2016 - jun 2022 • 6 anos",
+        date: "set 2016 - jun 2022 • 6 Years",
       },
       {
         title: "Suporte técnico",
         company: "Positivo Informática • Curitiba/PR",
-        date: "mar 2007 - nov 2011 • 4 anos",
+        date: "mar 2007 - nov 2011 • 4 Years",
       },
     ],
     educations: [
       {
         course: "Especialização em ReactJS",
         institution: "Rocketseat • Remoto",
-        date: "2022 - 2023 • 1 ano",
+        date: "2022 - 2023 • 1 Year",
       },
       {
         course: "Bacharelado Administração",
-        institution: "Faculdade Dom Bosco • Curitiba/PR",
-        date: "2011 - 2015 • 4 anos",
+        institution: "Dom Bosco Faculty • Curitiba/PR",
+        date: "2011 - 2015 • 4 Years",
       },
       {
         course: "Desenvolvimento de Sistemas",
-        institution: "Faculdade Tecnologica (FATEC) • Curitiba/PR",
-        date: "2008 - 2010 • 2 anos",
+        institution: "Technological Faculty (FATEC) • Curitiba/PR",
+        date: "2008 - 2010 • 2 ;Years",
       },
       {
         course: "Administração de Redes de Computadores",
-        institution: "HCI - Escola Técnica • Curitiba/PR",
-        date: "2004 - 2006 • 2 anos",
+        institution: "HCI - Technical School • Curitiba/PR",
+        date: "2004 - 2006 • 2 Years",
       },
     ],
   };

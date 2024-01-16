@@ -18,9 +18,9 @@ export const Heroes = async () => {
   return (
     <div className="w-full flex flex-col md:justify-start mb-14 space-y-4">
       <div className="flex items-start justify-start">
-        <h3 className="text-lg uppercase flex items-center">
-          <FaCodeBranch className="w-6 h-6 mr-2" />
-          Últimos commits
+        <h3 className="text-lg uppercase flex items-center" aria-label="LATEST UPDATES">
+          <FaCodeBranch className="w-6 h-6 mr-2" />          
+          LATEST UPDATES
         </h3>
       </div>
       <div className="flex flex-col md:flex-row items-center gap-4">
@@ -40,7 +40,7 @@ export const Heroes = async () => {
                 <div className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300">
                   <FaCode className="w-6 h-6" />
                 </div>
-                <p>{ProjectCounter} Projetos</p>
+                <p>{ProjectCounter} Projects</p>
               </div>
             </div>
           </Link>

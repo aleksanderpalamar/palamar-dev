@@ -28,7 +28,9 @@ const AboutPage = async () => {
         </div>
         <div className="bg-transparent rounded flex flex-col md:flex-row px-3 py-4 md:gap-x-4 gap-y-4 animate-fade-right">
           <div className="flex flex-col w-full h-full p-2">
-            <h1 className="text-2xl font-bold">Carreira</h1>
+            <h1 className="text-2xl font-bold">
+            Career
+            </h1>
             {about.jobs.map((job) => (
               <div key={job.title} className="flex flex-col space-y-2">
                 <h2 className="text-lg font-bold">{job.title}</h2>
@@ -39,7 +41,7 @@ const AboutPage = async () => {
           </div>
           <div className="border-t-2 md:border-r-2 border-zinc-700" />
           <div className="flex flex-col w-full h-full p-2">
-            <h1 className="text-2xl font-bold">Formação Acadêmica e Cursos</h1>
+            <h1 className="text-2xl font-bold">Education and Courses</h1>
             {about.educations.map((education) => (
               <div key={education.course} className="flex flex-col space-y-2">
                 <h2 className="text-lg font-bold">{education.course}</h2>

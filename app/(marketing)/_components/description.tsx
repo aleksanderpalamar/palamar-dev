@@ -13,8 +13,9 @@ export const Description = () => {
         "text-zinc-400 word-spacing-2 break-words p-2 text-justify animate-fade-up text-base font-light",
         poppins.className
       )}
+      aria-label="Creating amazing digital experiences, with a focus on performance and usability."
     >      
-      Criando experiências digitais incríveis, com foco em performance e usabilidade.
+      Creating amazing digital experiences, with a focus on performance and usability.
     </p>
   );
 };
