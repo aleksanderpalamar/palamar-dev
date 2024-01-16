@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { getStore } from "@/app/_service/store";
 import { Badge } from "@/components/ui/badge";
-import { Search } from "@/components/search";
 
 export const revalidate = 60; // 60 seconds
 export const dynamic = "force-dynamic";
@@ -15,8 +14,7 @@ const StorePage = async () => {
       <div className="max-w-6xl p-2 space-y-4 mt-40">
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
           Loja
-        </h1>
-        <Search />
+        </h1>        
         <Badge className="text-[#8257e6] bg-[#8257e6]/10 hover:bg-[#8257e6]/20">
           <p>Os produtos listados aqui são afiliados da Amazon.</p>
         </Badge>
