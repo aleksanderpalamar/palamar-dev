@@ -28,22 +28,26 @@ export const metadata: Metadata = {
   },
   icons: [
     {
-      url: "/favicon.ico",
-      type: "image/x-icon",
+      url: "/images/favicon.png",
+      type: "image/png",
       sizes: "32x32",
-      href: "/favicon.ico",
+      href: "/images/favicon.png",
     },
   ],
   keywords: [
     "Palamar.Dev",
-    "Palamar",
-    "Dev",
-    "Open Source",
+    "Dev Frontend",
+    "Dev Backend",
+    "Dev Fullstack",
     "Next.js",
     "React",
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "TailwindCSS",
   ],
-  authors: [{ name: "Palamar.Dev", url: "https://aleksanderpalamar.dev" }],
-  creator: "Palamar.Dev",
+  authors: [{ name: "Aleksander Palamar", url: "https://aleksanderpalamar.dev" }],
+  creator: "Aleksander Palamar",
 };
 
 export default function RootLayout({
