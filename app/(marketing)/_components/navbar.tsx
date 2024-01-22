@@ -61,7 +61,7 @@ export const Navbar = ({ className }: NavbarProps) => {
               height={20}
               alt="Logo"
             />
-            <p className="text-[#8257e6]">Palamar.Dev</p>
+            <p className="">Palamar.Dev</p>
           </Link>
           <MenuItem setActive={setActive} active={active} item="About">
             <div className="flex flex-col space-y-4 text-sm">
