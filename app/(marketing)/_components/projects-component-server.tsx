@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { formatText } from "@/utils/formatText";
 import Link from "next/link";
+import { Translate } from "./translate";
 
 export const revalidate = 60; // 60 seconds
 export const dynamic = "force-dynamic";
@@ -16,15 +17,13 @@ export async function generateStaticParams() {
   }));
 }
 
-
 export const ProjectsComponentServer = async () => {
   const projects = await getProjects();
+
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
       <div className="max-w-6xl p-2 space-y-4">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center mt-40">
-          Projects
-        </h1>
+        <Translate />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
           {projects.map((project) => (
             <div
