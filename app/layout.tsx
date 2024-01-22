@@ -10,7 +10,6 @@ import ErrorFallback from "./error";
 import { siteConfig } from "@/config/site";
 
 import { Toaster } from "sonner";
-import { LanguageProvider } from "@/context/translate-context";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -74,7 +73,7 @@ export default function RootLayout({
           >
             <Toaster position="bottom-center" />
             <ModalProvider />
-            <LanguageProvider>{children}</LanguageProvider>
+            {children}
           </ThemeProvider>
         </ErrorBoundary>
       </body>
