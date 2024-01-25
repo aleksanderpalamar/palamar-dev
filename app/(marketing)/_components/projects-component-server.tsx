@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { getProjects } from "@/app/_service/projects";
+import { Translate } from "@/components/translate";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
@@ -22,15 +23,7 @@ export const ProjectsComponentServer = async () => {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
       <div className="max-w-6xl p-2 space-y-4">
-        <h1 className="text-2xl flex flex-col font-bold text-zinc-900 dark:text-zinc-50 text-center mt-40">
-          Projects
-          <span className="text-sm text-zinc-500 font-normal">
-            Esses projetos foram desenvolvidos com o intuito de aprender novas
-            tecnologias e aprimorar as que já conheço, pois como não posso
-            colocar em prática e divulgar os códigos dos projetos que desenvolvo
-            no meu trabalho, então decidi criar esses projetos pessoais.
-          </span>
-        </h1>
+        <Translate />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left">
           {projects.map((project) => (
             <div
