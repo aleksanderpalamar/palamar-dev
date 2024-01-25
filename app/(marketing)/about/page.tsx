@@ -13,13 +13,13 @@ const AboutPage = async () => {
           {about.title}
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-around gap-4 animate-fade-left">
-          <div className="bg-transparent rounded w-80 h-80 flex items-center overflow-hidden">
+          <div className="bg-transparent rounded-xl w-80 h-80 flex items-center overflow-hidden ">
             <Image
               src={about.image}
               width={500}
               height={500}            
               alt="Me"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover bg-violet-500"
             />
           </div>
           <div className="bg-transparent rounded w-full h-full justify-start space-y-4 px-3 py-4 text-justify">
