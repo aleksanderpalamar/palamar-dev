@@ -5,17 +5,22 @@ import i18n from "i18next";
 import { useState } from "react";
 import { initReactI18next, useTranslation } from "react-i18next";
 
-const resources = {
+interface Translation {
+  title: string;
+  description: string;
+}
+
+const resources: { [key: string]: { translation: Translation } } = {
   pt: {
     translation: {
-      projects: "Projetos",
+      title: "Projetos",
       description:
         "Esses projetos foram desenvolvidos com o intuito de aprender novas tecnologias e aprimorar as que já conheço, pois como não posso colocar em prática e divulgar os códigos dos projetos que desenvolvo no meu trabalho, então decidi criar esses projetos pessoais.",
     },
   },
   en: {
     translation: {
-      projects: "Projects",
+      title: "Projects",
       description:
         "These projects were developed with the aim of learning new technologies and improving the ones I already know, as I cannot put into practice and publish the codes of the projects I develop in my work, so I decided to create these personal projects.",
     },
@@ -45,7 +50,7 @@ export const Translate = () => {
   return (
     <div className="flex items-center mt-4">
       <h1 className="text-2xl flex flex-col font-bold text-zinc-900 dark:text-zinc-50 text-center mt-40">
-        {t("projects")}
+        {t("title")}
         <span className="text-sm text-zinc-500 font-normal text-justify">
           {t("description")}
         </span>
