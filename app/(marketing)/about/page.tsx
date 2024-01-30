@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { CTA } from "../_components/cta";
 import { getAbout } from "@/app/_service/about";
-import { InfiniteCardsStack } from "../_components/InfiniteCardsStack";
 
 const AboutPage = async () => {
   const about = await getAbout();
