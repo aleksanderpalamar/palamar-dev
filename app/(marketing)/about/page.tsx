@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { CTA } from "../_components/cta";
 import { getAbout } from "@/app/_service/about";
+import { InfiniteCardsStack } from "../_components/InfiniteCardsStack";
 
 const AboutPage = async () => {
   const about = await getAbout();
@@ -25,6 +26,12 @@ const AboutPage = async () => {
           <div className="bg-transparent rounded w-full h-full justify-start space-y-4 px-3 py-4 text-justify">
             {about.description}
           </div>          
+        </div>
+        <div className="flex flex-col">
+          <h1 className="text-2xl font-bold">
+            My Stack&apos;s
+          </h1>
+          <InfiniteCardsStack />
         </div>
         <div className="bg-transparent rounded flex flex-col md:flex-row px-3 py-4 md:gap-x-4 gap-y-4 animate-fade-right">
           <div className="flex flex-col w-full h-full p-2">

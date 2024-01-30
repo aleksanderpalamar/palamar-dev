@@ -1,7 +1,5 @@
 "use client";
 
-import { Logo } from "@/components/logo";
-import { MobileToggle } from "@/components/mobile-toggle";
 import { Button } from "@/components/ui/button";
 import {
   HoveredLink,
@@ -46,12 +44,13 @@ export const Navbar = ({ className }: NavbarProps) => {
   }
 
   return (
-    <div
+    <header
       className={cn(
         "fixed top-10 inset-x-0 max-w-6xl mx-auto z-50 mb-40",
         className
       )}
     >
+      <nav>
       <Menu setActive={setActive}>
         <div id="logo" className="flex items-center justify-between w-full">
           <Link href="/" className="flex items-center gap-x-2">
@@ -93,18 +92,6 @@ export const Navbar = ({ className }: NavbarProps) => {
             </div>
           </MenuItem>
         </div>
-        <MenuItem setActive={setActive} active={active} item="Services">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/store">
-              <p className="flex flex-col">
-                Store
-                <span className="text-zinc-500 text-sm hidden md:flex">
-                  The products listed here are Amazon affiliates.
-                </span>
-              </p>
-            </HoveredLink>
-          </div>
-        </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Contact">
           <div className="flex flex-col space-y-4 text-sm">
             <Button
@@ -119,6 +106,7 @@ export const Navbar = ({ className }: NavbarProps) => {
           </div>
         </MenuItem>
       </Menu>
-    </div>
+      </nav>
+    </header>
   );
 };
