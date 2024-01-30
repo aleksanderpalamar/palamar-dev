@@ -3,7 +3,7 @@ import { getPosts } from "@/app/_service/blog";
 import { getProjects } from "@/app/_service/projects";
 import { ActionTooltip } from "@/components/action-tooltip";
 import Link from "next/link";
-import { FaCode, FaCodeBranch, FaReadme, FaStore } from "react-icons/fa6";
+import { FaCode, FaCodeBranch, FaReadme } from "react-icons/fa6";
 
 export const revalidate = 60; // 60 seconds
 export const dynamic = "force-dynamic";
@@ -16,8 +16,8 @@ export const Heroes = async () => {
   const PostCounter = post.length;
 
   return (
-    <div className="w-full flex flex-col md:justify-start mb-14 space-y-4">
-      <div className="flex items-start justify-start">
+    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+      <div className="container px-4 md:px-6">        
         <h3 className="text-lg uppercase flex items-center" aria-label="LATEST UPDATES">
           <FaCodeBranch className="w-6 h-6 mr-2" />          
           LATEST UPDATES
@@ -67,7 +67,7 @@ export const Heroes = async () => {
             </div>
           </Link>
         </ActionTooltip>
-      </div>
-    </div>
+      </div>      
+    </section>
   );
 };

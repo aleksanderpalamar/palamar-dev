@@ -27,7 +27,7 @@ export const ProjectsComponentServer = async () => {
       <div className="max-w-6xl p-2 space-y-4">
         <Translate />
         <div className="grid grid-cols-1 md:grid-cols-2  gap-4 animate-fade-left">
-          {projects.map((project) => (
+        {projects.map((project) => (
             <CardContainer key={project.id} className="inter-var">
               <CardBody
                 className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-violet-500/[0.1] 
@@ -114,7 +114,7 @@ export const ProjectsComponentServer = async () => {
                 </div>
               </CardBody>
             </CardContainer>
-          ))}
+          ))}         
         </div>
       </div>
     </div>

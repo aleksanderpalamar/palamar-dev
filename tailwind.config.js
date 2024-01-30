@@ -61,6 +61,11 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -94,6 +99,8 @@ module.exports = {
         "waving-hand": "wave 2s linear infinite",
         "blink-cursor": "blink-cursor 500ms step(40) infinite both",
         "typing": "typing 6s steps(40) infinite both",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
     },
   },
