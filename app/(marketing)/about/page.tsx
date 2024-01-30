@@ -18,26 +18,19 @@ const AboutPage = async () => {
             <Image
               src={about.image}
               width={500}
-              height={500}            
+              height={500}
               alt="Me"
               className="w-full h-full object-cover bg-violet-500"
             />
           </div>
           <div className="bg-transparent rounded w-full h-full justify-start space-y-4 px-3 py-4 text-justify">
             {about.description}
-          </div>          
+          </div>
         </div>
-        <div className="flex flex-col">
-          <h1 className="text-2xl font-bold">
-            My Stack&apos;s
-          </h1>
-          <InfiniteCardsStack />
-        </div>
+        
         <div className="bg-transparent rounded flex flex-col md:flex-row px-3 py-4 md:gap-x-4 gap-y-4 animate-fade-right">
           <div className="flex flex-col w-full h-full p-2">
-            <h1 className="text-2xl font-bold">
-            Career
-            </h1>
+            <h1 className="text-2xl font-bold">Career</h1>
             {about.jobs.map((job) => (
               <div key={job.title} className="flex flex-col space-y-2">
                 <h2 className="text-lg font-bold">{job.title}</h2>
@@ -59,7 +52,7 @@ const AboutPage = async () => {
               </div>
             ))}
           </div>
-        </div>        
+        </div>
         <CTA />
       </div>
     </div>
