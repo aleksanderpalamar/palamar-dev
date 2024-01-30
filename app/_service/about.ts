@@ -14,7 +14,7 @@ type AboutProps = {
   }[];
 };
 
-const imageAvatar = "/images/Palamar.png";
+const imageAvatar = "/images/palamar.png";
 
 export const getAbout = async (): Promise<AboutProps> => {
   return {
