@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { CTA } from "../_components/cta";
 import { getAbout } from "@/app/_service/about";
+import { StackCards } from "../_components/stack-cards";
 
 const AboutPage = async () => {
   const about = await getAbout();
@@ -13,20 +14,20 @@ const AboutPage = async () => {
           {about.title}
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-around gap-4 animate-fade-left">
-          <div className="bg-transparent rounded-xl w-80 h-80 flex items-center overflow-hidden ">
+          <div className="bg-transparent rounded-xl w-80 h-80 flex items-center overflow-hidden border-4 border-violet-500">
             <Image
               src={about.image}
               width={500}
               height={500}
               alt="Me"
-              className="w-full h-full object-cover bg-violet-500"
+              className="w-full h-full object-cover bg-violet-500 border-8 border-zinc-900 rounded-xl"
             />
           </div>
           <div className="bg-transparent rounded w-full h-full justify-start space-y-4 px-3 py-4 text-justify">
             {about.description}
           </div>
         </div>
-        
+        <StackCards />
         <div className="bg-transparent rounded flex flex-col md:flex-row px-3 py-4 md:gap-x-4 gap-y-4 animate-fade-right">
           <div className="flex flex-col w-full h-full p-2">
             <h1 className="text-2xl font-bold">Career</h1>
