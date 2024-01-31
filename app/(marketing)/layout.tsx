@@ -1,11 +1,11 @@
 "use client";
 
-import { Navbar } from "./_components/navbar";
+import Header from "./_components/header";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="h-full antialiased">
-      <Navbar />
+      <Header />
       <main className="h-full">{children}</main>      
     </div>
   );

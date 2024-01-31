@@ -1,12 +1,14 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
-import { Title } from "./title";
+import { CircleIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 export const Heading = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);  
 
   useEffect(() => {
     setIsMounted(true);
@@ -24,17 +26,52 @@ export const Heading = () => {
     };
   }, []);
 
+  if (isMobile) {
+    return (
+      <header className="container mx-auto px-2 py-10">
+        <h2 className="text-xl font-bold leading-tight">
+          Hey, I&apos;m Palamar.Dev
+          <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm" 
+          aria-label="Web Developer">
+            Web Developer |
+            <Badge
+              className="bg-[#8257e6]/10 text-violet-500 hover:bg-[#8257e6]/20 transition-all text-xs"
+              aria-label="FullStack"
+            >
+              FullStack
+            </Badge>
+          </p>
+        </h2>
+        <p className="text-gray-400 mt-4">
+          Unindo design e código, sigo criando projetos únicos.
+        </p>        
+      </header>      
+    );
+  }
+
   switch (isMounted) {
     case false:
       return null;
   }
 
   return (
-    <div className="w-full flex flex-col dark:bg-zinc-900">
-      <div className="max-w-6xl p-2 space-y-4 mt-14">
-        <Title />
-      </div>
-      <Separator className="my-4 w-full bg-muted-foreground/25 dark:bg-zinc-700" />
-    </div>
+    <header className="container mx-auto px-4 py-20">
+      <h2 className="text-6xl font-bold leading-tight animate-fade-right">
+        Hi, I&apos;m Aleksander Palamar
+        <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm leading-tight" 
+          aria-label="Web Developer">
+            Web Developer |
+            <Badge
+              className="bg-[#8257e6]/10 text-violet-500 hover:bg-[#8257e6]/20 transition-all text-xs"
+              aria-label="FullStack"
+            >
+              FullStack
+            </Badge>
+          </p>
+      </h2>
+      <p className="text-gray-400 mt-4">
+        Creating amazing digital experiences, with a focus on performance and usability.
+      </p>      
+    </header>
   );
 };
