@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Description } from "./description";
+import { Children, useEffect, useState } from "react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,8 +12,49 @@ const poppins = Poppins({
 });
 
 export function Title() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWindowSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkWindowSize();
+
+    window.addEventListener("resize", checkWindowSize);
+
+    return () => {
+      window.removeEventListener("resize", checkWindowSize);
+    };
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div className="flex flex-col items-start justify-center h-full mt-[2.5rem]">
+        <div className="flex flex-col space-y-2">
+          <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 animate-fade-up" aria-label="Hi I'm Aleksander Palamar">
+            Hi, I&apos;m Aleksander Palamar
+          </h1>
+          <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm" aria-label="Web Developer">
+            Web Developer |
+            <Badge
+              className={cn(
+                "bg-[#8257e6]/10 text-violet-500 hover:bg-[#8257e6]/20 transition-all text-xs",
+                poppins.className
+              )}
+              aria-label="FullStack"
+            >
+              FullStack
+            </Badge>
+          </p>
+          <Description />
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="flex flex-col items-start justify-center h-full mt-14">
+    <div className="flex flex-col items-start justify-center h-full">
       <div className="flex flex-col space-y-2">
         <h1 className="text-2xl md:text-6xl font-bold text-zinc-900 dark:text-zinc-50 animate-fade-up" aria-label="Hi I'm Aleksander Palamar">
           Hi, I&apos;m Aleksander Palamar

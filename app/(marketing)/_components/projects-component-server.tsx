@@ -24,7 +24,7 @@ export const ProjectsComponentServer = async () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
-      <div className="max-w-6xl p-2 space-y-4">
+      <div className="max-w-[80rem] py-2 space-y-4">
         <Translate />
         <div className="grid grid-cols-1 md:grid-cols-2  gap-4 animate-fade-left">
         {projects.map((project) => (

@@ -10,8 +10,8 @@ const StorePage = async () => {
   const products = await getStore();
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
-      <div className="max-w-6xl p-2 space-y-4 mt-40">
+    <section className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
+      <div className="container items-center justify-center w-max  p-2 space-y-4 mt-40">
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
           Shop
         </h1>        
@@ -60,7 +60,7 @@ const StorePage = async () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

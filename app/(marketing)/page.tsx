@@ -7,16 +7,18 @@ export const revalidate = 60 // 60 seconds
 
 const Home = () => {  
   return (
-    <div className="min-h-screen min-w-screen flex flex-col items-center justify-center dark:bg-zinc-900">
+    <section className="min-h-screen min-w-screen flex 
+    flex-col items-center justify-center dark:bg-zinc-900
+    ">
       <div
-        className="flex flex-col items-center justify-center
-      md:justify-between flex-1 p-4 w-full max-w-6xl"
+        className="container flex flex-col items-center justify-center
+      md:justify-between flex-1 py-4 max-w-[80rem] w-full"
       >
         <Heading />
         <Heroes />
         <CTA />
       </div>     
-    </div>
+    </section>
   )
 }
 
