@@ -15,5 +15,6 @@
     "Refatoração",
     "Últimos",
     "utilizo"
-  ]
+  ],
+  "remote.autoForwardPortsFallback": 0
 }

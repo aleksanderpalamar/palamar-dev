@@ -34,13 +34,7 @@ export const Navbar = () => {
             <Logo />
             <span className="sr-only">Palamar.Dev</span>
           </Link>
-          <div className="grid gap-2 py-6">
-            <Link
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              href="/"
-            >
-              Home
-            </Link>
+          <div className="grid gap-2 py-6">            
             <Link
               className="flex w-full items-center py-2 text-lg font-semibold"
               href="/about"
@@ -55,9 +49,9 @@ export const Navbar = () => {
             </Link>
             <Link
               className="flex w-full items-center py-2 text-lg font-semibold"
-              href="#"
+              href="/blog"
             >
-              Contact
+              Blog
             </Link>
           </div>
         </SheetContent>
