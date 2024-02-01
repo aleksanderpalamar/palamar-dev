@@ -18,36 +18,20 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.title}`,
   },
   description: siteConfig.description,
   robots: {
     index: true,
     follow: true,
   },
-  icons: [
-    {
-      url: "/images/favicon.png",
-      type: "image/png",
-      sizes: "32x32",
-      href: "/images/favicon.png",
-    },
-  ],
-  keywords: [
-    "Palamar.Dev",
-    "Dev Frontend",
-    "Dev Backend",
-    "Dev Fullstack",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "Node.js",
-    "TailwindCSS",
-  ],
-  authors: [{ name: "Aleksander Palamar", url: "https://aleksanderpalamar.dev" }],
-  creator: "Aleksander Palamar",
+  icons: siteConfig.icons,
+  alternates: siteConfig.alternates,
+  openGraph: siteConfig.openGraph,
+  keywords: siteConfig.keywords,
+  authors: siteConfig.authors,
+  creator: siteConfig.creator,
 };
 
 export default function RootLayout({
