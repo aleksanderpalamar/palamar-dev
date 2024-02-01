@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { getProjects } from "@/app/_service/projects";
-import { Translate } from "@/components/translate";
 import { formatText } from "@/utils/formatText";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-cards";
@@ -24,13 +23,21 @@ export const ProjectsComponentServer = async () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
-      <div className="max-w-[80rem] py-2 space-y-4">
-        <Translate />
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-4 animate-fade-left">
-        {projects.map((project) => (
+      <div className="max-w-[80rem]">
+        <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-4 text-left">
+          Projects
+          <p className="text-sm text-zinc-500 font-normal text-justify">
+            These projects were developed with the aim of learning new
+            technologies and improving the ones I already know, as I cannot put
+            into practice and publish the codes of the projects I develop in my
+            work, so I decided to create these personal projects.
+          </p>
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-left">
+          {projects.map((project) => (
             <CardContainer key={project.id} className="inter-var">
               <CardBody
-                className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-violet-500/[0.1] 
+                className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-violet-500/[0.1] 
               dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"
               >
                 <CardItem
@@ -114,7 +121,7 @@ export const ProjectsComponentServer = async () => {
                 </div>
               </CardBody>
             </CardContainer>
-          ))}         
+          ))}
         </div>
       </div>
     </div>

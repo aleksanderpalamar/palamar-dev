@@ -55,7 +55,7 @@ export const Heading = () => {
   }
 
   return (
-    <header className="container mx-auto px-4 py-20">
+    <header className="container mx-auto ">
       <h2 className="text-6xl font-bold leading-tight animate-fade-right">
         Hi, I&apos;m Aleksander Palamar
         <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm leading-tight" 
