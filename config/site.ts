@@ -1,13 +1,105 @@
 type SiteConfigProps = {
-  name: string;
-  description: string;
-  ogImage: string;
-  url: string;
+  title: string,
+  description: string,
+  icons: [
+    { 
+      url: string,
+      sizes: string,
+      type: string,
+     },
+     {
+      url: string,
+      sizes: string,
+      type:   string,
+     },
+     {
+      url: string,
+      sizes: string,
+      type:  string,
+     }
+  ],
+  keywords: [
+    'AleksanderPalamar',
+    'Desenvolvedor',
+    'Desenvolvedor Web',
+    'Programador',
+    'Programador Web',
+    'Frontend',
+    'Frontend Developer',
+    'Backend',
+    'Backend Developer',
+    'Fullstack',
+  ],
+  alternates: {
+    canonical: string,
+    languages: {
+      'pt-BR': string,
+      'en-US': string,
+    },
+  },
+  openGraph: {
+    title: string,
+    description: string,
+    images: string,
+  },
+  authors: [
+    { 
+      name: string, 
+      url: string,
+    }
+],
+creator: string, 
 };
 
 export const siteConfig: SiteConfigProps = {
-  name: "Palamar.Dev",
-  description: "Palamar.Dev - Web Developer, Creating amazing digital experiences, with a focus on performance and usability.",  
-  ogImage: "/images/favicon.png",  
-  url: "https://palamardev.vercel.app/",
+  title: 'Palamar.Dev',
+  description: 'Site pessoal de Aleksander Palamar',
+  icons: [
+    {
+      url: '/images/favicon.png',
+      sizes: '32x32',
+      type: 'image/png',
+    },
+    {
+      url: '/images/favicon.png',
+      sizes: '192x192',
+      type: 'image/png',
+    },
+    {
+      url: '/images/favicon.png',
+      sizes: '512x512',
+      type: 'image/png',
+    },
+  ],
+  keywords: [
+    'AleksanderPalamar',
+    'Desenvolvedor',
+    'Desenvolvedor Web',
+    'Programador',
+    'Programador Web',
+    'Frontend',
+    'Frontend Developer',
+    'Backend',
+    'Backend Developer',
+    'Fullstack',
+  ],
+  alternates: {
+    canonical: 'https://aleksanderpalamar.dev',
+    languages: {
+      'pt-BR': 'https://aleksanderpalamar.dev',
+      'en-US': 'https://aleksanderpalamar.dev/',
+    },
+  },
+  openGraph: {
+    title: 'Palamar.Dev',
+    description: 'Site pessoal de Aleksander Palamar',
+    images: '/icons/icon-512x512.png',
+  },
+  authors: [
+    {
+      name: 'Aleksander Palamar',
+      url: 'https://aleksanderpalamar.dev',
+    },
+  ],
+  creator: 'Aleksander Palamar',
 };
