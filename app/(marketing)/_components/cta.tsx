@@ -11,7 +11,7 @@ export const CTA = () => {
   const contact = useContact();
 
   return (
-    <div className="flex flex-col w-full border-[1px] border-muted-foreground/25 dark:border-zinc-700 rounded" aria-label="Call to action">
+    <footer className="flex flex-col w-full border-[1px] border-muted-foreground/25 dark:border-zinc-700 rounded" aria-label="Call to action">
       <div className="flex flex-col space-y-4 p-4">
         <h2 className="text-xl font-bold transform uppercase text-left " aria-label="Let's develop something together?">
           LET&apos;S DEVELOP SOMETHING TOGETHER?
@@ -100,6 +100,6 @@ export const CTA = () => {
           </div>
         </Link>
       </div>
-    </div>
+    </footer>
   );
 };

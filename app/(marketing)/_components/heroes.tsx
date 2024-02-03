@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCode, FaReadme } from "react-icons/fa6";
 
+export const runtime = 'edge';
+
 export const revalidate = 60; // 60 seconds
 export const dynamic = "force-dynamic";
 

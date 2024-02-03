@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
+export const runtime = "edge";
+
 export const revalidate = 60; // 60 seconds
 export const dynamic = "force-dynamic";
 
@@ -23,7 +25,7 @@ export const ProjectsComponentServer = async () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
-      <div className="max-w-[80rem]">
+      <div className="max-w-[73rem]">
         <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-4 text-left">
           Projects
           <p className="text-sm text-zinc-500 font-normal text-justify">
