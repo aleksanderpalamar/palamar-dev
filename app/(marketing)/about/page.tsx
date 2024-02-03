@@ -9,11 +9,11 @@ const AboutPage = async () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center dark:bg-zinc-900">
-      <div className="container max-w-[80rem] space-y-4">
+      <div className="container max-w-[73rem] space-y-4 mb-2">
         <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-4 text-left ">
           {about.title}
         </h1>
-        <div className="flex flex-col md:flex-row items-center justify-around gap-4 animate-fade-left">
+        <div className="flex flex-col md:flex-row justify-around gap-4 animate-fade-left">
           <div className="bg-transparent rounded-xl w-80 h-80 flex items-center overflow-hidden border-4 border-violet-500">
             <Image
               src={about.image}
@@ -23,9 +23,9 @@ const AboutPage = async () => {
               className="w-full h-full object-cover bg-violet-500 border-8 border-zinc-900 rounded-xl"
             />
           </div>
-          <div className="bg-transparent rounded w-full h-full justify-start space-y-4 px-3 py-4 text-justify">
+          <div className="bg-transparent rounded w-full h-full space-y-4 text-justify overflow-hidden">
             {about.description}
-          </div>
+          </div>          
         </div>
         <StackCards />
         <div className="bg-transparent rounded flex flex-col md:flex-row px-3 py-4 md:gap-x-4 gap-y-4 animate-fade-right">

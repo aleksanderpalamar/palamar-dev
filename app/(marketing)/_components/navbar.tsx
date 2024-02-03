@@ -9,7 +9,7 @@ import { Menu } from "lucide-react";
 
 export const Navbar = () => {
   return (
-    <nav className="container mx-auto flex items-center justify-between p-4 max-w-[80rem]">
+    <nav className="container mx-auto flex items-center justify-between p-4 max-w-[73rem]">
       <Logo />
       <div className="hidden md:flex space-x-8">
         <Link className="text-white hover:text-gray-300" href="/about">
