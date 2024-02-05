@@ -56,6 +56,7 @@ const BlogPage = async () => {
                     src={post.coverImage}
                     alt=""
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               ) : (

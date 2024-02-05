@@ -21,6 +21,8 @@ const AboutPage = async () => {
               height={500}
               alt="Me"
               className="w-full h-full object-cover bg-violet-500 border-8 border-zinc-900 rounded-xl"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="bg-transparent rounded w-full h-full space-y-4 text-justify overflow-hidden">

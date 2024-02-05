@@ -1,3 +1,6 @@
+import { alt } from "@/app/(marketing)/about/opengraph-image";
+import { url } from "inspector";
+
 type SiteConfigProps = {
   title: string,
   description: string,

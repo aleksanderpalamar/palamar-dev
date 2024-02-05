@@ -35,6 +35,8 @@ export const Heroes = async () => {
               width={258}
               height={160}
               className="w-full h-full object-cover opacity-30"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute top-0 w-full h-full flex items-start justify-between p-2">
               <div className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300">
@@ -56,6 +58,8 @@ export const Heroes = async () => {
               width={258}
               height={160}
               className="w-full h-full object-cover opacity-30"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute top-0 w-full h-full flex items-start justify-between p-2">
               <div className="bg-zinc-50 p-2 rounded flex items-center text-zinc-950 hover:bg-zinc-300">
