@@ -65,6 +65,8 @@ export const ProjectsComponentServer = async () => {
                           width={1000}
                           height={1000}
                           className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </DialogTrigger>
                       <DialogContent className="bg-white text-zinc-950 p-0 overflow-hidden max-w-6xl">
@@ -74,6 +76,8 @@ export const ProjectsComponentServer = async () => {
                           width={1000}
                           height={1000}
                           className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl animate-fade"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </DialogContent>
                     </Dialog>

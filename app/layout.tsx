@@ -16,7 +16,7 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.title}`,
@@ -26,6 +26,20 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  images: [
+    {
+      url: siteConfig.title,
+      alt: siteConfig.title,
+      width: 800,
+      height: 600,
+    },
+    {
+      url: siteConfig.openGraph.images,
+      alt: siteConfig.title,
+      width: 1800,
+      height: 1200,
+    }
+  ],
   icons: siteConfig.icons,
   alternates: siteConfig.alternates,
   openGraph: siteConfig.openGraph,
