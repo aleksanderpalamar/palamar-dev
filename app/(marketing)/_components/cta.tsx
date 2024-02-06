@@ -11,14 +11,20 @@ export const CTA = () => {
   const contact = useContact();
 
   return (
-    <footer className="flex flex-col w-full border-[1px] border-muted-foreground/25 dark:border-zinc-700 rounded" aria-label="Call to action">
+    <footer
+      className="flex flex-col w-full border-[1px] border-muted-foreground/25 dark:border-zinc-700 rounded"
+      aria-label="Call to action"
+    >
       <div className="flex flex-col space-y-4 p-4">
-        <h2 className="text-xl font-bold transform uppercase text-left " aria-label="Let's develop something together?">
-          LET&apos;S DEVELOP SOMETHING TOGETHER?
+        <h2
+          className="text-xl font-bold transform uppercase text-left "
+          aria-label="Let's develop something together?"
+        >
+          VAMOS DESENVOLVER ALGO JUNTOS?
         </h2>
         <p className="text-sm text-zinc-500 text-left">
-          If you have an idea, a solution or a project that needs to be
-          developed, please contact us.
+          Se você tem uma ideia, uma solução ou um projeto que precisa ser
+          desenvolvido, entre em contato conosco.
         </p>
         <div className="flex items-center gap-x-2">
           <div
@@ -28,7 +34,7 @@ export const CTA = () => {
             aria-label="Button Contact"
           >
             <Mail className="w-4 h-4" />
-            <span className="ml-2">Contact</span>
+            <span className="ml-2">Contato</span>
           </div>
           <div
             className="flex items-center w-[max-content] p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base cursor-pointer"
@@ -47,7 +53,10 @@ export const CTA = () => {
         </div>
       </div>
       <div className="border-t border-muted-foreground/25 dark:border-zinc-700 mt-4" />
-      <div className="flex items-center justify-center p-4 gap-x-2" aria-label="Social">
+      <div
+        className="flex items-center justify-center p-4 gap-x-2"
+        aria-label="Social"
+      >
         <Link href="https://github.com/aleksanderpalamar">
           <div
             className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"

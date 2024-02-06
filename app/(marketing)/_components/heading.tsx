@@ -30,8 +30,8 @@ export const Heading = () => {
     return (
       <header className="container mx-auto px-2 py-10">
         <h2 className="text-xl font-bold leading-tight">
-          Hey, I&apos;m Palamar.Dev
-          <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm" 
+          Hey, I&apos;m Aleksander Palamar
+          <p className="text-zinc-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm" 
           aria-label="Web Developer">
             Web Developer |
             <Badge
@@ -42,7 +42,7 @@ export const Heading = () => {
             </Badge>
           </p>
         </h2>
-        <p className="text-gray-400 mt-4">
+        <p className="font-extralight text-zinc-400 mt-4">
           Unindo design e código, sigo criando projetos únicos.
         </p>        
       </header>      
@@ -56,7 +56,7 @@ export const Heading = () => {
 
   return (
     <div className="flex-1">
-      <h2 className="text-6xl font-bold leading-tight animate-fade-right">
+      <h2 className="text-4xl font-semibold leading-tight animate-fade-right">
         Hi, I&apos;m Aleksander Palamar
         <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm leading-tight" 
           aria-label="Web Developer">
@@ -69,7 +69,7 @@ export const Heading = () => {
             </Badge>
           </p>
       </h2>
-      <p className="text-gray-400 mt-4">
+      <p className="font-extralight text-zinc-400 mt-4">
         Unindo design e código, sigo criando projetos únicos.
       </p>      
     </div>
