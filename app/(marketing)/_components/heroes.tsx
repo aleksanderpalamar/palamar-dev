@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { getPosts } from "@/app/_service/blog";
 import { getProjects } from "@/app/_service/projects";
+import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCode, FaReadme } from "react-icons/fa6";
+import { Heading } from "./heading";
 
 export const runtime = 'edge';
 
@@ -18,7 +20,9 @@ export const Heroes = async () => {
   const PostCounter = post.length;
 
   return (
-    <section className="container mx-auto px-4 py-10">
+    <section className="container flex flex-col space-y-8">
+      <Heading />
+      <Separator />
       <h3 className="text-2xl font-bold" aria-label="LATEST UPDATES">
         LATEST UPDATES
       </h3>
@@ -70,6 +74,7 @@ export const Heroes = async () => {
           </div>
         </Link>
       </div>
+      <Separator />
     </section>
   );
 };
