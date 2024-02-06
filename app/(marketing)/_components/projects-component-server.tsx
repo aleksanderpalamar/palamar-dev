@@ -27,12 +27,12 @@ export const ProjectsComponentServer = async () => {
     <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
       <div className="max-w-[73rem]">
         <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-4 text-left">
-          Projects
-          <p className="text-sm text-zinc-500 font-normal text-justify">
-            These projects were developed with the aim of learning new
-            technologies and improving the ones I already know, as I cannot put
-            into practice and publish the codes of the projects I develop in my
-            work, so I decided to create these personal projects.
+          Projetos
+          <p className="text-sm text-zinc-500 font-extralight text-justify">
+            Esses projetos foram desenvolvidos com o objetivo de aprender novas
+            tecnologias e aprimorar as que já conheço, pois não consigo colocar
+            em prática e publicar os códigos dos projetos que desenvolvo em meu
+            trabalho, então decidi criar esses projetos pessoais.
           </p>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-left">

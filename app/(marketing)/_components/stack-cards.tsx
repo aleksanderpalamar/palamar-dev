@@ -12,7 +12,7 @@ export const StackCards = () => {
       <h2 
         className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-20"
       >
-        My Stack&apos;s
+        Minhas Tecnologias
       </h2>
       <InfiniteMovingCards 
         items={stackitems}

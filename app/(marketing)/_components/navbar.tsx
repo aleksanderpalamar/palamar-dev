@@ -13,10 +13,10 @@ export const Navbar = () => {
       <Logo />
       <div className="hidden md:flex space-x-8">
         <Link className="text-white hover:text-gray-300" href="/about">
-          About
+          Sobre
         </Link>
         <Link className="text-white hover:text-gray-300" href="/projects">
-          Projects
+          Projetos
         </Link>
         <Link className="text-white hover:text-gray-300" href="/blog">
           Blog
@@ -39,13 +39,13 @@ export const Navbar = () => {
               className="flex w-full items-center py-2 text-lg font-semibold"
               href="/about"
             >
-              About
+              Sobre
             </Link>
             <Link
               className="flex w-full items-center py-2 text-lg font-semibold"
               href="/projects"
             >
-              Projects
+              Projetos
             </Link>
             <Link
               className="flex w-full items-center py-2 text-lg font-semibold"
