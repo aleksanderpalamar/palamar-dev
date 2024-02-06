@@ -55,7 +55,7 @@ export const Heading = () => {
   }
 
   return (
-    <div className="container mx-auto ">
+    <div className="flex-1">
       <h2 className="text-6xl font-bold leading-tight animate-fade-right">
         Hi, I&apos;m Aleksander Palamar
         <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm leading-tight" 
@@ -70,7 +70,7 @@ export const Heading = () => {
           </p>
       </h2>
       <p className="text-gray-400 mt-4">
-        Creating amazing digital experiences, with a focus on performance and usability.
+        Unindo design e código, sigo criando projetos únicos.
       </p>      
     </div>
   );

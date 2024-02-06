@@ -18,15 +18,15 @@ const imageAvatar = "/images/palamar.png";
 
 export const getAbout = async (): Promise<AboutProps> => {
   return {
-    title: "About me",
+    title: "Sobre mim",
     description: [
-      "My name is Aleksander Palamar, better known as Palamar I am 41 years old.", 
-      "I'm a full-stack programmer with 6 years of experience with these technologies: HTML, CSS, JavaScript, Typescript,",
-      "TailwindCss, React, NextJS, NodeJS, MongoDB, MySQL, PostgreSQL, Docker, Git, Linux, AWS, Azure, GCP, Vercel,", 
-      "NetlifyThroughout my career, I've worked as a freelancer, in marketing agencies and in technology companies,",
-      "gaining experience in agile methodologies such as Scrum and Kanban. I'm available to contribute my expertise in JavaScript,",
-      "TypeScript, NextJs, and NodeJs.I'm passionate about technology, and I love learning new things,", 
-      "and sharing what I've learned with others, through articles, on my blog.",
+      "Meu nome é Aleksander Palamar, mais conhecido como Palamar, tenho 41 anos.",
+       "Sou um programador full-stack com 6 anos de experiência com estas tecnologias: HTML, CSS, JavaScript, Typescript,",
+       "TailwindCss, React, NextJS, NodeJS, MongoDB, MySQL, PostgreSQL, Docker, Git, Linux, AWS, Azure, GCP, Vercel,",
+       "NetlifyAo longo da minha carreira, trabalhei como freelancer, em agências de marketing e em empresas de tecnologia",
+       "adquirindo experiência em metodologias ágeis como Scrum e Kanban. Estou à disposição para contribuir com meu conhecimento em JavaScript,",
+       "TypeScript, NextJs e NodeJs. Sou apaixonado por tecnologia e adoro aprender coisas novas",
+       "e compartilhar o que aprendi com outras pessoas, por meio de artigos, no meu blog.",
     ],
     image: imageAvatar,
     jobs: [
@@ -41,31 +41,31 @@ export const getAbout = async (): Promise<AboutProps> => {
         date: "set 2016 - jun 2022 • 6 Years",
       },
       {
-        title: "Technical support",
+        title: "Suporte Técnico",
         company: "Positivo Informática • Curitiba/PR",
         date: "mar 2007 - nov 2011 • 4 Years",
       },
     ],
     educations: [
       {
-        course: "ReactJS Specialization",
+        course: "Formação em ReactJS",
         institution: "Rocketseat • Remoto",
-        date: "2022 - 2023 • 1 Year",
+        date: "2022 - 2023 • 1 Ano",
       },
       {
-        course: "Bachelor's Degree in Business Administration",
-        institution: "Dom Bosco Faculty • Curitiba/PR",
-        date: "2011 - 2015 • 4 Years",
+        course: "Bacharelado em Administração",
+        institution: "Faculdade Dom Bosco • Curitiba/PR",
+        date: "2011 - 2015 • 4 Anos",
       },
       {
-        course: "Analyst and Development of Systems",
-        institution: "Technological Faculty (FATEC) • Curitiba/PR",
-        date: "2008 - 2010 • 2 Years",
+        course: "Analise e Desenvolvimento de Sistemas",
+        institution: "Faculdade de Tecnologia (FATEC) • Curitiba/PR",
+        date: "2008 - 2010 • 2 Anos",
       },
       {
-        course: "Computer Network Administration",
-        institution: "HCI - Technical School • Curitiba/PR",
-        date: "2004 - 2006 • 2 Years",
+        course: "Admnistração de Redes de Computadores",
+        institution: "HCI - Escola Técnica • Curitiba/PR",
+        date: "2004 - 2006 • 2 Anos",
       },
     ],
   };
