@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { Logo } from "@/components/logo";
 
 export const Navbar = () => {
   return (
@@ -31,7 +32,6 @@ export const Navbar = () => {
         </SheetTrigger>
         <SheetContent side="left">
           <Link href="/">
-            <Logo />
             <span className="sr-only">Palamar.Dev</span>
           </Link>
           <div className="grid gap-2 py-6">            
@@ -59,15 +59,6 @@ export const Navbar = () => {
     </nav>
   );
 };
-
-function Logo() {
-  return (
-    <Link href="/" className="flex items-center gap-x-2">
-      <Image src="/images/favicon.png" width={20} height={20} alt="Logo" />
-      <div className="text-white font-bold text-2xl">Palamar.Dev</div>
-    </Link>
-  );
-}
 
 function MenuIcon() {
   return (

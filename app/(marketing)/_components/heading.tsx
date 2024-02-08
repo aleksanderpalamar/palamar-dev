@@ -55,7 +55,7 @@ export const Heading = () => {
   }
 
   return (
-    <div className="flex-1">
+    <div className="flex flex-col space-y-8 mt-8">
       <h2 className="text-4xl font-semibold leading-tight animate-fade-right">
         Hi, I&apos;m Aleksander Palamar
         <p className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm leading-tight" 
