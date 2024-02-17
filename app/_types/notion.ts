@@ -85,6 +85,12 @@ export interface CoverImage {
   files: any[];
 }
 
+export interface uploadFiles {
+  id: string;
+  type: string;
+  files: any[];
+}
+
 export interface Tags {
   id: string;
   type: string;

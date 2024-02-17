@@ -59,7 +59,8 @@ export const ProjectsComponentServer = async () => {
                   {project.coverImage ? (
                     <Dialog>
                       <DialogTrigger>
-                        <Image
+                        {Image ? (
+                          <Image
                           src={project.coverImage}
                           alt={project.title}
                           width={1000}
@@ -68,9 +69,16 @@ export const ProjectsComponentServer = async () => {
                           loading="lazy"
                           decoding="async"
                         />
+                        ) : (
+                          <video 
+                            src={project.coverImage}                            
+                            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                          />
+                        )}
                       </DialogTrigger>
                       <DialogContent className="bg-white text-zinc-950 p-0 overflow-hidden max-w-6xl">
-                        <Image
+                        {Image ? (
+                          <Image
                           src={project.coverImage}
                           alt={project.title}
                           width={1000}
@@ -79,6 +87,14 @@ export const ProjectsComponentServer = async () => {
                           loading="lazy"
                           decoding="async"
                         />
+                        ) : (
+                          <video 
+                            src={project.coverImage}                            
+                            className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl animate-fade"
+                            autoPlay
+                            loop
+                          />
+                        )}
                       </DialogContent>
                     </Dialog>
                   ) : (
