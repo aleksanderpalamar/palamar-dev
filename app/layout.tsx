@@ -38,7 +38,7 @@ export const metadata = {
       alt: siteConfig.title,
       width: 1800,
       height: 1200,
-    }
+    },
   ],
   icons: siteConfig.icons,
   alternates: siteConfig.alternates,
@@ -64,7 +64,7 @@ export default function RootLayout({
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="default"
             enableSystem
             disableTransitionOnChange
             storageKey="PalamarDevTheme"

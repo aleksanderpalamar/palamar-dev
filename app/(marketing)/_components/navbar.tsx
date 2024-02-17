@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
@@ -22,6 +21,9 @@ export const Navbar = () => {
         <Link className="text-white hover:text-gray-300" href="/blog">
           Blog
         </Link>
+        <Link className="text-white hover:text-gray-300" href="/chat">
+          Chat com IA
+        </Link>
       </div>
       <Sheet>
         <SheetTrigger asChild>
@@ -34,7 +36,7 @@ export const Navbar = () => {
           <Link href="/">
             <span className="sr-only">Palamar.Dev</span>
           </Link>
-          <div className="grid gap-2 py-6">            
+          <div className="grid gap-2 py-6">
             <Link
               className="flex w-full items-center py-2 text-lg font-semibold"
               href="/about"
@@ -52,6 +54,12 @@ export const Navbar = () => {
               href="/blog"
             >
               Blog
+            </Link>
+            <Link
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              href="/chat"
+            >
+              Chat com IA
             </Link>
           </div>
         </SheetContent>
