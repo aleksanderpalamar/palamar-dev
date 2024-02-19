@@ -6,7 +6,7 @@ import { Bot, SendHorizonal } from "lucide-react";
 export default function ChatPage() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
   return (
-    <div className="flex flex-col w-full h-full p-4 bg-zinc-900">
+    <div className="flex flex-col w-full min-h-screen p-4 bg-zinc-900">
       <div className="max-w-6xl self-center w-full flex-1">
       <h1 className="text-3xl font-bold text-white flex items-center">
         <Bot className="w-8 h-8 mr-2" />
@@ -19,14 +19,14 @@ export default function ChatPage() {
         </span>
       <form
         onSubmit={handleSubmit}
-        className="flex w-full h-12 mt-4 rounded-lg space-x-2 bg-zinc-800"
+        className="flex items-center p-2 w-full h-20 mt-4 rounded-lg space-x-2 bg-zinc-800"
       >
-        <input
+        <textarea
           placeholder="Type a message"
           value={input}
           onChange={handleInputChange}
           className="flex-1 p-2 border-none rounded-lg focus:outline-none
-          justify-self-end bg-zinc-800 text-white"
+          justify-self-end bg-zinc-800 text-white resize-none"
         />
         <button
           className="flex items-center justify-center w-12 h-12 bg-violet-500 
