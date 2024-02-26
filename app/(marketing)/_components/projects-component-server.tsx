@@ -85,7 +85,7 @@ export const ProjectsComponentServer = async () => {
                 </Dialog>
               ) : (
                 <div className="w-full h-full bg-[#8257e6]">
-                  <div className="w-full h-full flex items-center justify-center">
+                  <div className="w-full h-60 flex items-center justify-center">
                     <p className="text-base font-bold text-zinc-50">
                       No Cover Image
                     </p>
