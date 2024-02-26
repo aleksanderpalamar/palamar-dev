@@ -2,7 +2,6 @@
 import { getProjects } from "@/app/_service/projects";
 import { formatText } from "@/utils/formatText";
 import Link from "next/link";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-cards";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -35,83 +34,67 @@ export const ProjectsComponentServer = async () => {
             trabalho, então decidi criar esses projetos pessoais.
           </p>
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left mt-4">
           {projects.map((project) => (
-            <CardContainer key={project.id} className="inter-var">
-              <CardBody
-                className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-violet-500/[0.1] 
-              dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"
-              >
-                <CardItem
-                  translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
-                >
-                  {project.title}
-                </CardItem>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                >
-                  {formatText(project.description, 10)}
-                </CardItem>
-                <CardItem translateZ="100" className="w-full mt-4">
-                  {project.coverImage ? (
-                    <Dialog>
-                      <DialogTrigger>
-                        {Image ? (
-                          <Image
-                          src={project.coverImage}
-                          alt={project.title}
-                          width={1000}
-                          height={1000}
-                          className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                        ) : (
-                          <video 
-                            src={project.coverImage}                            
-                            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                          />
-                        )}
-                      </DialogTrigger>
-                      <DialogContent className="bg-white text-zinc-950 p-0 overflow-hidden max-w-6xl">
-                        {Image ? (
-                          <Image
-                          src={project.coverImage}
-                          alt={project.title}
-                          width={1000}
-                          height={1000}
-                          className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl animate-fade"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                        ) : (
-                          <video 
-                            src={project.coverImage}                            
-                            className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl animate-fade"
-                            autoPlay
-                            loop
-                          />
-                        )}
-                      </DialogContent>
-                    </Dialog>
-                  ) : (
-                    <div className="w-full h-48 bg-[#8257e6]">
-                      <div className="w-full h-full flex items-center justify-center">
-                        <p className="text-base font-bold text-zinc-50">
-                          No Cover Image
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </CardItem>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                >
+            <div
+              key={project.id}
+              className="card bg-base-100 dark:bg-zinc-800 shadow-xl hover:shadow-2xl 
+              dark:shadow-2xl hover:scale-105 transition-all rounded overflow-hidden
+              flex flex-col space-y-4"
+            >
+              {project.coverImage ? (
+                <Dialog>
+                  <DialogTrigger>
+                    {Image ? (
+                      <Image
+                        src={project.coverImage}
+                        alt={project.title}
+                        width={1000}
+                        height={1000}
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      <video
+                        src={project.coverImage}
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                      />
+                    )}
+                  </DialogTrigger>
+                  <DialogContent className="bg-white text-zinc-950 p-0 overflow-hidden max-w-6xl">
+                    {Image ? (
+                      <Image
+                        src={project.coverImage}
+                        alt={project.title}
+                        width={1000}
+                        height={1000}
+                        className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl animate-fade"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      <video
+                        src={project.coverImage}
+                        className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl animate-fade"
+                        autoPlay
+                        loop
+                      />
+                    )}
+                  </DialogContent>
+                </Dialog>
+              ) : (
+                <div className="w-full h-full bg-[#8257e6]">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <p className="text-base font-bold text-zinc-50">
+                      No Cover Image
+                    </p>
+                  </div>
+                </div>
+              )}
+              <div className="p-4 space-y-4">
+                <h2 className="text-base font-bold">{project.title}</h2>
+                <div className="flex flex-wrap gap-2 items-center">
                   {project.technologies.map((technology) => (
                     <Badge
                       key={technology}
@@ -122,7 +105,7 @@ export const ProjectsComponentServer = async () => {
                       {technology}
                     </Badge>
                   ))}
-                </CardItem>
+                </div>
                 <div className="flex justify-between items-center mt-20">
                   <Link
                     href={project.href}
@@ -141,8 +124,8 @@ export const ProjectsComponentServer = async () => {
                     Github
                   </Link>
                 </div>
-              </CardBody>
-            </CardContainer>
+              </div>
+            </div>
           ))}
         </div>
       </div>
