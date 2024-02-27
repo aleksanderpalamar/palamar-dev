@@ -5,7 +5,7 @@ import { ProjectsComponentServer } from "../_components/projects-component-serve
 const Projects = () => {
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start">
       <div className="max-w-6xl p-2 space-y-4">
         <ProjectsComponentServer />
         <CTA />

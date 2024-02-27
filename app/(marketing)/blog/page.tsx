@@ -26,7 +26,7 @@ const BlogPage = async () => {
   const posts = await getPosts();
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-[#1f1f1f]">
       <div className="max-w-[73rem] p-2 space-y-4">
         <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-4 text-left">
           Blog
@@ -51,7 +51,7 @@ const BlogPage = async () => {
               flex flex-col space-y-4"
             >
               {post.coverImage ? (
-                <div className="w-full h-48">
+                <div className="w-full h-60">
                   <img
                     src={post.coverImage}
                     alt=""
@@ -60,7 +60,7 @@ const BlogPage = async () => {
                   />
                 </div>
               ) : (
-                <div className="w-full h-48 bg-[#8257e6]">
+                <div className="w-full h-60 bg-[#8257e6]">
                   <div className="w-full h-full flex items-center justify-center">
                     <p className="text-base font-bold text-zinc-50">
                       No Cover Image
@@ -82,7 +82,7 @@ const BlogPage = async () => {
                     <Badge
                       key={tag}
                       className={cn(
-                        "bg-[#8257e6]/10 text-[#8257e6] hover:bg-[#8257e6]/20 transition-all w-[max-content]"
+                        "bg-[#48424e] text-[#8257e6] hover:bg-[#8257e6]/20 transition-all w-[max-content]"
                       )}
                     >
                       {tag}

@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <section
       className="min-h-screen min-w-screen flex 
-    flex-col items-center justify-center dark:bg-zinc-900"
+    flex-col items-center justify-center dark:bg-[#1f1f1f]"
     >
       <div
         className="container flex flex-col items-center justify-center

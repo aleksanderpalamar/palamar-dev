@@ -1,7 +1,6 @@
 import "./globals.css";
 
 import { ErrorBoundary } from "react-error-boundary";
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -58,7 +57,7 @@ export default function RootLayout({
       <body
         className={cn(
           poppins.className,
-          "bg-white text-zinc-950 dark:bg-dark:bg-gray-950 dark:text-white"
+          "text-zinc-950 bg-[#1f1f1f] dark:text-white"
         )}
       >
         <ErrorBoundary FallbackComponent={ErrorFallback}>

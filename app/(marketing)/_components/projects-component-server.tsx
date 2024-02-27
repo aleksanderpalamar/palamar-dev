@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { getProjects } from "@/app/_service/projects";
-import { formatText } from "@/utils/formatText";
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
@@ -23,7 +22,7 @@ export const ProjectsComponentServer = async () => {
   const projects = await getProjects();
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start dark:bg-zinc-900">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start">
       <div className="max-w-[73rem]">
         <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-4 text-left">
           Projetos
@@ -99,7 +98,7 @@ export const ProjectsComponentServer = async () => {
                     <Badge
                       key={technology}
                       className={cn(
-                        "bg-[#8257e6]/10 text-[#8257e6] hover:bg-[#8257e6]/20 transition-all w-[max-content] mr-1"
+                        "bg-[#48424e] text-[#8257e6] hover:bg-[#8257e6]/20 transition-all w-[max-content] mr-1"
                       )}
                     >
                       {technology}

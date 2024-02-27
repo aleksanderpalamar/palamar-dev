@@ -7,7 +7,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
   const post = await getPost(params.slug);
 
   return (
-    <div className="m-auto bg-white dark:bg-zinc-900 min-h-screen flex items-start justify-center">
+    <div className="m-auto bg-white dark:bg-[#1f1f1f] min-h-screen flex items-start justify-center">
       <div className="max-w-6xl py-14 md:py-20 px-4 text-justify animate-fade space-y-4">
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-14">
           {post.title}
@@ -28,8 +28,8 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
             ),           
             blockquote: ({ node, ...props }) => (
               <blockquote
-                className="border-l-4 border-[#8257e6] pl-4 pr-2 
-                my-4 font-light bg-[#8257e6]/10 dark:bg-[#8257e6]/20 text-sm text-ellipsis"
+                className="border-l-4 border-[#8257e6] px-3 py-2 
+                my-4 font-light bg-[#48424e] text-sm text-ellipsis"
                 {...props}
               />
             ),
@@ -43,7 +43,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
             ),
             code: ({ node, ...props }) => (
               <code
-                className="text-[#8257e6] bg-[#8257e6]/10 dark:bg-[#8257e6]/20 px-1 py-0.5 rounded"
+                className="text-[#8257e6] bg-[#48424e] px-1 py-0.5 rounded"
                 {...props}
               />
             ),
