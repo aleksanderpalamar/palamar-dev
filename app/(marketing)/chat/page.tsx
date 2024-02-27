@@ -10,6 +10,13 @@ export default function ChatPage() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   useEffect(() => {
+    const chat = document.querySelector(".chat");
+    if (chat) {
+      chat.scrollTo(0, chat.scrollHeight);
+    }
+  }, []);
+
+  useEffect(() => {
     const disableRightClick = (event: {
       button: number;
       preventDefault: () => void;
@@ -64,24 +71,29 @@ export default function ChatPage() {
               key={message.id}
               className={cn(
                 "flex flex-col p-2 my-2 bg-[#48424e]/20 rounded-lg",
-                message.role === "user" && "bg-sky-500/20",
-                message.role === "assistant" && "bg-violet-500/20"
+                message.role === "user" && "bg-transparent",
+                message.role === "assistant" && "bg-transparent"
               )}
             >
               {message.role === "user" && (
                 <div className="flex items-center justify-between space-x-2">
-                  <span className="text-white flex items-center">
-                    <User className="w-6 h-6" />
+                  <span className="text-white text-sm bg-sky-500/20 p-2 rounded-md">
+                    <User className="w-6 h-6 mr-2" />
+                    {message.content}
                   </span>
-                  <span className="text-white text-sm">{message.content}</span>
                 </div>
               )}
               {message.role === "assistant" && (
                 <div className="flex items-center justify-between space-x-2">
-                  <span className="text-white flex items-center">
-                    <Bot className="w-6 h-6" />
-                  </span>
-                  <span className="text-white text-sm">{message.content}</span>
+                  <div className="text-white text-sm bg-violet-500/20 p-2 rounded-md">
+                    <div className="flex items-center font-semibold underline">
+                      <Bot className="w-6 h-6 mr-2" />
+                      PalamarDev:
+                    </div>
+                    <pre className="text-sm text-white break-all whitespace-pre-wrap p-2">
+                      {message.content}
+                    </pre>
+                  </div>
                 </div>
               )}
             </div>
