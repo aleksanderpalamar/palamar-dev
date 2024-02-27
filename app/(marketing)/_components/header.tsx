@@ -27,7 +27,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-zinc-900 border-b-[1px] border-zinc-700">
+    <header className=" border-b-[1px] border-zinc-700">
       <Navbar />
     </header>
   );

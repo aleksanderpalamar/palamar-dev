@@ -8,7 +8,7 @@ const AboutPage = async () => {
   const about = await getAbout();
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center dark:bg-zinc-900">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center">
       <div className="container max-w-[73rem] space-y-4 mb-2">
         <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-4 text-left ">
           {about.title}
