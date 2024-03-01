@@ -3,13 +3,12 @@
 import { cn } from "@/lib/utils";
 import { useChat } from "ai/react";
 import { Bot, SendHorizonal, User } from "lucide-react";
-import { FormEvent, ReactElement, useEffect, useRef, useState } from "react";
+import { FormEvent, ReactElement, useRef, useState } from "react";
 import { toast } from "sonner";
 
 export default function ChatPage(props: {
   endpoint: string,
   emptyStateComponent: ReactElement,
-  placeholder?: string,
   titleText?: string,
   emoji?: string;
   showIngestForm?: boolean,
@@ -17,7 +16,7 @@ export default function ChatPage(props: {
 }) {
   const messageContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const { endpoint, emptyStateComponent, placeholder, titleText = "Chat AI", showIngestForm, showIntermediateStepsToggle, emoji } = props;
+  const { endpoint, titleText = "Chat AI", emoji } = props;
   const [showIntermediateSteps, setShowIntermediateSteps] = useState(false);
   const [intermediateStepsLoading, setIntermediateStepsLoading] = useState(false);
 
@@ -38,15 +37,6 @@ export default function ChatPage(props: {
         });
       }
     });
-
-  const intemediateStepsToggle = showIntermediateStepsToggle && (
-    <div>
-      <input type="checkbox" id="show_intermediate_steps" name="show_intermediate_steps" checked={showIntermediateSteps} onChange={(e) => setShowIntermediateSteps(e.target.checked)}></input>
-      <label htmlFor="show_intermediate_steps">
-        Mostrar passos intermediários
-      </label>
-    </div>
-  );
 
   const [sourcesForMessages, setSourcesForMessages] = useState<Record<string, any>>({});
 
