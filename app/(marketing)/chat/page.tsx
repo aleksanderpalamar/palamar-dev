@@ -4,36 +4,16 @@ import { cn } from "@/lib/utils";
 import { useChat } from "ai/react";
 import { Bot, SendHorizonal, User } from "lucide-react";
 import { useEffect } from "react";
-import { toast } from "sonner";
 
 export default function ChatPage() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
+  // Scroll to bottom of chat when new messages are added.
   useEffect(() => {
     const chat = document.querySelector(".chat");
     if (chat) {
       chat.scrollTo(0, chat.scrollHeight);
     }
-  }, []);
-
-  useEffect(() => {
-    const disableRightClick = (event: {
-      button: number;
-      preventDefault: () => void;
-    }) => {
-      if (event.button === 2) {
-        event.preventDefault();
-        toast.error(
-          "Por motivo de segurança, você não pode usar o botão direito do mouse, nesta página."
-        );
-      }
-    };
-
-    document.addEventListener("contextmenu", disableRightClick);
-
-    return () => {
-      document.removeEventListener("contextmenu", disableRightClick);
-    };
   }, []);
 
   return (
@@ -44,19 +24,18 @@ export default function ChatPage() {
           Chat AI
         </h1>
         <span className="text-xs text-muted-foreground">
-          Esse modelo AI GPT - Generative Pre-trained Transformer está sendo
-          treinado para responder perguntas sobre programação e tecnologia.
+          (powered by Palamar)
         </span>
         <form
           onSubmit={handleSubmit}
           className="flex items-center p-2 w-full mt-4 rounded-lg space-x-2 bg-zinc-800"
         >
           <input
-            placeholder="Type a message"
+            placeholder="Pergunte-me algo? 🤖"
             value={input}
             onChange={handleInputChange}
             className="flex-1 px-3 py-4 border-none rounded-lg focus:outline-none
-          justify-self-end bg-zinc-800 text-white resize-none h-auto w-full row-span-4"
+          justify-self-end bg-zinc-800 text-white resize-none h-auto w-full row-span-4 placeholder:text-gray-500"
           />
           <button
             className="flex items-center justify-center w-12 h-12 bg-violet-500 
