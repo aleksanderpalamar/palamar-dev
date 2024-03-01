@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { ClerkProvider } from "@clerk/clerk-react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
