@@ -3,31 +3,113 @@
 import { cn } from "@/lib/utils";
 import { useChat } from "ai/react";
 import { Bot, SendHorizonal, User } from "lucide-react";
-import { useEffect } from "react";
+import { FormEvent, ReactElement, useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 
-export default function ChatPage() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+export default function ChatPage(props: {
+  endpoint: string,
+  emptyStateComponent: ReactElement,
+  placeholder?: string,
+  titleText?: string,
+  emoji?: string;
+  showIngestForm?: boolean,
+  showIntermediateStepsToggle?: boolean
+}) {
+  const messageContainerRef = useRef<HTMLDivElement | null>(null);
 
-  // Scroll to bottom of chat when new messages are added.
-  useEffect(() => {
-    const chat = document.querySelector(".chat");
-    if (chat) {
-      chat.scrollTo(0, chat.scrollHeight);
+  const { endpoint, emptyStateComponent, placeholder, titleText = "Chat AI", showIngestForm, showIntermediateStepsToggle, emoji } = props;
+  const [showIntermediateSteps, setShowIntermediateSteps] = useState(false);
+  const [intermediateStepsLoading, setIntermediateStepsLoading] = useState(false);
+
+  const { messages, input, setInput, handleInputChange, handleSubmit, isLoading: chatEndpointIsLoading, setMessages } =
+    useChat({
+      api: endpoint,
+      onResponse(response) {
+        const sourcesHeader = response.headers.get("x-sources");
+        const sources = sourcesHeader ? JSON.parse((Buffer.from(sourcesHeader, 'base64')).toString('utf8')) : [];
+        const messageIndexHeader = response.headers.get("x-message-index");
+        if (sources.length && messageIndexHeader !== null) {
+          setSourcesForMessages({...sourcesForMessages, [messageIndexHeader]: sources});
+        }
+      },
+      onError: (e) => {
+        toast(e.message, {
+          position: "bottom-right",
+        });
+      }
+    });
+
+  const intemediateStepsToggle = showIntermediateStepsToggle && (
+    <div>
+      <input type="checkbox" id="show_intermediate_steps" name="show_intermediate_steps" checked={showIntermediateSteps} onChange={(e) => setShowIntermediateSteps(e.target.checked)}></input>
+      <label htmlFor="show_intermediate_steps">
+        Mostrar passos intermediários
+      </label>
+    </div>
+  );
+
+  const [sourcesForMessages, setSourcesForMessages] = useState<Record<string, any>>({});
+
+  async function sendMessage(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (messageContainerRef.current) {
+      messageContainerRef.current.classList.add("grow");
     }
-  }, []);
+    if (!messages.length) {
+      await new Promise(resolve => setTimeout(resolve, 300));
+    }
+    if (chatEndpointIsLoading ?? intermediateStepsLoading) {
+      return;
+    }
+    if (!showIntermediateSteps) {
+      handleSubmit(e);
+    // Some extra work to show intermediate steps properly
+    } else {
+      setIntermediateStepsLoading(true);
+      setInput("");
+      const messagesWithUserReply = messages.concat({ id: messages.length.toString(), content: input, role: "user" });
+      setMessages(messagesWithUserReply);
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: JSON.stringify({
+          messages: messagesWithUserReply,
+          show_intermediate_steps: true
+        })
+      });
+      const json = await response.json();
+      setIntermediateStepsLoading(false);
+      if (response.status === 200) {
+        // Represent intermediate steps as system messages for display purposes
+        
+        const newMessages = messagesWithUserReply;
+        newMessages.push({
+          id: messagesWithUserReply.length.toString(),
+          content: json.output,
+          role: "assistant"
+        })
+
+        setMessages([...newMessages,...json.intermediate_steps]);
+        
+      } else {
+        if (json.error) {
+          toast(json.error);
+          throw new Error(json.error);
+        }
+      }
+    }
+  }
 
   return (
-    <div className="flex flex-col w-full min-h-screen p-4">
+    <div className={`flex flex-col items-center p-4 md:p-8 rounded grow overflow-hidden ${(messages.length > 0 ? "border" : "")}`}>
       <div className="max-w-6xl self-center w-full flex-1">
-        <h1 className="text-3xl font-bold text-white flex items-center">
-          <Bot className="w-8 h-8 mr-2" />
-          Chat AI
-        </h1>
+        <h1 className={`${messages.length > 0 ? "" : ""} text-2xl`}>
+        {emoji} {titleText}
+        </h1>        
         <span className="text-xs text-muted-foreground">
           (powered by Palamar)
         </span>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={sendMessage}
           className="flex items-center p-2 w-full mt-4 rounded-lg space-x-2 bg-zinc-800"
         >
           <input
