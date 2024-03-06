@@ -34,7 +34,7 @@ export const Heroes = async () => {
               alt=""
               width={258}
               height={160}
-              className="w-[258px] h-[160px] object-cover opacity-30"
+              className="w-full h-full object-cover opacity-30"
               loading="lazy"
             />
             <div className="absolute top-0 w-full h-full flex items-start justify-between p-2">
@@ -57,7 +57,7 @@ export const Heroes = async () => {
               alt=""
               width={258}
               height={160}
-              className="w-[258px] h-[160px] object-cover opacity-30"
+              className="w-full h-full object-cover opacity-30"
               loading="lazy"
             />
             <div className="absolute top-0 w-full h-full flex items-start justify-between p-2">
