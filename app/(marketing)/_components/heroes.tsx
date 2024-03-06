@@ -30,7 +30,7 @@ export const Heroes = async () => {
               flex flex-col relative"
           >
             <Image
-              src="https://cdn.discordapp.com/attachments/811800332006457356/1188820804520132638/e9a8244b217a8cb45e0425252c6d4606.jpg?ex=659beaa7&is=658975a7&hm=57970c20a79e1bd5358ee984c1e3534aadd5a7a46f9fc863e320ded944259022&"
+              src="https://cdn.discordapp.com/attachments/811800332006457356/1214974314512908350/image-5.png?ex=65fb1001&is=65e89b01&hm=5c42a78fd4236d8bb4aa9f589d12414d05079b5b07aeb689a701f356f6bfda8e&"
               alt=""
               width={258}
               height={160}
@@ -53,7 +53,7 @@ export const Heroes = async () => {
               flex flex-col relative"
           >
             <Image
-              src="https://cdn.discordapp.com/attachments/811800332006457356/1188820804520132638/e9a8244b217a8cb45e0425252c6d4606.jpg?ex=659beaa7&is=658975a7&hm=57970c20a79e1bd5358ee984c1e3534aadd5a7a46f9fc863e320ded944259022&"
+              src="https://cdn.discordapp.com/attachments/811800332006457356/1214974210070417539/image-6.png?ex=65fb0fe8&is=65e89ae8&hm=d2bee8773a760be8ee26d7524bcf01d6dcc6933dc23e08a95f690fe06c3deac8&"
               alt=""
               width={258}
               height={160}
