@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -20,9 +18,6 @@ export const Navbar = () => {
         </Link>
         <Link className="text-white hover:text-gray-300" href="/blog">
           Blog
-        </Link>
-        <Link className="text-white hover:text-gray-300" href="/chat">
-          Chat com IA
         </Link>
       </div>
       <Sheet>
@@ -54,12 +49,6 @@ export const Navbar = () => {
               href="/blog"
             >
               Blog
-            </Link>
-            <Link
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              href="/chat"
-            >
-              Chat com IA
             </Link>
           </div>
         </SheetContent>

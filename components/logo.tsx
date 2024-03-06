@@ -7,10 +7,11 @@ export const Logo = () => {
       <div className="h-10 w-auto sm:h-12 flex items-center">
       <Image
         alt="Logo"
-        className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-        height="70"
+        className="aspect-auto overflow-hidden rounded-lg object-contain object-center mr-2"
+        height="40"
         src="/images/favicon.png"
-        width="70"
+        width="40"
+        loading="lazy"
       />
       <p className="font-normal text-lg">Palamar.Dev</p>
     </div>

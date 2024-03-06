@@ -6,19 +6,16 @@ export const runtime = "edge";
 
 export const revalidate = 60; // 60 seconds
 
+
 const Home = () => {
   return (
     <section
-      className="min-h-screen min-w-screen flex 
-    flex-col items-center justify-center dark:bg-[#1f1f1f]"
+      className="min-h-screen max-w-6xl mx-auto p-2 flex 
+    flex-col items-center justify-between dark:bg-[#1f1f1f]"
     >
-      <div
-        className="container flex flex-col items-center justify-center
-      md:justify-between flex-1 py-4 max-w-[80rem] w-full"
-      >
-        <Heroes />
-        <CTA />
-      </div>
+      <Heading />
+      <Heroes />
+      <CTA />
     </section>
   );
 };
