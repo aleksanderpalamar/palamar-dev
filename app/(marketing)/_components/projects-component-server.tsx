@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { formatText } from "@/utils/formatText";
+import { Title } from "./title";
+import language from "react-syntax-highlighter/dist/esm/languages/hljs/1c";
 
 export const runtime = "edge";
 
@@ -24,15 +26,10 @@ export const ProjectsComponentServer = async () => {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start">
       <div className="max-w-[73rem]">
-        <h1 className="flex flex-col text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-4 text-left">
-          Projetos
-          <p className="text-sm text-zinc-500 font-extralight text-justify">
-            Esses projetos foram desenvolvidos com o objetivo de aprender novas
-            tecnologias e aprimorar as que já conheço, pois não consigo colocar
-            em prática e publicar os códigos dos projetos que desenvolvo em meu
-            trabalho, então decidi criar esses projetos pessoais.
-          </p>
-        </h1>
+        <Title
+          
+        />
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-left mt-4">
           {projects.map((project) => (
             <div
@@ -96,9 +93,7 @@ export const ProjectsComponentServer = async () => {
               )}
               <div className="p-4 space-y-4">
                 <h2 className="text-base font-bold">{project.title}</h2>
-                <p className="text-sm text-zinc-500">
-                  {project.description}
-                </p>
+                <p className="text-sm text-zinc-500">{project.description}</p>
                 <div className="flex flex-wrap gap-2 items-center">
                   {project.technologies.map((technology) => (
                     <Badge
