@@ -1,10 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import { getProjects } from "@/app/_service/projects";
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { formatText } from "@/utils/formatText";
 
 export const runtime = "edge";
 
@@ -85,14 +85,20 @@ export const ProjectsComponentServer = async () => {
               ) : (
                 <div className="w-full h-full bg-[#8257e6]">
                   <div className="w-full h-60 flex items-center justify-center">
-                    <p className="text-base font-bold text-zinc-50">
+                    <p className="text-base font-bold text-zinc-50 flex flex-col">
                       No Cover Image
+                      <span className="text-sm text-zinc-200">
+                        {formatText(project.title, 2)}
+                      </span>
                     </p>
                   </div>
                 </div>
               )}
               <div className="p-4 space-y-4">
                 <h2 className="text-base font-bold">{project.title}</h2>
+                <p className="text-sm text-zinc-500">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2 items-center">
                   {project.technologies.map((technology) => (
                     <Badge
