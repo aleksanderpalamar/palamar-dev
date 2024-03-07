@@ -8,7 +8,7 @@ export const Heading = () => {
   const { language } = useContext(LanguageContext);
 
   return (
-    <div className="flex flex-col space-y-8 mt-8 self-start mb-4">
+    <div className="flex flex-col space-y-8 mt-8 self-start">
       <h2 className="text-4xl font-semibold leading-tight animate-fade-right">
         {language === "en"
          ? "Hi, I'm Aleksander Palamar"
