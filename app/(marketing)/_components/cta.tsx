@@ -1,13 +1,16 @@
 "use client";
 
+import { LanguageContext } from "@/context/language-context";
 import { useContact } from "@/hooks/use-contact";
 import { Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { WhatsappLogo } from "phosphor-react";
+import { useContext } from "react";
 import { FaThreads, FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa6";
 
 export const CTA = () => {
+  const { language } = useContext(LanguageContext)!;
   const contact = useContact();
 
   return (
@@ -20,11 +23,14 @@ export const CTA = () => {
           className="text-xl font-bold transform uppercase text-left "
           aria-label="Let's develop something together?"
         >
-          VAMOS DESENVOLVER ALGO JUNTOS?
+          {language === "en"
+           ? "Let's develop something together?"
+            : "Vamos desenvolver algo junto?"}
         </h2>
         <p className="text-sm text-zinc-500 text-left">
-          Se você tem uma ideia, uma solução ou um projeto que precisa ser
-          desenvolvido, entre em contato conosco.
+          {language === "en"
+           ? "If you have an idea, a solution or a project that needs to be developed, contact us."
+            : "Se você tem uma ideia, uma solução ou um projeto que precisa ser desenvolvido, entre em contato conosco."}
         </p>
         <div className="flex items-center gap-x-2">
           <div
@@ -34,7 +40,9 @@ export const CTA = () => {
             aria-label="Button Contact"
           >
             <Mail className="w-4 h-4" />
-            <span className="ml-2">Contato</span>
+            <span className="ml-2">
+              {language === "en"? "Contact" : "Contato"}
+            </span>
           </div>
           <div
             className="flex items-center w-[max-content] p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base cursor-pointer"

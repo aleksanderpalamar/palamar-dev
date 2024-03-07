@@ -1,18 +1,23 @@
+"use client";
+
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa6";
 import { SiJavascript, SiTypescript, SiDocker, SiMysql, SiMongodb, SiTailwindcss } from "react-icons/si";
 import { FcLinux } from "react-icons/fc";
 
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
 import Image from "next/image";
+import { useContext } from "react";
+import { LanguageContext } from "@/context/language-context";
 
 
 export const StackCards = () => {
+  const { language } = useContext(LanguageContext);
   return (
     <div className="h-full rounded-md flex flex-col antialiased justify-center relative overflow-hidden animate-fade-left">
       <h2 
         className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-20"
       >
-        Minhas Tecnologias
+        {language === "en"? "Stacks" : "Minhas Tecnologias"}
       </h2>
       <InfiniteMovingCards 
         items={stackitems}

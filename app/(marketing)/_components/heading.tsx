@@ -1,10 +1,18 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
+import { LanguageContext } from "@/context/language-context";
+import { useContext } from "react";
 
 export const Heading = () => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <div className="flex flex-col space-y-8 mt-8 self-start mb-4">
       <h2 className="text-4xl font-semibold leading-tight animate-fade-right">
-        Hi, I&apos;m Aleksander Palamar
+        {language === "en"
+         ? "Hi, I'm Aleksander Palamar"
+          : "Olá, sou Aleksander Palamar"}
         <p
           className="text-gray-500 dark:text-gray-50 flex items-center gap-2 animate-fade-right text-sm leading-tight"
           aria-label="Web Developer"
@@ -19,7 +27,9 @@ export const Heading = () => {
         </p>
       </h2>
       <p className="font-medium text-zinc-400 mt-2">
-        Combining design and development, I continue to create unique projects.
+        {language === "en"
+         ? "Combining design and development, I continue to create unique projects."
+          : "Combinando design e desenvolvimento, continuo a criar projetos únicos."}
       </p>
     </div>
   );
