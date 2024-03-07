@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FaCode, FaComputer, FaReadme, FaUserAstronaut } from "react-icons/fa6";
-import { Title } from "./title";
 
 export const runtime = "edge";
 
@@ -20,7 +19,9 @@ export const Heroes = async () => {
 
   return (
     <section className="flex flex-col w-full">
-      <Title />
+      <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mt-20">
+        Last Updated
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-2 mb-2">
         <Link href="/about">
           <div
