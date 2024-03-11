@@ -26,6 +26,7 @@ import {
 import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Textarea } from "../ui/textarea";
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -81,7 +82,7 @@ export const ContactForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleOnSubmit)}>
-        <div className="space-y-8 px-6">
+        <div className="space-y-8 px-6 flex flex-col gap-6">
           <FormField
             control={form.control}
             name="name"
@@ -93,9 +94,7 @@ export const ContactForm = () => {
                 <FormControl>
                   <Input
                     disabled={isLoading}
-                    className="bg-zinc-300/50 dark:bg-zinc-100 border-0 
-                        focus-visible:ring-0 text-black 
-                        focus-visible:ring-offset-0"
+                    className="w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
                     placeholder="Name (e.g. John Doe)"
                     {...field}
                   />
@@ -115,9 +114,7 @@ export const ContactForm = () => {
                 <FormControl>
                   <Input
                     disabled={isLoading}
-                    className="bg-zinc-300/50 dark:bg-zinc-100 border-0 
-                        focus-visible:ring-0 text-black 
-                        focus-visible:ring-offset-0"
+                    className="w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
                     placeholder="Email (e.g. 4K2wD@example.com)"
                     {...field}
                   />
@@ -137,9 +134,7 @@ export const ContactForm = () => {
                 <FormControl>
                   <Input
                     disabled={isLoading}
-                    className="bg-zinc-300/50 dark:bg-zinc-100 border-0 
-                        focus-visible:ring-0 text-black 
-                        focus-visible:ring-offset-0"
+                    className="w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
                     placeholder="Subject"
                     {...field}
                   />
@@ -157,11 +152,9 @@ export const ContactForm = () => {
                   Message
                 </FormLabel>
                 <FormControl>
-                  <Input
+                  <Textarea
                     disabled={isLoading}
-                    className="bg-zinc-300/50 dark:bg-zinc-100 border-0 
-                        focus-visible:ring-0 text-black 
-                        focus-visible:ring-offset-0"
+                    className="w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
                     placeholder="Enter message"
                     {...field}
                   />
@@ -175,7 +168,10 @@ export const ContactForm = () => {
           <Button
             variant="default"
             disabled={isLoading}
-            className={cn("bg-emerald-500 hover:bg-emerald-400 text-zinc-950")}
+            className={cn(
+              "bg-[#8257e6] hover:bg-[#8257e6]/90 transition-colors text-zinc-950 w-full",              
+              isLoading && "opacity-50 cursor-not-allowed"
+            )}
             suppressHydrationWarning
           >
             {isLoading ? (
