@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { formatText } from "@/utils/formatText";
 import { Title } from "./title";
-import language from "react-syntax-highlighter/dist/esm/languages/hljs/1c";
 
 export const runtime = "edge";
 
