@@ -34,12 +34,6 @@ export const metadata = {
       width: 800,
       height: 600,
     },
-    {
-      url: siteConfig.openGraph.images,
-      alt: siteConfig.title,
-      width: 1800,
-      height: 1200,
-    },
   ],
   icons: siteConfig.icons,
   alternates: siteConfig.alternates,

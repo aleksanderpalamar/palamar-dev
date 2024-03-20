@@ -32,7 +32,7 @@ export const DownloadModal = () => {
         <DialogFooter className="mt-4 flex items-center">
           <Button
             onClick={downloadResumePT}
-            variant="outline"
+            variant="superOutline"
             size="sm"
             className="w-full flex items-center justify-between border-emerald-500 
             hover:bg-emerald-200 hover:text-emerald-500 text-xs"
@@ -42,7 +42,7 @@ export const DownloadModal = () => {
           </Button>
           <Button
             onClick={downloadResumeEN}
-            variant="outline"
+            variant="superOutline"
             size="sm"
             className="w-full flex items-center justify-between border-emerald-500 
             hover:bg-emerald-200 hover:text-emerald-500 text-xs"

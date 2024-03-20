@@ -40,7 +40,7 @@ type SiteConfigProps = {
       'en-US': string,
     },
   },
-  openGraph: {
+  openGraph?: {
     title: string,
     description: string,
     images: string,
@@ -93,11 +93,7 @@ export const siteConfig: SiteConfigProps = {
       'en-US': 'https://aleksanderpalamar.dev/',
     },
   },
-  openGraph: {
-    title: 'Palamar.Dev',
-    description: 'Site pessoal de Aleksander Palamar',
-    images: '/icons/icon-512x512.png',
-  },
+  
   authors: [
     {
       name: 'Aleksander Palamar',

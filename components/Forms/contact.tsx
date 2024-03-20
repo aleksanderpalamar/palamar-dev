@@ -166,7 +166,8 @@ export const ContactForm = () => {
         </div>
         <DialogFooter className="px-6 py-4">
           <Button
-            variant="default"
+            variant="superOutline"
+            size="sm"
             disabled={isLoading}
             className={cn(
               "bg-[#8257e6] hover:bg-[#8257e6]/90 transition-colors text-zinc-950 w-full",              

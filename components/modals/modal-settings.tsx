@@ -6,7 +6,6 @@ import {
   DialogHeader,
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label";
-import { ModeToggle } from "@/components/mode-toggle";
 import { useSettings } from "@/hooks/use-settings";
 
 export const SettingsModal = () => {
@@ -26,7 +25,7 @@ export const SettingsModal = () => {
                 Customize how the app looks on your device.
               </span>
             </div>
-            <ModeToggle />
+            
           </div>
         </DialogHeader>
       </DialogContent>
