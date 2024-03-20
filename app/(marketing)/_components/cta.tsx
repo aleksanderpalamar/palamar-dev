@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { LanguageContext } from "@/context/language-context";
 import { useContact } from "@/hooks/use-contact";
 import { Mail } from "lucide-react";
@@ -33,9 +34,10 @@ export const CTA = () => {
             : "Se você tem uma ideia, uma solução ou um projeto que precisa ser desenvolvido, entre em contato conosco."}
         </p>
         <div className="flex items-center gap-x-2">
-          <div
-            role="button"
-            className="flex items-center w-[max-content] p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base cursor-pointer"
+          <Button
+            variant="ghost"
+            size="sm"
+            className="flex items-center w-[max-content] p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base cursor-pointer text-white"
             onClick={contact.onOpen}
             aria-label="Button Contact"
           >
@@ -43,10 +45,11 @@ export const CTA = () => {
             <span className="ml-2">
               {language === "en"? "Contact" : "Contato"}
             </span>
-          </div>
-          <div
-            className="flex items-center w-[max-content] p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base cursor-pointer"
-            role="button"
+          </Button>
+          <Button
+            className="flex items-center w-[max-content] p-1 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base cursor-pointer text-white"
+            variant="ghost"
+            size="sm"
             onClick={() =>
               window.open(
                 "https://api.whatsapp.com/send?phone=5541987938328",
@@ -57,7 +60,7 @@ export const CTA = () => {
           >
             <WhatsappLogo className="w-4 h-4" />
             <span className="ml-2">WhatsApp</span>
-          </div>
+          </Button>
         </div>
       </div>
       <div className="border-t border-muted-foreground/25 dark:border-zinc-700 mt-4" />
@@ -66,34 +69,42 @@ export const CTA = () => {
         aria-label="Social"
       >
         <Link href="https://github.com/aleksanderpalamar">
-          <div
-            className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+          <Button
+            variant="ghost"
+            size="icon"
+            className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-white"
             role="button"
             aria-label="Github"
           >
             <FaGithub className="w-7 h-7" />
-          </div>
+          </Button>
         </Link>
         <Link href="https://www.linkedin.com/in/aleksanderpalamar/">
-          <div
-            className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+          <Button
+            variant="ghost"
+            size="icon"
+            className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-white"
             role="button"
             aria-label="Linkedin"
           >
             <FaLinkedin className="w-7 h-7" />
-          </div>
+          </Button>
         </Link>
         <Link href="https://www.threads.net/@palamar.dev">
-          <div
-            className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+          <Button
+            variant="ghost"
+            size="icon"
+            className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-white"
             role="button"
             aria-label="Threads"
           >
             <FaThreads className="w-7 h-7" />
-          </div>
+          </Button>
         </Link>
         <Link href="https://x.com/Palamar_Dev_">
-          <div
+          <Button
+            variant="ghost"
+            size="icon"
             className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base text-zinc-700 dark:text-white"
             role="button"
             aria-label="X"
@@ -105,16 +116,18 @@ export const CTA = () => {
               alt=""
               className="w-7 h-7 dark:invert"
             />
-          </div>
+          </Button>
         </Link>
         <Link href="https://discord.com/users/273228029843734528">
-          <div
-            className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-base"
+          <Button
+            variant="ghost"
+            size="icon"
+            className="p-2 border-l-2 border-r-2 border-zinc-700/75 hover:bg-zinc-500/10 text-white"
             role="button"
             aria-label="Discord"
           >
             <FaDiscord className="w-7 h-7" />
-          </div>
+          </Button>
         </Link>
       </div>
     </footer>

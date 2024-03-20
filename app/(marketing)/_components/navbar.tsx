@@ -10,11 +10,10 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ArrowLeft, ArrowRight, ChevronDown, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { FaFlagUsa } from "react-icons/fa6";
 
 export const Navbar = () => {
   const { language, changeLanguage } = useContext(LanguageContext);
@@ -168,7 +167,7 @@ export const Navbar = () => {
             <Separator />
             <DropdownMenuItem>
               <Button
-                variant="outline"
+                variant="super"
                 size="sm"
                 className={cn(
                   "flex",

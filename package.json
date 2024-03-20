@@ -68,6 +68,7 @@
     "nodemailer": "^6.9.7",
     "notion-to-md": "^3.1.1",
     "npm": "^10.4.0",
+    "nvm": "^0.0.4",
     "openai": "^4.28.0",
     "phosphor-icons": "^1.4.2",
     "phosphor-react": "^1.4.1",
